@@ -394,3 +394,5 @@ configuration.php
 index.php
 joomla.xml
 *.txt
+!/src/index.php
+/target/

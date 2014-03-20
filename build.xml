@@ -1,0 +1,118 @@
+<project name="tpl_bodenleger-stockach" default="build" basedir=".">
+
+   <description>
+      Joomla!-Template: Bodenleger-Stockach - the responsive template based on Foundation.
+   </description>
+
+   <property environment="env" />
+   <property file="build.properties" />
+
+
+   <property name="module.name" value="tpl_bodenleger-stockach" />
+   <property name="template.name" value="Bodenleger-Stockach" />
+   
+   <property name="xml.name" value="Bodenleger-Stockach - the responsive template based on Foundation" />
+   <property name="xml.author" value="Stephan Strittmatter" />
+   <property name="xml.authoremail" value="info@bodenleger-stockach.de" />
+      
+   <property name="build.source.dir" value="src" />
+   <property name="build.target.dir" value="target" />
+
+   <target name="build" depends="clean">
+      <!-- create target directories -->
+      <mkdir dir="${build.target.dir}" />
+      <mkdir dir="${build.target.dir}/files/${module.name}" />
+
+      <!-- copy files -->
+      <antcall target="copy.template"></antcall>
+
+
+      <!-- Copy update files. -->
+      <copy todir="${build.target.dir}" verbose="${build.verbose}">
+         <fileset dir="${module.target.dir}">
+            <include name="*_update.xml" />
+         </fileset>
+      </copy>
+
+      <!-- create zip file -->
+      <antcall target="zip"></antcall>
+   </target>
+
+   <target name="copy.template">
+      <!-- Copy files -->
+      <copy todir="${build.target.dir}/files/${module.name}" overwrite="true" verbose="${build.verbose}">
+         <fileset dir="${build.source.dir}">
+            <exclude name="sass/**" />
+         </fileset>
+      </copy>
+   </target>
+
+
+   <target name="deploy" description="Deploys Template: ${module.name}" depends="init, copy.template,  zip">
+      <!-- clean then the template directory for the new files -->
+      <delete verbose="${build.verbose}">
+         <fileset dir="${local.joomla.template.dir}" >
+            <exclude name="css/" />
+         </fileset>
+      </delete>
+
+      <!-- copy language files to language -->
+      <copy todir="${dev.server.htdocs.dir}" overwrite="true" verbose="${build.verbose}">
+         <fileset dir="${module.target.dir}">
+            <include name="language/" />
+         </fileset>
+      </copy>
+
+      <copy todir="${local.joomla.template.dir}" overwrite="true" verbose="${build.verbose}">
+         <fileset dir="${build.target.dir}/files/${module.name}">
+            <include name="html/" />
+            <include name="language/" />
+            <include name="css/" />
+            <include name="fonts/" />
+            <include name="images/" />
+            <include name="js/" />
+            <include name="js.min/" />
+            <include name="*.html" />
+            <include name="*.php" />
+            <include name="*.png" />
+            <include name="templateDetails.xml" />
+         </fileset>
+      </copy>
+   </target>
+
+
+   <target name="init">
+      <echo level="info">Joomla! extension:  ${module.name}</echo>
+
+      <tstamp>
+         <format property="build.date" pattern="dd.MM.yyyy" />
+      </tstamp>
+
+      <property name="module.target.dir" value="${build.target.dir}/files/${module.name}"/>
+      <property name="local.joomla.language.dir" value="${dev.server.htdocs.dir}/language" />
+      <property name="local.joomla.media.dir" value="${dev.server.htdocs.dir}/media" />
+      <property name="local.joomla.template.dir" value="${dev.server.htdocs.dir}/templates/${template.name}" />
+   </target>
+
+   <target name="clean" depends="init">
+      <echo>Removing current module files: ${build.target.dir}...</echo>
+      <delete file="${build.target.dir}/${xml.name}_update.xml" verbose="${build.verbose}"/>
+      <delete file="${build.target.dir}/${module.name}_update.xml" verbose="${build.verbose}"/>
+      <delete file="${build.target.dir}/${module.name}.zip" verbose="${build.verbose}"/>
+      <delete dir="${module.target.dir}" failonerror="true" verbose="${build.verbose}"/>
+   </target>
+
+   <target name="zip">
+      <!-- create zip file -->
+      <delete file="${build.target.dir}/${module.name}.zip" failonerror="false" verbose="${build.verbose}" />
+      <zip destfile="${build.target.dir}/${module.name}.zip" update="true">
+         <fileset dir="${module.target.dir}">
+            <exclude name="**/.sass-cache/" />
+            <exclude name="**/sass/" />
+            <exclude name="**/*.rb" />
+            <exclude name="**/${module.name}_update.xml" />
+            <exclude name="**/${xml.name}_update.xml" />
+         </fileset>
+      </zip>
+   </target>
+</project>

@@ -1,0 +1,44 @@
+body {
+   background-color: #2B3850;
+   background-image: url('../images/background.jpg');
+   background-repeat: repeat;
+   background-attachment: fixed;
+   background-position: top center;
+}
+
+#header {
+
+}
+
+#content {
+   background-color: #f0ede0;
+}
+
+#left {
+
+}
+
+#component {
+
+}
+
+#right {
+
+}
+#bottom {
+   background-color: #f5b371;
+}
+
+#bottom-1, #bottom-2, #bottom-3 {
+   padding: 50px 0 0 0;
+   margin-bottom: 30px;
+}
+#bottom-2, #bottom-3 {
+   border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+#footer {
+   background: #512200;
+}
+#copyright {
+   font-weight: bold;
+}
