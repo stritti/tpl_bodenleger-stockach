@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site" method="upgrade">
+
+   <name>Bodenleger-Stockach</name>
+   <creationDate>2014-03-13</creationDate>
+   <version>1.0</version>
+   <author>Stephan Strittmatter</author>
+   <authorUrl> </authorUrl>
+   <license>Apache Version 2.0 http://www.apache.org/licenses/</license>
+   <description>Kostenloses Template von http://www.bodenleger-stockach.de</description>
+
+   <files>
+      <folder>css</folder>
+      <folder>fonts</folder>
+      <folder>html</folder>
+      <folder>images</folder>
+      <folder>js</folder>
+
+      <filename>component.php</filename>
+      <filename>functions.php</filename>
+      <filename>index.php</filename>
+      <filename>index.html</filename>
+      <filename>template_preview.png</filename>
+      <filename>template_thumbnail.png</filename>
+      <filename>favicon.ico</filename>
+      <filename>templateDetails.xml</filename>
+   </files>
+
+   <positions>
+      <position>banner</position>
+      <position>debug</position>
+      <position>position-0</position> <!-- Search -->
+      <position>position-1</position> <!-- navigation -->
+      <position>position-2</position> <!-- breadcrumb -->
+      <position>position-3</position> <!-- Top center -->
+      <position>position-4</position> <!-- bottom 1 -->
+      <position>position-5</position> <!-- bottom 2 -->
+      <position>position-6</position> <!-- bottom 3 -->
+      <position>position-7</position>
+      <position>position-8</position> <!-- left -->
+      <position>position-9</position>
+      <position>position-10</position>
+      <position>position-11</position>
+      <position>position-12</position>
+      <position>position-13</position>
+      <position>position-14</position>
+      <position>footer</position>
+   </positions>
+   <languages folder="language">
+      <language tag="en-GB">en-GB/en-GB.tpl_bodenleger-stockach.ini</language>
+      <language tag="en-GB">en-GB/en-GB.tpl_bodenleger-stockach.sys.ini</language>
+   </languages>
+   <config>
+      <fields name="params">
+         <fieldset name="basic" description="Enter text here" label="Frontpage text and title parameters">
+            <field type="text" name="siteTitle" description="Maintitle" label="Main-Titel" default="Bodenleger J. Schmid" size="40"/>
+            <field type="text" name="siteDescription" description="Subtitle" label="Subtitle" default="Verlegearbeiten - Schleifarbeiten - Estrichsanierung" size="40"/>
+            <field type="text" name="siteCopyright" description="Copyright-Information" label="Copyright" default="Ihre Firma/Seite oder Verein" size="40"/>
+         </fieldset>
+         <filedset name="social" description="Social Links" label="Social Links">
+            <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/106185857467526994975" size="40" />
+            <field type="text" name="facebookFanpage" description="URL of corresponding Facebook FanPage" label="Facebook Fanpage URL" default="https://www.facebook.com" size="40" />
+         </filedset>
+      </fields>
+   </config>
+  
+   <updateservers>
+      <server type="extension" priority="2" name="Update-Server">http://www.bodenleger-stockach.de/downloads/tpl_bodenleger-stockach_update.xml</server>
+   </updateservers>
+</extension>

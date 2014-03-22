@@ -1,0 +1,81 @@
+/*
+*/
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-bolder-normal.eot");
+  src: url("../fonts/sourcesanspro-bolder-normal.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-bolder-normal.woff") format("woff"), url("../fonts/sourcesanspro-bolder-normal.ttf") format("truetype"), url("../fonts/sourcesanspro-bolder-normal.svg#SourceSansPro") format("svg");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-bolder-italic.eot");
+  src: url("../fonts/sourcesanspro-bolder-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-bolder-italic.woff") format("woff"), url("../fonts/sourcesanspro-bolder-italic.ttf") format("truetype"), url("../fonts/sourcesanspro-bolder-italic.svg#SourceSansPro") format("svg");
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-100-normal.eot");
+  src: url("../fonts/sourcesanspro-100-normal.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-100-normal.woff") format("woff"), url("../fonts/sourcesanspro-100-normal.ttf") format("truetype"), url("../fonts/sourcesanspro-100-normal.svg#SourceSansPro") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-100-italic.eot");
+  src: url("../fonts/sourcesanspro-100-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-100-italic.woff") format("woff"), url("../fonts/sourcesanspro-100-italic.ttf") format("truetype"), url("../fonts/sourcesanspro-100-italic.svg#SourceSansPro") format("svg");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-normal-italic.eot");
+  src: url("../fonts/sourcesanspro-normal-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-normal-italic.woff") format("woff"), url("../fonts/sourcesanspro-normal-italic.ttf") format("truetype"), url("../fonts/sourcesanspro-normal-italic.svg#SourceSansPro") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-lighter-normal.eot");
+  src: url("../fonts/sourcesanspro-lighter-normal.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-lighter-normal.woff") format("woff"), url("../fonts/sourcesanspro-lighter-normal.ttf") format("truetype"), url("../fonts/sourcesanspro-lighter-normal.svg#SourceSansPro") format("svg");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-lighter-italic.eot");
+  src: url("../fonts/sourcesanspro-lighter-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-lighter-italic.woff") format("woff"), url("../fonts/sourcesanspro-lighter-italic.ttf") format("truetype"), url("../fonts/sourcesanspro-lighter-italic.svg#SourceSansPro") format("svg");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-normal-normal.eot");
+  src: url("../fonts/sourcesanspro-normal-normal.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-normal-normal.woff") format("woff"), url("../fonts/sourcesanspro-normal-normal.ttf") format("truetype"), url("../fonts/sourcesanspro-normal-normal.svg#SourceSansPro") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-bold-normal.eot");
+  src: url("../fonts/sourcesanspro-bold-normal.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-bold-normal.woff") format("woff"), url("../fonts/sourcesanspro-bold-normal.ttf") format("truetype"), url("../fonts/sourcesanspro-bold-normal.svg#SourceSansPro") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/sourcesanspro-bold-italic.eot");
+  src: url("../fonts/sourcesanspro-bold-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-bold-italic.woff") format("woff"), url("../fonts/sourcesanspro-bold-italic.ttf") format("truetype"), url("../fonts/sourcesanspro-bold-italic.svg#SourceSansPro") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
