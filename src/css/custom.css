@@ -42,3 +42,15 @@ body {
 #copyright {
    font-weight: bold;
 }
+
+#image-caption {
+   background-color: #f5b371;
+   padding: 0.3em;
+}
+
+article p {
+-webkit-hyphens: auto;
+-moz-hyphens: auto;
+-ms-hyphens: auto;
+hyphens: auto;
+}
