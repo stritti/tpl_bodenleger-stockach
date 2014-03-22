@@ -25,7 +25,7 @@ $metatags = array(
 );
 
 $customtags = array(
-    // garanbo meta tags
+    // meta tags
     '<meta property="og:site_name" content="' . $params->get('siteTitle') . '"/>',
     '<meta property="og:description" content="' . $doc->getDescription() . '" />',
     '<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
@@ -103,3 +103,37 @@ foreach ($scripts as $script) {
 $doc->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
 $doc->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
 $doc->addStyleSheet($templateUrl . '/css/template.css.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view);
+
+
+/**
+ * Calculate colums wether left or right sidebar is used
+ * position-7: right sidebar
+ * position-8: left sidebar
+ */
+if ($this->error || !$this->countModules('position-8') && !$this->countModules('position-7')) {
+   $showLeftSidebar = false;
+   $showRightSidebar = false;
+   $columnSizeContent = "large-12";
+
+} else if ($this->countModules('position-8') && !$this->countModules('position-7')) {
+   $showLeftSidebar = true;
+   $showRightSidebar = false;
+
+   $columnSizeContent = "large-9 medium-8 column";
+   $columnSizeLeftSideBar = "large-3 medium-4 column hide-on-print";
+
+} else if ($this->countModules('position-7') && !$this->countModules('position-8')) {
+   $showLeftSidebar = false;
+   $showRightSidebar = true;
+
+   $columnSizeContent = "large-9 medium-8";
+   $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print";
+
+} else {
+   $showLeftSidebar = true;
+   $showRightSidebar = true;
+
+   $columnSizeContent = "large-6 medium-6 column";
+   $columnSizeLeftSideBar = "large-3 medium-3 column hide-on-print";
+   $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print";
+}

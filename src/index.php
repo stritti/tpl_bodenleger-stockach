@@ -60,7 +60,6 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
             <h2 class="logo-text"><?php echo $this->params->get('siteDescription'); ?></h2>
          </div>
       </a>
-
    </header>
 
    <div id="banner" class="row">
@@ -94,12 +93,19 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    </div>
 
    <div id="content" class="row">
-      <div id="left" class="large-3 medium-3 column">
+      <?php if($showLeftSidebar) { ?>
+      <div id="leftSidebar" class="<?php echo $columnSizeLeftSideBar;?>">
          <jdoc:include type="modules" name="position-8" />
       </div>
-      <main id="component" class="large-9 medium-9 column">
+      <?php } ?>
+      <main id="component" class="<?php echo $columnSizeContent;?>">
          <jdoc:include type="component" />
       </main>
+      <?php if($showRightSidebar) { ?>
+      <div id="rightSidebar" class="<?php echo $columnSizeRightSideBar;?>">
+         <jdoc:include type="modules" name="position-7" />
+      </div>
+      <?php } ?>
    </div>
 
    <div id="bottom" class="row">
