@@ -24,10 +24,7 @@
 			}
 		},
 		{
-			"contents": "tpl_bodenleger-stockach\n=======================\n\nResponsive Joomla! 3.0 Template based on Foundation 5.0\n\n\n### License\nThe template is licensed under the Apache 2.0 license. For details, see LICENSE file.\n\n### Credits\n * ZURB Foundation Responsive Library: http://foundation.zurb.com, Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )\n * jQuery JavaScript Library v2.1.0,  http://jquery.com/, Released under the MIT license ( http://jquery.org/license)\n * jQuery Plugin: sublimeSlideshow, http://www.jqueryscript.net/slideshow/Fullscreen-Background-Image-Slideshow-Plugin-with-jQuery.html\n\n",
 			"file": "README.md",
-			"file_size": 408,
-			"file_write_time": 130399895865053341,
 			"settings":
 			{
 				"buffer_size": 629,
@@ -35,10 +32,10 @@
 			}
 		},
 		{
-			"file": "src/js/foundation/foundation.js",
+			"file": "src/js/foundation/foundation.equalizer.js",
 			"settings":
 			{
-				"buffer_size": 17316,
+				"buffer_size": 1735,
 				"line_ending": "Windows"
 			}
 		},
@@ -213,11 +210,11 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/js/foundation/foundation.js",
+					"file": "src/js/foundation/foundation.equalizer.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 17316,
+						"buffer_size": 1735,
 						"regions":
 						{
 						},

@@ -1,18 +1,24 @@
 <?php
 defined('_JEXEC') or die;
-?><!DOCTYPE html>
 
-<!--[if IE 9]><html class="lt-ie10" lang="<?php echo $doc->language; ?>"  > <![endif]-->
-<html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
+// variables
+$app = JFactory::getApplication();
+$doc = JFactory::getDocument(); 
+$tpath = $this->baseurl.'/templates/'.$this->template;
+
+$this->setGenerator(null);
+
+$doc->addStyleSheet($this->baseurl .'/templates/system/css/system.css');
+$doc->addStyleSheet($this->baseurl .'/templates/system/css/general.css');
+$doc->addStyleSheet($tpath.'/css/print.css?v=1');
+?><!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
-    <meta charset="utf-8">
-    <jdoc:include type="head" />
-    <link rel="stylesheet" href="<?php echo $this->baseurl; ?>/templates/system/css/system.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo $this->baseurl; ?>/templates/system/css/general.css" type="text/css" />
-    <link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template; ?>/css/print.css" type="text/css" />
+ <jdoc:include type="head" />
 </head>
 <body class="contentpane">
-<jdoc:include type="message" />
-<jdoc:include type="component" />
+ <jdoc:include type="message" />
+ <jdoc:include type="component" />
+ <?php if ($_GET['print'] == '1') echo '<script type="text/javascript">window.print();</script>'; ?>
 </body>
 </html>
