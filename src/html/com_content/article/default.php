@@ -29,6 +29,26 @@ $document->addCustomTag('<meta property="og:image" content="' . $server . $image
 $document->addCustomTag('<meta property="og:url" content="' . $canonical . '"/>');
 
 $article_details_show = ((intval($this->item->modified) != 0 && $this->params->get('show_modify_date')) || ($this->params->get('show_author') && ($this->article->author != "")) || ($this->params->get('show_create_date')) || ($this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')));
+
+ $useDefList = (($params->get('show_author')) or ($params->get('show_category')) or ($params->get('show_parent_category')) or ($params->get('show_create_date')) or ($params->get('show_modify_date')) or ($params->get('show_publish_date')) or ($params->get('show_hits')));
+
+/**
+ *
+ * @return String HTML of Author
+ */
+function getAuthor() {
+   $retval = NULL;
+   $author = ($this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author);
+
+   if (!empty($this->item->contactid) && $params->get('link_author') == true) {
+      $retval = JText::sprintf('COM_CONTENT_WRITTEN_BY',
+              JHtml::_('link', JRoute::_('index.php?option=com_contact&view=contact&id=' . $this->item->contactid), $author));
+   } else {
+      $retval = JText::sprintf('COM_CONTENT_WRITTEN_BY', $author);
+   }
+
+   return $retval;
+}
 ?>
 <article class="row columns large-12 <?php echo $this->pageclass_sfx ?>">
 <?php if ($this->params->get('show_page_heading')) { ?>
@@ -62,54 +82,40 @@ $article_details_show = ((intval($this->item->modified) != 0 && $this->params->g
       ?>
       <?php echo $this->item->event->beforeDisplayContent; ?>
 
-      <?php
-      $useDefList = (($params->get('show_author')) or ($params->get('show_category')) or ($params->get('show_parent_category')) or ($params->get('show_create_date')) or ($params->get('show_modify_date')) or ($params->get('show_publish_date')) or ($params->get('show_hits')));
-      ?>
-      <div class="small-12 columns">
+      <dl class="small-12 columns">
       <?php if ($params->get('show_create_date')) : ?>
             <dd class="create">
                <small><?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC1'))); ?></small>
             </dd>
          <?php endif; ?>
-<?php if ($params->get('show_modify_date')) : ?>
+         <?php if ($params->get('show_modify_date')) : ?>
             <dd class="modified">
                <small><?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC1'))); ?></small>
             </dd>
          <?php endif; ?>
-<?php if ($params->get('show_publish_date')) : ?>
+         <?php if ($params->get('show_publish_date')) : ?>
             <dd class="published">
                <small><?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC1'))); ?></small>
             </dd>
          <?php endif; ?>
-      </div>
+      </dl>
    </div>
 
-
-<?php if ($params->get('show_author') && !empty($this->item->author)) : ?>
-      <dd class="createdby">
-   <?php $author = $this->item->author; ?>
-      <?php $author = ($this->item->created_by_alias ? $this->item->created_by_alias : $author); ?>
-
-         <?php if (!empty($this->item->contactid) && $params->get('link_author') == true): ?>
-            <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_('index.php?option=com_contact&view=contact&id=' . $this->item->contactid), $author));
-            ?>
-
-         <?php else : ?>
-            <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
-         <?php endif; ?>
-      </dd>
+ <?php if ($useDefList) : ?>
+   <dl>
+      <?php if ($params->get('show_author') && !empty($this->item->author)) : ?>
+         <dd class="createdby"><?php echo getAuthor(); ?> </dd>
       <?php endif; ?>
       <?php if ($params->get('show_hits')) : ?>
-      <dd class="hits">
-      <?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?>
-      </dd>
-   <?php endif; ?>
-      <?php if ($useDefList) : ?>
+         <dd class="hits"><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+      <?php endif; ?>
    </dl>
-   <?php endif; ?>
+<?php endif; ?>
 
-   <?php if (isset($this->item->toc)) { ?>
+<?php if (isset($this->item->toc)) { ?>
+   <div class="small-12 columns">
    <?php echo $this->item->toc; ?>
+   </div>
 <?php } ?>
 
 <?php
@@ -122,12 +128,12 @@ if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position ==
    <?php if (isset($images->image_fulltext) and !empty($images->image_fulltext)) { ?>
       <?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
 
-      <div class="<?php echo htmlspecialchars($imgfloat); ?> large-6 medium-12 small-12">
+      <div class="<?php echo htmlspecialchars($imgfloat); ?> large-4 medium-4 small-12 image-fulltext">
          <img src="<?php echo htmlspecialchars($images->image_fulltext); ?>"
               title="<?php echo htmlspecialchars($images->image_fulltext_caption); ?>"
               alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" width="100%"/>
          <?php if ($images->image_fulltext_caption) { ?>
-            <div class="blogcaption"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
+            <div class="image-caption"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
          <?php } ?>
       </div>
    <?php } ?>
@@ -140,27 +146,22 @@ if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position ==
    ?>
 
    <?php echo $this->item->text; ?>
-
 </div>
 
-<div class="pagenav">
-   <?php
-   if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND !$this->item->paginationrelative):
-      echo $this->item->pagination;
-      ?>
-   <?php endif; ?>
+   <div class="pagenav">
+      <?php
+      if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND !$this->item->paginationrelative):
+         echo $this->item->pagination;
+         ?>
+      <?php endif; ?>
 
-   <?php if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position == '1')) OR ( $params->get('urls_position') == '1') )):
-      ?>
-      <?php echo $this->loadTemplate('links'); ?>
-   <?php endif; ?>
-</div>
+      <?php if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position == '1')) OR ( $params->get('urls_position') == '1') )):
+         ?>
+         <?php echo $this->loadTemplate('links'); ?>
+      <?php endif; ?>
+   </div>
 
-<?php
-if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND $this->item->paginationrelative) {
-   echo $this->item->pagination;
-}
-?>
-<?php echo $this->item->event->afterDisplayContent; ?>
-
+   <div class="row">
+      <?php echo $this->item->event->afterDisplayContent; ?>
+   </div>
 </article>

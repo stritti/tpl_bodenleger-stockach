@@ -8,15 +8,6 @@ $document = JFactory::getDocument();
 $app = JFactory::getApplication();
 $tpath = '/templates/' . $app->getTemplate();
 
-$scripts = array(
-    'modernizr.js',
-    'foundation.js',
-    'foundation/foundation.orbit.js'
-);
-
-JHtml::_('garanbo.jquery');
-JHtml::_('garanbo.custom', 'foundation', substr($tpath, 1) . '/', $scripts);
-
 ?>
 <header>
    <?php if ($this->params->get('show_page_heading')) { ?>
