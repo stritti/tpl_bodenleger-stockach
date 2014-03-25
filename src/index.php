@@ -53,14 +53,14 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
       </nav>
    </div>
 
-   <header id="header" class="row" role="banner">
+   <div id="header" class="row" role="banner">
       <a href="<?php echo $doc->baseurl; ?>">
          <div class="logo">
             <h1 class="logo-name"><?php echo $this->params->get('siteTitle'); ?></h1>
             <h2 class="logo-text"><?php echo $this->params->get('siteDescription'); ?></h2>
          </div>
       </a>
-   </header>
+   </div>
 
    <div id="banner" class="row">
       <jdoc:include type="modules" name="banner" />

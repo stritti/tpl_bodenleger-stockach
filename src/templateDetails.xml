@@ -60,8 +60,8 @@
             <field type="text" name="siteCopyright" description="Copyright-Information" label="Copyright" default="Ihre Firma/Seite oder Verein" size="40"/>
          </fieldset>
          <filedset name="social" description="Social Links" label="Social Links">
-            <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/106185857467526994975" size="40" />
-            <field type="text" name="facebookFanpage" description="URL of corresponding Facebook FanPage" label="Facebook Fanpage URL" default="https://www.facebook.com" size="40" />
+            <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/+BodenlegerJSchmidStockach" size="40" />
+            <field type="text" name="facebookFanpage" description="URL of corresponding Facebook FanPage" label="Facebook Fanpage URL" default="https://www.facebook.com/bodenleger.j.schmid" size="40" />
          </filedset>
       </fields>
    </config>

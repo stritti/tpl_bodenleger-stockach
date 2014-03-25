@@ -49,8 +49,37 @@ body {
 }
 
 article p {
--webkit-hyphens: auto;
--moz-hyphens: auto;
--ms-hyphens: auto;
-hyphens: auto;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto;
+}
+
+.readmore a {
+   border-style: solid;
+   border-width: 0px;
+   cursor: pointer;
+   font-weight: normal;
+   line-height: normal;
+   margin: 0 0 1.25rem;
+   position: relative;
+   text-decoration: none;
+   text-align: center;
+   display: inline-block;
+   padding-top: 0.875rem;
+   padding-right: 1.75rem;
+   padding-bottom: 0.9375rem;
+   padding-left: 1.75rem;
+   font-size: 0.8125rem;
+   background-color: #5e2700;
+   border-color: #4b1f00;
+   color: white;
+   -webkit-transition: background-color 300ms ease-out;
+   -moz-transition: background-color 300ms ease-out;
+   transition: background-color 300ms ease-out;
+}
+
+.readmore a:hover, .readmore a:focus, .readmore a:hover, .readmore a:focus {
+   background-color: #4b1f00;
+   color: white;
 }

@@ -33,7 +33,7 @@ if ($params->get('access-view')) {
    $link->setVar('return', base64_encode($returnURL));
 }
 ?>
-<article class="post columns <?php if ($this->item->state == 0) echo 'unpublished' ?>">
+<section class="post large-12 <?php if ($this->item->state == 0) echo 'unpublished' ?>">
 
         
    <?php /** Begin Article Title * */
@@ -69,7 +69,7 @@ if ($params->get('access-view')) {
             </a>
         </div>
    <?php } else { ?>
-   <div class="large-11 small-11 large-centered small-centered columns">
+   <div class="large-12 medium-12 small-12">
       <?php echo $this->item->introtext; ?>
       <?php
       /** Begin Read More * */
@@ -108,4 +108,4 @@ if ($params->get('access-view')) {
       <?php echo $this->item->event->afterDisplayContent; ?>
    </div>
    <?php } /** End Intro Image * */ ?>
-</article>
+</section>

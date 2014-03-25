@@ -22,12 +22,18 @@ $metatags = array(
     'x-ua-compatible' => 'IE=edge,chrome=1',
     // viewport for media queries
     'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+    'copyright' => htmlspecialchars($app->getCfg('sitename')),
 );
 
 $customtags = array(
     // meta tags
-    '<meta property="og:site_name" content="' . $params->get('siteTitle') . '"/>',
+    '<meta property="og:locale" content="' . $doc->language . '" />',
+    '<meta property="og:type" content="website" />',
+    '<meta property="og:title" content="' . $doc->getTitle() . '" />',
     '<meta property="og:description" content="' . $doc->getDescription() . '" />',
+    '<meta property="og:url" content="' . JURI::current() . '" />',
+    '<meta property="og:site_name" content="' . $params->get('siteTitle') . '"/>',
+    //Google+ Publisher
     '<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
     // apple touch icons
     '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
@@ -51,8 +57,6 @@ unset($head['metaTags']['http-equiv']);
 unset($head['metaTags']['standard']['title']);
 unset($head['metaTags']['standard']['rights']);
 unset($head['metaTags']['standard']['language']);
-// Robots if you wish
-//unset($head['metaTags']['standard']['robots']);
 
 if ($user->guest) {
 // Mootools remove for unregistered
@@ -72,14 +76,6 @@ if ($user->guest) {
    unset($head['scripts'][$this->baseurl . '/media/system/js/tabs-state.js']);
 }
 $doc->setHeadData($head);
-
-// New meta
-$doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
-$doc->setMetadata('viewport', 'width=device-width, initial-scale=1.0');
-// Copyrights
-$doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
-
-$doc->setMetadata('google-site-verification', 'ilE9MeNgWLovl-eaqJcltldDd_ObYSJ7Wikfq2heAXQ');
 
 //Remove or rewrite ($doc->setGenerator('your generator');)
 $doc->setGenerator('');
@@ -114,21 +110,18 @@ if ($this->error || !$this->countModules('position-8') && !$this->countModules('
    $showLeftSidebar = false;
    $showRightSidebar = false;
    $columnSizeContent = "large-12";
-
 } else if ($this->countModules('position-8') && !$this->countModules('position-7')) {
    $showLeftSidebar = true;
    $showRightSidebar = false;
 
    $columnSizeContent = "large-9 medium-8 column";
    $columnSizeLeftSideBar = "large-3 medium-4 column hide-on-print";
-
 } else if ($this->countModules('position-7') && !$this->countModules('position-8')) {
    $showLeftSidebar = false;
    $showRightSidebar = true;
 
    $columnSizeContent = "large-9 medium-8";
    $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print";
-
 } else {
    $showLeftSidebar = true;
    $showRightSidebar = true;
