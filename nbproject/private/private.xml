@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Projekte/ssr/Jens/template/src/functions.php</file>
             <file>file:/D:/Projekte/ssr/Jens/template/src/css/custom.css</file>
             <file>file:/D:/Projekte/ssr/Jens/template/src/templateDetails.xml</file>
@@ -16,6 +17,13 @@
             <file>file:/D:/Projekte/ssr/Jens/template/src/html/com_content/category/blog.php</file>
             <file>file:/D:/Projekte/ssr/Jens/template/build.xml</file>
             <file>file:/D:/Projekte/ssr/Jens/template/src/css/template.css.php</file>
+=======
+            <file>file:/Z:/User/Stephan/Dokumente/GitHub/tpl_bodenleger-stockach/src/functions.php</file>
+            <file>file:/Z:/User/Stephan/Dokumente/GitHub/tpl_bodenleger-stockach/src/index.php</file>
+            <file>file:/Z:/User/Stephan/Dokumente/GitHub/tpl_bodenleger-stockach/src/templateDetails.xml</file>
+            <file>file:/Z:/User/Stephan/Dokumente/GitHub/tpl_bodenleger-stockach/src/component.php</file>
+            <file>file:/Z:/User/Stephan/Dokumente/GitHub/tpl_bodenleger-stockach/src/css/fonts/webicons/README.markdown</file>
+>>>>>>> bcd9dacd7d7fc4cd9492b96a74b2bb8ecc1d4fff
         </group>
     </open-files>
 </project-private>
