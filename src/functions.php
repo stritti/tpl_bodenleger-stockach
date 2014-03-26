@@ -107,7 +107,7 @@ $doc->addStyleSheet($templateUrl . '/css/template.css.php?debug=' . JDEBUG . '&c
  * position-7: right sidebar
  * position-8: left sidebar
  */
-if ($this->error || !$this->countModules('position-8') && !$this->countModules('position-7')) {
+if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $showLeftSidebar = false;
    $showRightSidebar = false;
    $columnSizeContent = "large-12";
