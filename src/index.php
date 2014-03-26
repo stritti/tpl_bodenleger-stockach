@@ -128,14 +128,14 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          <jdoc:include type="modules" name="user2" />
       </div>
       <div id="footer-3" class="large-4 medium-4 columns">
-         <?php if($params->get('facebookFanpage')) { ?>
-         <a class="webicon facebook large" href="<?php echo $params->get('facebookFanpage'); ?>">Facebook</a>
+         <?php if($this->params->get('facebookFanpage') != "") { ?>
+         <a class="webicon facebook large" href="<?php echo $this->params->get('facebookFanpage'); ?>">Facebook</a>
          <?php } ?>
-         <?php if($params->get('googlePublisher')) { ?>
-         <a class="webicon googleplus large" href="<?php echo $params->get('googlePublisher'); ?>">Google+</a>
+         <?php if($this->params->get('googlePublisher') != "") { ?>
+         <a class="webicon googleplus large" href="<?php echo $this->params->get('googlePublisher'); ?>">Google+</a>
          <?php } ?>
-         <?php if($params->get('twitterAccount')) { ?>
-         <a class="webicon twitter large" href="<?php echo $params->get('twitterAccount'); ?>">Twitter</a>
+         <?php if($this->params->get('twitterAccount') != "") { ?>
+         <a class="webicon twitter large" href="<?php echo $this->params->get('twitterAccount'); ?>">Twitter</a>
          <?php } ?>
       </div>
    </footer>
