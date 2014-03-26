@@ -26,7 +26,7 @@ body {
 
 }
 #bottom {
-   background-color: #512200;
+   background-color: #f5b371;
 }
 
 #bottom-1, #bottom-2, #bottom-3 {
@@ -37,7 +37,12 @@ body {
    border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 #footer {
-   background: #f5b371;
+   background: #512200;
+   padding-top: 1em;
+   padding-bottom: 1em;
+}
+#footer a {
+   color: #f5b371;
 }
 #copyright {
    font-weight: bold;

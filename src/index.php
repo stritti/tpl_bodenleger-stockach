@@ -109,44 +109,39 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    </div>
 
    <div id="bottom" class="row">
-      <div id="bottom-1" class="large-4 medium-4 column">
+      <div id="bottom-1" class="large-4 medium-4 columns">
          <jdoc:include type="modules" name="position-4" />
       </div>
-      <div id="bottom-2" class="large-4 medium-4 column">
+      <div id="bottom-2" class="large-4 medium-4 columns">
          <jdoc:include type="modules" name="position-5" />
       </div>
-      <div id="bottom-3" class="large-4 medium-4 column">
+      <div id="bottom-3" class="large-4 medium-4 columns end">
          <jdoc:include type="modules" name="position-6" />
       </div>
    </div>
-
-   <footer id="footer" class="row" role="contentinfo">
-      <div id="user1" class="small-4">
+   <footer id="footer" class="row">
+      <div id="footer-1" class="large-4 medium-4 columns">
          <img src="<?php echo $templateUrl; ?>/images/bodenleger-j-schmid-stockach.png" alt="Bodenleger J. & J. Schmid GbR" />
          <jdoc:include type="modules" name="user1" />
       </div>
-      <div id="user2" class="small-4">
+      <div id="footer-2" class="large-4 medium-4 columns">
          <jdoc:include type="modules" name="user2" />
       </div>
-      <div id="user3" class="small-4">
-         <jdoc:include type="modules" name="user3" />
-      </div>
-      <div id="user4" class="small-4">
-         <jdoc:include type="modules" name="user4" />
-      </div>
-      <div id="user5" class="small-4">
-         <jdoc:include type="modules" name="user5" />
+      <div id="footer-3" class="large-4 medium-4 columns">
+         <?php if($params->get('facebookFanpage')) { ?>
+         <a class="webicon facebook large" href="<?php echo $params->get('facebookFanpage'); ?>">Facebook</a>
+         <?php } ?>
+         <?php if($params->get('googlePublisher')) { ?>
+         <a class="webicon googleplus large" href="<?php echo $params->get('googlePublisher'); ?>">Google+</a>
+         <?php } ?>
+         <?php if($params->get('twitterAccount')) { ?>
+         <a class="webicon twitter large" href="<?php echo $params->get('twitterAccount'); ?>">Twitter</a>
+         <?php } ?>
       </div>
    </footer>
-
-   <div id="syndicate" class="small-4">
-      <jdoc:include type="modules" name="syndicate" />
-   </div>
-
    <div id="copyright" class="row">
       <jdoc:include type="modules" name="copyright" />
    </div>
-
    <script>
       $(document).foundation();
    </script>

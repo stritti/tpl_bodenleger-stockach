@@ -50,9 +50,9 @@ function getAuthor() {
    return $retval;
 }
 ?>
-<article class="row columns large-12 <?php echo $this->pageclass_sfx ?>">
+<article class="article<?php echo $this->pageclass_sfx ?> large-12">
 <?php if ($this->params->get('show_page_heading')) { ?>
-   <hgroup class="row">
+   <hgroup class="large-12">
          <h1><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
          <?php
          if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative) {
@@ -68,13 +68,10 @@ function getAuthor() {
       <?php } ?>
    </hgroup>
 <?php } // END show_page_heading ?>
-
-   <div class="row">
-      <div class="small-12 columns">
-         <?php if ($params->get('show_title')) { ?>
-            <h2><?php echo $this->escape($this->item->title); ?></h2>
-         <?php } ?>
-      </div>
+<?php if ($params->get('show_title')) { ?>
+      <h2 class="large-12"><?php echo $this->escape($this->item->title); ?></h2>
+<?php } ?>
+      
       <?php
          if (!$params->get('show_intro')) {
             echo $this->item->event->afterDisplayTitle;
@@ -82,7 +79,7 @@ function getAuthor() {
       ?>
       <?php echo $this->item->event->beforeDisplayContent; ?>
 
-      <dl class="small-12 columns">
+      <dl class="large-12">
       <?php if ($params->get('show_create_date')) : ?>
             <dd class="create">
                <small><?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC1'))); ?></small>
@@ -99,7 +96,7 @@ function getAuthor() {
             </dd>
          <?php endif; ?>
       </dl>
-   </div>
+
 
  <?php if ($useDefList) : ?>
    <dl>
@@ -148,20 +145,16 @@ if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position ==
    <?php echo $this->item->text; ?>
 </div>
 
-   <div class="pagenav">
-      <?php
-      if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND !$this->item->paginationrelative):
-         echo $this->item->pagination;
-         ?>
-      <?php endif; ?>
+   
+<?php if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND !$this->item->paginationrelative): ?>
+<div class="pagenav large-12">
+<?php echo $this->item->pagination; ?>
+</div>
+<?php endif; ?>
 
-      <?php if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position == '1')) OR ( $params->get('urls_position') == '1') )):
-         ?>
-         <?php echo $this->loadTemplate('links'); ?>
-      <?php endif; ?>
-   </div>
-
-   <div class="row">
-      <?php echo $this->item->event->afterDisplayContent; ?>
-   </div>
+<?php if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position == '1')) OR ( $params->get('urls_position') == '1') )): ?>
+   <?php echo $this->loadTemplate('links'); ?>
+<?php endif; ?>
+   
+<?php echo $this->item->event->afterDisplayContent; ?>
 </article>

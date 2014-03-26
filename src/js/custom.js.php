@@ -11,22 +11,22 @@ if ($debug === 0) {
 header("Content-type:text/javascript; charset=UTF-8");
 // cache control to process
 header("Cache-Control:must-revalidate");
+?>
 
-echo '
-   $(function(){
-        $.sublime_slideshow({
-            src:[
-            {url:"images/1.jpg"},
-            {url:"images/2.jpg"},
-            {url:"images/3.jpg"},
-            {url:"images/4.jpg"},
-            {url:"images/5.jpg"},
-            {url:"images/6.jpg"}
-            ],
-            duration:   6,
-            fade:       3,
-            scaling:    false,
-            rotating:   false,
-            //overlay:    "images/pattern.png"
-        });
-    });';
+$(function() {
+   $.sublime_slideshow({
+      src: [
+         {url: "/templates/bodenleger-stockach/images/1.jpg"},
+         {url: "/templates/bodenleger-stockach/images/2.jpg"},
+         {url: "/templates/bodenleger-stockach/images/3.jpg"},
+         {url: "/templates/bodenleger-stockach/images/4.jpg"},
+         {url: "/templates/bodenleger-stockach/images/5.jpg"},
+         {url: "/templates/bodenleger-stockach/images/6.jpg"}
+      ],
+      duration: 12,
+      fade: 4,
+      scaling: false,
+      rotating: false,
+      overlay: false
+   });
+});

@@ -32,7 +32,7 @@ $customtags = array(
     '<meta property="og:title" content="' . $doc->getTitle() . '" />',
     '<meta property="og:description" content="' . $doc->getDescription() . '" />',
     '<meta property="og:url" content="' . JURI::current() . '" />',
-    '<meta property="og:site_name" content="' . $params->get('siteTitle') . '"/>',
+    '<meta property="og:site_name" content="' . $params->get('sitename') . '"/>',
     //Google+ Publisher
     '<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
     // apple touch icons
@@ -49,7 +49,7 @@ $scripts = array(
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
     '/js/jquery.sublimeSlideshow.js',
-    '/js/custom.js',
+    '/js/custom.js.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view,
 );
 
 // remove deprecated meta-data (html5)
@@ -98,6 +98,7 @@ foreach ($scripts as $script) {
 //Styles sheets
 $doc->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
 $doc->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
+//rest of styles are loaded within following css
 $doc->addStyleSheet($templateUrl . '/css/template.css.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view);
 
 
@@ -114,19 +115,19 @@ if ($this->error || !$this->countModules('position-8') && !$this->countModules('
    $showLeftSidebar = true;
    $showRightSidebar = false;
 
-   $columnSizeContent = "large-9 medium-8 column";
+   $columnSizeContent = "large-9 medium-8 column end";
    $columnSizeLeftSideBar = "large-3 medium-4 column hide-on-print";
 } else if ($this->countModules('position-7') && !$this->countModules('position-8')) {
    $showLeftSidebar = false;
    $showRightSidebar = true;
 
    $columnSizeContent = "large-9 medium-8";
-   $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print";
+   $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print end";
 } else {
    $showLeftSidebar = true;
    $showRightSidebar = true;
 
    $columnSizeContent = "large-6 medium-6 column";
    $columnSizeLeftSideBar = "large-3 medium-3 column hide-on-print";
-   $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print";
+   $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
