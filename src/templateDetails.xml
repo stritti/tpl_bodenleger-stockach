@@ -63,7 +63,6 @@
             <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/+BodenlegerJSchmidStockach" size="40" />
             <field type="text" name="facebookFanpage" description="URL of corresponding Facebook FanPage" label="Facebook Fanpage URL" default="https://www.facebook.com/bodenleger.j.schmid" size="40" />
             <field type="text" name="twitterAccount" description="URL of your Twitter-Account" label="Twitter Account URL" default="https://www.twitter.com/_stritti_" size="40" />
-
          </filedset>
       </fields>
    </config>
