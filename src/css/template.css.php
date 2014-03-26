@@ -7,10 +7,10 @@ $component = $_GET['c'];
 
 $cssFiles = array(
     'normalize.css',
-    '/fonts/foundation-icons/foundation-icons.css',
-    '/fonts/general_foundicons/general_foundicons.css',
-    '/fonts/social_foundicons/social_foundicons.css',
-    '/fonts/webicons/webicons.css',
+    'fonts/foundation-icons/foundation-icons.css',
+    'fonts/general_foundicons/general_foundicons.css',
+    'fonts/social_foundicons/social_foundicons.css',
+    'fonts/webicons/webicons.css',
     'foundation.css',
     'custom.css',
     'print.css',
@@ -68,5 +68,7 @@ function compress($buffer) {
 foreach ($cssFiles as $file) {
    if (is_file($file)) {
       require($file);
+   } else {
+      echo "File not found: " . $file;
    }
 }
