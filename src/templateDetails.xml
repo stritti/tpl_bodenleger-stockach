@@ -18,7 +18,15 @@
    <author>Stephan Strittmatter</author>
    <authorUrl> </authorUrl>
    <license>The MIT License (MIT)</license>
-   <description>Kostenloses Template von <a href="http://www.bodenleger-stockach.de">www.bodenleger-stockach.de</a></description>
+   <description>
+      <p>
+         Free responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
+         <a href="http://www.bodenleger-stockach.de">www.bodenleger-stockach.de</a>.
+      </p>
+      <p>
+         Full source at https://github.com/stritti/tpl_bodenleger-stockach
+      </p>
+   </description>
 
    <files>
       <folder>css</folder>

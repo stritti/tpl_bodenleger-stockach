@@ -1,6 +1,6 @@
 <?php
 /*
- * License: Creative Commons Attribution 2.5 License
+ * License: The MIT License (MIT)
  *
  * Our templates are downloadable for everyone and for free. You are allowed
  * to modify this template to suite your needs and as you wish, the only thing not allowed
@@ -47,9 +47,8 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 
          <section id="navigation" class="top-bar-section">
             <jdoc:include type="modules" name="position-1" />
+            <jdoc:include type="modules" name="position-0" />
          </section>
-
-         <jdoc:include type="modules" name="position-0" />
       </nav>
    </div>
 
@@ -65,21 +64,9 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    <div id="banner" class="row">
       <jdoc:include type="modules" name="banner" />
    </div>
-
-   <div class="nav">
-      <div class="hmenu-extra1">
-         <jdoc:include type="modules" name="extra1" />
-      </div>
-      <div class="hmenu-extra2">
-         <jdoc:include type="modules" name="extra2" />
-      </div>
-      <jdoc:include type="modules" name="user3" />
-   </div>
-
    <div id="breadcrumb" class="row">
       <jdoc:include type="modules" name="position-2" />
    </div>
-
    <div id="top" class="row">
       <div id="top1" class="small-4">
          <jdoc:include type="modules" name="top1" />
