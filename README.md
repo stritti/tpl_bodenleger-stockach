@@ -1,11 +1,12 @@
 tpl_bodenleger-stockach
 =======================
 
-Responsive Joomla! 3.0 Template based on Foundation 5.0
+Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for [Bodenleger Stockach](http://www.bodenleger-stockach.de)
 
+Full source at (https://github.com/stritti/tpl_bodenleger-stockach)
 
 ### License
-The template is Ffree to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php ).
+The template is Ffree to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
 
 ### Credits
  * ZURB Foundation Responsive Library: http://foundation.zurb.com, Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )
