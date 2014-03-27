@@ -108,3 +108,7 @@ article p {
    padding-bottom: .35rem;
    font-size: 0.75rem;
 }
+
+fieldset legend {
+   background-color: transparent;
+}
