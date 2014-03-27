@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--
+*
+ * License: The MIT License (MIT)
+ *
+ * Our templates are downloadable for everyone and for free. You are allowed
+ * to modify this template to suite your needs and as you wish, the only thing not allowed
+ * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ * somewhere else in your site for example in your links section or impressum.
+ *
+-->
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site" method="upgrade">
 
@@ -8,7 +17,7 @@
    <version>1.0</version>
    <author>Stephan Strittmatter</author>
    <authorUrl> </authorUrl>
-   <license>Apache Version 2.0 http://www.apache.org/licenses/</license>
+   <license>The MIT License (MIT)</license>
    <description>Kostenloses Template von <a href="http://www.bodenleger-stockach.de">www.bodenleger-stockach.de</a></description>
 
    <files>
