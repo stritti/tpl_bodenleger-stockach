@@ -14,3 +14,8 @@ Licensed under the Apache 2.0 license. Please see LICENSE for more information.
 #phocagallery .pg-cats-box-float2 {
    padding: initial;
 }
+
+#phocagallery .category {
+   margin: 0;
+   font-weight: bold;
+}
