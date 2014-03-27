@@ -1,81 +1,51 @@
 <?php
+/*
+ * License: The MIT License (MIT)
+ *
+ * Our templates are downloadable for everyone and for free. You are allowed
+ * to modify this template to suite your needs and as you wish, the only thing not allowed
+ * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ * somewhere else in your site for example in your links section or impressum.
+ */
 defined('_JEXEC') or die;
 
-if (!defined('_ARTX_FUNCTIONS'))
-  require_once dirname(__FILE__) . str_replace('/', DIRECTORY_SEPARATOR, '/../functions.php');
+defined('_JEXEC') or die;
 
-function modChrome_artstyle($module, &$params, &$attribs)
+/**
+ * This is a file to add template specific chrome to module rendering.  To use it you would
+ * set the style attribute for the given module(s) include in your template to use the style
+ * for each given modChrome function.
+ *
+ * eg.  To render a module mod_test in the submenu style, you would use the following include:
+ * <jdoc:include type="module" name="test" style="submenu" />
+ *
+ * This gives template designers ultimate control over how modules are rendered.
+ *
+ * NOTICE: All chrome wrapping methods should be named: modChrome_{STYLE} and take the same
+ * two arguments.
+ */
+
+/*
+ * Module chrome for rendering the module in a submenu
+ */
+function modChrome_no($module, &$params, &$attribs)
 {
-  $style = isset($attribs['artstyle']) ? $attribs['artstyle'] : 'nostyle';
-  $styles = array(
-    'nostyle' => 'modChrome_artnostyle',
-    'block' => 'modChrome_artblock',
-    'article' => 'modChrome_artarticle',
-    'vmenu' => 'modChrome_artvmenu'
-  );
-  // moduleclass_sfx support:
-  //  '' or 'suffix'   - use default style, suffix will not be added to the module tag
-  //                     but will be added to the module elements.
-  //  ' suffix'        - adds suffix to the module root tag as well as to the module elements.
-  //  '...'        - overwrites module style.
-  //  '... suffix' - overwrites style and adds suffix to the module root tag and
-  //                     to the module elements, does not add ... to the module elements.
-  $classes = '';
-  $sfx = $params->get('moduleclass_sfx');
-  if (strlen($sfx) != 0) {
-    if (' ' == $sfx[0])
-      $classes = $sfx;
-    else {
-      $parts = explode(' ', $sfx, 2);
-      if (in_array($parts[0], array_keys($styles))) {
-        $style = $parts[0];
-        if (count($parts) > 1)
-          $classes = ' ' . $parts[1];
-        $params->set('moduleclass_sfx', $classes);
-      }
-    }
-  }
-  $params->set('artx-module-classes', $classes);
-  call_user_func($styles[$style], $module, $params, $attribs);
+	if ($module->content)
+	{
+		echo $module->content;
+	}
 }
 
-function modChrome_artnostyle($module, &$params, &$attribs)
+function modChrome_well($module, &$params, &$attribs)
 {
-if (!empty ($module->content)) : ?>
-<div class="nostyle<?php echo $params->get('artx-module-classes'); ?>">
-<?php if ($module->showtitle != 0) : ?>
-<h3><?php echo $module->title; ?></h3>
-<?php endif; ?>
-<?php echo $module->content; ?>
-</div>
-<?php endif;
-}
-
-function modChrome_artblock($module, &$params, &$attribs)
-{
-  if (!empty ($module->content))
-    echo artxBlock(($module->showtitle != 0) ? $module->title : '', $module->content,
-      $params->get('artx-module-classes'));
-}
-
-function modChrome_artvmenu($module, &$params, &$attribs)
-{
-  if (!empty ($module->content)) {
-    if (function_exists('artxVMenuBlock'))
-      echo artxVMenuBlock(($module->showtitle != 0) ? $module->title : '', $module->content,
-        $params->get('artx-module-classes'));
-    else
-      echo artxBlock(($module->showtitle != 0) ? $module->title : '', $module->content,
-        $params->get('artx-module-classes'));
-  }
-}
-
-function modChrome_artarticle($module, &$params, &$attribs)
-{
-  if (!empty ($module->content)) {
-    $data = array('classes' => $params->get('artx-module-classes'), 'content' => $module->content);
-    if ($module->showtitle != 0)
-      $data['header-text'] = $module->title;
-    echo artxPost($data);
-  }
+	if ($module->content)
+	{
+		echo "<div class=\"well " . htmlspecialchars($params->get('moduleclass_sfx')) . "\">";
+		if ($module->showtitle)
+		{
+			echo "<h3 class=\"page-header\">" . $module->title . "</h3>";
+		}
+		echo $module->content;
+		echo "</div>";
+	}
 }
