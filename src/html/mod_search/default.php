@@ -5,7 +5,12 @@
  * http://www.bodenleger-stockach.de
  * By @stritti
  *
- * Licensed under the Apache 2.0 license. Please see LICENSE for more information.
+ * License: The MIT License (MIT)
+ *
+ * Our templates are downloadable for everyone and for free. You are allowed
+ * to modify this template to suite your needs and as you wish, the only thing not allowed
+ * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ * somewhere else in your site for example in your links section or impressum.
  */
 
 defined('_JEXEC') or die;
