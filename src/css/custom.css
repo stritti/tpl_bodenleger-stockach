@@ -88,3 +88,23 @@ article p {
    background-color: #4b1f00;
    color: white;
 }
+
+.left img {
+   padding-right: 1em;
+}
+
+.right img {
+   padding-left: 1em;
+}
+
+
+.search .element-invisible {
+   display: none;
+}
+
+.search  #mod-search-searchword {
+   height: auto;
+   padding-top: .35rem;
+   padding-bottom: .35rem;
+   font-size: 0.75rem;
+}
