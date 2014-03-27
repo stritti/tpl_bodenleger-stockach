@@ -33,7 +33,7 @@ if ($params->get('access-view')) {
    $link->setVar('return', base64_encode($returnURL));
 }
 ?>
-<section class="post large-12 <?php if ($this->item->state == 0) echo 'unpublished' ?>">
+<section class="post row large-12 <?php if ($this->item->state == 0) echo 'unpublished' ?>">
 
         
    <?php /** Begin Article Title * */

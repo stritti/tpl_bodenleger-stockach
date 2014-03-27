@@ -13,15 +13,15 @@ $app = JFactory::getApplication();
 $tpath = '/templates/' . $app->getTemplate();
 ?>
 
-<div class="blog<?php echo $this->pageclass_sfx; ?> large-12">
+<div class="blog<?php echo $this->pageclass_sfx; ?> large-12 column">
 
-   <header>
+   <header class="row">
 <?php if ($this->params->get('show_page_heading', 1)) { ?>
-         <h1 id="heading" class="row large-12 columns"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
+         <h1 id="heading" class="large-12"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
       <?php } ?>
 
       <?php if ($this->params->get('show_category_title', 1) or $this->params->get('page_subheading')) { ?>
-         <h2 id="subheading" class="subheader row large-12 columns hide-for-small">
+         <h2 id="subheading" class="large-12 hide-for-small">
          <?php echo $this->escape($this->params->get('page_subheading')); ?>
             <?php if ($this->params->get('show_category_title')) { ?>
                <?php echo $this->category->title; ?>
@@ -36,7 +36,7 @@ $tpath = '/templates/' . $app->getTemplate();
 
       <?php /** start Description */ ?>
       <?php if ($this->params->def('show_description', 1) || $this->params->def('show_description_image', 1)) { ?>
-         <div id="description" class="row large-12 columns">
+         <div id="description" class="large-12">
          <?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) { ?>
                <div class="large-3 medium-3 hide-for-small columns">
                   <img src="<?php echo $this->category->getParams()->get('image'); ?>"/>
@@ -56,22 +56,20 @@ $tpath = '/templates/' . $app->getTemplate();
          <p><?php echo JText::_('COM_CONTENT_NO_ARTICLES'); ?></p>
       <?php } ?>
    <?php } ?>
-   <?php
-   $leadingcount = 0;
-   if (!empty($this->lead_items)) {
-      ?>
-      <div id="leading" class="row large-12 columns">
+   <?php if (!empty($this->lead_items)) { ?>
+      <div id="leading" class="row">
       <?php
       foreach ($this->lead_items as &$item) {
          $this->item = &$item;
          echo $this->loadTemplate('item');
-         $leadingcount++;
       }
       ?>
       </div>
-      <?php }/** End Leading Articles */ ?>
+   <?php }/** End Leading Articles */ ?>
 
-   <?php if (!empty($this->intro_items)) { ?>
+   <?php if (!empty($this->intro_items)) {
+      $counter = 0;
+      ?>
       <?php foreach ($this->intro_items as $key => &$item) { ?>
          <?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
          <?php if ($rowcount == 1) : ?>
