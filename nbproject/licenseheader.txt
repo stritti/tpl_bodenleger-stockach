@@ -1,0 +1,18 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Copyright 2014
+${licensePrefix}An free open source Joomla! Template
+${licensePrefix}http://www.bodenleger-stockach.de
+${licensePrefix}By @stritti
+${licensePrefix}
+${licensePrefix} Full source at https://github.com/stritti/tpl_bodenleger-stockach
+${licensePrefix} Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+${licensePrefix}
+${licensePrefix} Our templates are downloadable for everyone and for free. You are allowed
+${licensePrefix} to modify this template to suite your needs and as you wish, the only thing not allowed
+${licensePrefix} is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+${licensePrefix} somewhere else in your site for example in your links section or impressum.
+<#if licenseLast??>
+${licenseLast}
+</#if>
