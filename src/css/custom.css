@@ -14,16 +14,19 @@ body {
    background-color: #f0ede0;
 }
 
-#left {
-
+#left-sidebar {
+   padding-top: 0.9375em;
+   padding-bottom: 0.9375em;
 }
 
 #component {
-
+   padding-top: 0.9375em;
+   padding-bottom: 0.9375em;
 }
 
-#right {
-
+#right-sidebar {
+   padding-top: 0.9375em;
+   padding-bottom: 0.9375em;
 }
 #bottom {
    background-color: #f5b371;
