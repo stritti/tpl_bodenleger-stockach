@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-*
- * License: The MIT License (MIT)
  *
- * Our templates are downloadable for everyone and for free. You are allowed
- * to modify this template to suite your needs and as you wish, the only thing not allowed
- * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
- * somewhere else in your site for example in your links section or impressum.
+ * Copyright 2014
+ * An free open source Joomla! Template
+ * http://www.bodenleger-stockach.de
+ * By @stritti
+ *
+ *  Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ *  Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+ *
+ *  Our templates are downloadable for everyone and for free. You are allowed
+ *  to modify this template to suite your needs and as you wish, the only thing not allowed
+ *  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ *  somewhere else in your site for example in your links section or impressum.
  *
 -->
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">

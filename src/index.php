@@ -1,11 +1,17 @@
 <?php
 /*
- * License: The MIT License (MIT)
+ * Copyright 2014
+ * An free open source Joomla! Template
+ * http://www.bodenleger-stockach.de
+ * By @stritti
  *
- * Our templates are downloadable for everyone and for free. You are allowed
- * to modify this template to suite your needs and as you wish, the only thing not allowed
- * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
- * somewhere else in your site for example in your links section or impressum.
+ *  Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ *  Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+ *
+ *  Our templates are downloadable for everyone and for free. You are allowed
+ *  to modify this template to suite your needs and as you wish, the only thing not allowed
+ *  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ *  somewhere else in your site for example in your links section or impressum.
  */
 
 defined('_JEXEC') or die;
@@ -81,7 +87,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 
    <div id="content" class="row">
       <?php if($showLeftSidebar) { ?>
-      <div id="leftSidebar" class="<?php echo $columnSizeLeftSideBar;?>">
+      <div id="left-sidebar" class="<?php echo $columnSizeLeftSideBar;?>">
          <jdoc:include type="modules" name="position-8" />
       </div>
       <?php } ?>
@@ -89,7 +95,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          <jdoc:include type="component" />
       </main>
       <?php if($showRightSidebar) { ?>
-      <div id="rightSidebar" class="<?php echo $columnSizeRightSideBar;?>">
+      <div id="right-sidebar" class="<?php echo $columnSizeRightSideBar;?>">
          <jdoc:include type="modules" name="position-7" />
       </div>
       <?php } ?>
