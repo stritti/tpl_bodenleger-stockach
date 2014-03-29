@@ -396,3 +396,4 @@ joomla.xml
 *.txt
 !/src/index.php
 /target/
+nbproject/private/private.xml
