@@ -11,8 +11,7 @@ $cssFiles = array(
     'fonts/general_foundicons/general_foundicons.css',
     'fonts/social_foundicons/social_foundicons.css',
     'fonts/webicons/webicons.css',
-    'foundation.css',
-    'custom.css',
+    'app.css',
     'print.css',
     'pages/' . $component . '/' . $component . '.css',
     'pages/' . $component . '/views/' . $view . '.css'
