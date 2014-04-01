@@ -14,7 +14,7 @@ You'll need to have the following items installed before continuing.
   * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
 ### License
-The template is Ffree to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+The template is free to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
 
 ### Credits
  * ZURB Foundation Responsive Library: http://foundation.zurb.com, Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )
