@@ -1,5 +1,4 @@
 <?php
-
 // parameter
 $debug = $_GET['debug'];
 $view = $_GET['v'];
