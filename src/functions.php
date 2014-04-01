@@ -80,9 +80,8 @@ if ($user->guest) {
    unset($head['scripts'][$this->baseurl . '/media/system/js/modal.js']);
 
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.min.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
+   //unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/bootstrap.js']);

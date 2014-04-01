@@ -52,29 +52,29 @@ body {
 }
 #bottom {
    background-color: #f5b371;
-}
 
-#bottom-1, #bottom-2, #bottom-3 {
-   padding: 50px 0 0 0;
-   margin-bottom: 30px;
+   #bottom-1, #bottom-2, #bottom-3 {
+      padding: 50px 0 0 0;
+      margin-bottom: 30px;
+   }
+   #bottom-2, #bottom-3 {
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+   }
 }
-#bottom-2, #bottom-3 {
-   border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
-
 #footer {
    background: #512200;
    padding-top: 1em;
    padding-bottom: 1em;
-}
 
-#footer h3 {
-   font-size: 1em;
-   font-weight: bold;
-   color: #e09040;
-}
-#footer a {
-   color: #f5b371;
+
+   h3 {
+      font-size: 1em;
+      font-weight: bold;
+      color: #e09040;
+   }
+   a {
+      color: #f5b371;
+   }
 }
 #copyright {
    font-weight: bold;

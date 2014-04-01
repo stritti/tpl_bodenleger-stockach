@@ -1,0 +1,28 @@
+/*
+Copyright 2014
+An free open source Joomla! Template
+http://www.bodenleger-stockach.de
+By @stritti
+
+Licensed under the Apache 2.0 license. Please see LICENSE for more information.
+*/
+/* 
+    Created on : 21.03.2014, 13:39:04
+    Author     : ssr
+*/
+
+@import "settings";
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "foundation/functions";
+
+#phocagallery {
+   .pg-cats-box-float2 {
+      padding: initial;
+   }
+
+   .category {
+      margin: 0;
+      font-size: $h3-font-size;
+      font-weight: bold;
+   }
+}

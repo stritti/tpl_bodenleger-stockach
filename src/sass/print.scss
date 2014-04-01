@@ -17,6 +17,11 @@ By @stritti
     Author     : ssr
 */
 
+@import "settings";
+@import "foundation";
+// Allows the use of rem-calc() or lower-bound() in your settings
+@import "foundation/functions";
+
 body {
    background-color: #ffffff;
    background-image: none;

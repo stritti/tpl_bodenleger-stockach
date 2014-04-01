@@ -16,8 +16,9 @@ By @stritti
     Created on : 01.04.2014, 10:14:51
     Author     : ssr
 */
-// Allows the use of rem-calc() or lower-bound() in your settings
+
 @import "settings";
+@import "foundation";
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 

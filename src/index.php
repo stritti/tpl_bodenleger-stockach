@@ -21,8 +21,8 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 
 <!--[if IE 9]><html class="lt-ie10" lang="<?php echo $doc->language; ?>"  > <![endif]-->
 <html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
-<head>
-   <meta charset="utf-8">
+   <head>
+      <meta charset="utf-8">
    <jdoc:include type="head" />
 
    <script type="text/javascript">
@@ -86,18 +86,18 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    </div>
 
    <div id="content" class="row">
-      <?php if($showLeftSidebar) { ?>
-      <div id="left-sidebar" class="<?php echo $columnSizeLeftSideBar;?>">
-         <jdoc:include type="modules" name="position-8" />
-      </div>
+      <?php if ($showLeftSidebar) { ?>
+         <div id="left-sidebar" class="<?php echo $columnSizeLeftSideBar; ?>">
+            <jdoc:include type="modules" name="position-8" />
+         </div>
       <?php } ?>
-      <main id="component" class="<?php echo $columnSizeContent;?>">
+      <main id="component" class="<?php echo $columnSizeContent; ?>">
          <jdoc:include type="component" />
       </main>
-      <?php if($showRightSidebar) { ?>
-      <div id="right-sidebar" class="<?php echo $columnSizeRightSideBar;?>">
-         <jdoc:include type="modules" name="position-7" />
-      </div>
+      <?php if ($showRightSidebar) { ?>
+         <div id="right-sidebar" class="<?php echo $columnSizeRightSideBar; ?>">
+            <jdoc:include type="modules" name="position-7" />
+         </div>
       <?php } ?>
    </div>
 
@@ -118,26 +118,24 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          <jdoc:include type="modules" name="user1" />
       </div>
       <div id="footer-2" class="large-4 medium-4 columns">
-         <jdoc:include type="modules" name="user2" />
+         <jdoc:include type="modules" name="user2" style="footer"/>
       </div>
       <div id="footer-3" class="large-4 medium-4 columns">
-         <?php if($this->params->get('facebookFanpage') != "") { ?>
-         <a class="webicon facebook large" href="<?php echo $this->params->get('facebookFanpage'); ?>">Facebook</a>
+         <?php if ($this->params->get('facebookFanpage') != "") { ?>
+            <a class="webicon facebook large" href="<?php echo $this->params->get('facebookFanpage'); ?>">Facebook</a>
          <?php } ?>
-         <?php if($this->params->get('googlePublisher') != "") { ?>
-         <a class="webicon googleplus large" href="<?php echo $this->params->get('googlePublisher'); ?>">Google+</a>
+         <?php if ($this->params->get('googlePublisher') != "") { ?>
+            <a class="webicon googleplus large" href="<?php echo $this->params->get('googlePublisher'); ?>">Google+</a>
          <?php } ?>
-         <?php if($this->params->get('twitterAccount') != "") { ?>
-         <a class="webicon twitter large" href="<?php echo $this->params->get('twitterAccount'); ?>">Twitter</a>
+         <?php if ($this->params->get('twitterAccount') != "") { ?>
+            <a class="webicon twitter large" href="<?php echo $this->params->get('twitterAccount'); ?>">Twitter</a>
          <?php } ?>
       </div>
    </footer>
    <div id="copyright" class="row">
       <jdoc:include type="modules" name="copyright" />
    </div>
-   <script>
-      $(document).foundation();
-   </script>
 <jdoc:include type="modules" name="debug" />
+<script src="<?php echo $templateUrl; ?>/js/final.js?debug=<?php echo JDEBUG; ?>&c=<?php echo $component; ?>&v=<?php echo $view; ?>" type="text/javascript"></script>
 </body>
 </html>

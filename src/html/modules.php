@@ -30,25 +30,18 @@ defined('_JEXEC') or die;
  * two arguments.
  */
 
-/*
- * Module chrome for rendering the module in a submenu
+/**
+ * Module Chrome for rendering in footer.
+ * 
+ * @param type $module
+ * @param type $params
+ * @param type $attribs
  */
-function modChrome_no($module, &$params, &$attribs)
-{
-	if ($module->content)
-	{
-		echo $module->content;
-	}
-}
-
-function modChrome_well($module, &$params, &$attribs)
-{
-	if ($module->content)
-	{
-		echo "<div class=\"well " . htmlspecialchars($params->get('moduleclass_sfx')) . "\">";
-		if ($module->showtitle)
-		{
-			echo "<h3 class=\"page-header\">" . $module->title . "</h3>";
+function modChrome_footer($module, &$params, &$attribs) {
+	if ($module->content) {
+		echo '<div class="footer' . htmlspecialchars($params->get('moduleclass_sfx')) . ' row">';
+		if ($module->showtitle) {
+			echo '<h3>' . $module->title . '</h3>';
 		}
 		echo $module->content;
 		echo "</div>";
