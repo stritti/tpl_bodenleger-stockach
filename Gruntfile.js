@@ -51,10 +51,8 @@ module.exports = function(grunt) {
           compass: true
         },
         files: {
-              'src/css/app.css': 'src/sass/app.scss',
-              'src/css/editor.css': 'src/sass/editor.scss',
-              'src/css/print.css': 'src/sass/print.scss',
-              //'src/css/pages/**/*.css': 'src/css/pages/**/*.scss'
+            'src/css/app.css': 'src/sass/app.scss',
+            'src/css/editor.css': 'src/sass/editor.scss',
         }
       },
       dist: {
@@ -63,10 +61,8 @@ module.exports = function(grunt) {
           compass: true
         },
         files: {
-               'src/css/app.css': 'src/sass/app.scss',
-              'src/css/editor.css': 'src/sass/editor.scss',
-              'src/css/print.css': 'src/sass/print.scss',
-              //'src/css/pages/**/*.css': 'src/css/pages/**/*.scss'
+            'src/css/app.css': 'src/sass/app.scss',
+            'src/css/editor.css': 'src/sass/editor.scss',
          }
       }
    },
