@@ -11,7 +11,6 @@ $cssFiles = array(
     'fonts/social_foundicons/social_foundicons.css',
     'fonts/webicons/webicons.css',
     'app.css',
-    'print.css',
     'pages/' . $component . '/' . $component . '.css',
     'pages/' . $component . '/views/' . $view . '.css'
 );
@@ -67,6 +66,6 @@ foreach ($cssFiles as $file) {
    if (is_file($file)) {
       require($file);
    } else {
-      echo "File not found: " . $file;
+      echo "//File not found: " . $file;
    }
 }
