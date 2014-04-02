@@ -1,14 +1,23 @@
 <?php
 /*
- * License: The MIT License (MIT)
- *
- * Our templates are downloadable for everyone and for free. You are allowed
- * to modify this template to suite your needs and as you wish, the only thing not allowed
- * is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
- * somewhere else in your site for example in your links section or impressum.
- */
+Copyright 2014
+An free open source Joomla! Template
+http://www.bodenleger-stockach.de
+By @stritti
+
+ Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+
+ Our templates are downloadable for everyone and for free. You are allowed
+ to modify this template to suite your needs and as you wish, the only thing not allowed
+ is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ somewhere else in your site for example in your links section or impressum.
+*/
 
 $debug = $_GET['debug'];
+$view = $_GET['v'];
+$component = $_GET['c'];
+
 // initialize ob_gzhandler to send and compress data
 ob_start("ob_gzhandler");
 
@@ -44,14 +53,7 @@ function shuffle(array) {
   return array;
 }
 
-var backgroundSlides = [
-   {url: "/templates/bodenleger-stockach/images/1.jpg"},
-   {url: "/templates/bodenleger-stockach/images/2.jpg"},
-   {url: "/templates/bodenleger-stockach/images/3.jpg"},
-   {url: "/templates/bodenleger-stockach/images/4.jpg"},
-   {url: "/templates/bodenleger-stockach/images/5.jpg"},
-   {url: "/templates/bodenleger-stockach/images/6.jpg"}];
-backgroundSlides= shuffle(backgroundSlides);
+backgroundSlides= shuffle(bslides);
 
 $(function() {
    $.sublime_slideshow({

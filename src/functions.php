@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014
  * An free open source Joomla! Template
@@ -39,20 +40,20 @@ $metatags = array(
 );
 
 $customtags = array(
-    // meta tags
-    '<meta property="og:locale" content="' . $doc->language . '" />',
-    '<meta property="og:type" content="website" />',
-    '<meta property="og:title" content="' . $doc->getTitle() . '" />',
-    '<meta property="og:description" content="' . $doc->getDescription() . '" />',
-    '<meta property="og:url" content="' . JURI::current() . '" />',
-    '<meta property="og:site_name" content="' . $params->get('sitename') . '"/>',
-    //Google+ Publisher
-    '<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
-    // apple touch icons
-    '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
-    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
-    '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
-    '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
+// meta tags
+'<meta property="og:locale" content="' . $doc->language . '" />',
+ '<meta property="og:type" content="website" />',
+ '<meta property="og:title" content="' . $doc->getTitle() . '" />',
+ '<meta property="og:description" content="' . $doc->getDescription() . '" />',
+ '<meta property="og:url" content="' . JURI::current() . '" />',
+ '<meta property="og:site_name" content="' . $params->get('sitename') . '"/>',
+ //Google+ Publisher
+'<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
+ // apple touch icons
+'<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
+ '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
+ '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
+ '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
 );
 
 // javascripts
@@ -102,7 +103,7 @@ foreach ($customtags as $customtag) {
    $doc->addCustomTag($customtag);
 }
 
-//JA SCripts
+//JavaScripts
 foreach ($scripts as $script) {
    $doc->addScript($templateUrl . $script);
 }
@@ -112,7 +113,6 @@ $doc->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
 $doc->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
 //rest of styles are loaded within following css
 $doc->addStyleSheet($templateUrl . '/css/template.css.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view);
-
 
 /**
  * Calculate colums wether left or right sidebar is used
@@ -142,4 +142,17 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeContent = "large-6 medium-6 column";
    $columnSizeLeftSideBar = "large-3 medium-3 column hide-on-print";
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
+}
+
+function getSlideImages($params) {
+   $slideImageArray = "";
+
+   for ($index = 1; $index <= 6; $index++) {
+      $filename = $params->get('slide-' . $index);
+      //if(file_exists($filename)) {
+      $slideImageArray .= '{url: "' . $filename . '"},';
+      //}
+   }
+
+   return "var bslides = [" . $slideImageArray . "];";
 }

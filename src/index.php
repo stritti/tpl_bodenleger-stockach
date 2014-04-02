@@ -23,6 +23,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 <html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
    <head>
       <meta charset="utf-8">
+       <?php echo '<script>' . getSlideImages($this->params) . '</script>'; //custom Tag, because addScript has wrong order...?>
    <jdoc:include type="head" />
 
    <script type="text/javascript">
@@ -42,7 +43,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
 
-   <div class="contain-to-grid">
+   <div class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
          <ul class="title-area">
             <li class="name">
