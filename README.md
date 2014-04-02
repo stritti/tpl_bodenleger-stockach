@@ -24,8 +24,8 @@ The template is free to use under the [MIT license](http://www.opensource.org/li
 You'll need to have the following items installed before continuing.
 
   * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
-  * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
-  * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
+  * [Grunt](http://gruntjs.com/)
+  * [Bower](http://bower.io)
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the
 [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a
@@ -35,6 +35,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 After installation clone the git repository:
 ```shell
 git clone git@github.com:stritti/tpl_bodenleger-stockach.git
+
 npm install && bower install
 npm install -g grunt-cli
 npm install -g bower
