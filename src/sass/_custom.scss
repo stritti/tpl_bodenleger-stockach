@@ -144,3 +144,12 @@ article p {
 fieldset legend {
    background-color: transparent;
 }
+
+//see https://github.com/zurb/foundation/issues/2625
+.recaptcha_is_showing_audio embed {
+   height: 0;
+   width: 0;
+}
+#recaptcha_area table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+   line-height: normal;
+}
