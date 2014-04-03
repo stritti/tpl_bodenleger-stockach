@@ -15,7 +15,8 @@
  *  somewhere else in your site for example in your links section or impressum.
  *
 -->
-<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+
 <extension version="3.1" type="template" client="site" method="upgrade">
 
    <name>Bodenleger-Stockach</name>
@@ -86,6 +87,14 @@
             <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/+BodenlegerJSchmidStockach" size="40" />
             <field type="text" name="facebookFanpage" description="URL of corresponding Facebook FanPage" label="Facebook Fanpage URL" default="https://www.facebook.com/bodenleger.j.schmid" size="40" />
             <field type="text" name="twitterAccount" description="URL of your Twitter-Account" label="Twitter Account URL" default="https://www.twitter.com/_stritti_" size="40" />
+         </fieldset>
+         <fieldset name="slideshow" description="Backround Slideshow" label="Backround Slideshow">
+            <field type="media" name="slide-1" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/1.jpg" filter="string"/>
+            <field type="media" name="slide-2" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/2.jpg" filter="string"/>
+            <field type="media" name="slide-3" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/3.jpg" filter="string"/>
+            <field type="media" name="slide-4" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/4.jpg" filter="string"/>
+            <field type="media" name="slide-5" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/5.jpg" filter="string"/>
+            <field type="media" name="slide-6" description="Image for background slide" label="Image for background slide" default="/templates/bodenleger-stockach/images/6.jpg" filter="string"/>
          </fieldset>
       </fields>
    </config>

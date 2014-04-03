@@ -24,7 +24,7 @@ JHtml::_('behavior.tooltip');
 	</div>
 <?php endif; ?>
 
-<div class="contact-form">
+<div class="contact-form hide-for-print">
 	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate" data-abide>
 		<fieldset>
 			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>

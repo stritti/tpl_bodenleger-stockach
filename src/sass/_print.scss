@@ -12,17 +12,22 @@ By @stritti
  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
  somewhere else in your site for example in your links section or impressum.
 */
-/* 
-    Created on : 01.04.2014, 10:13:55
-    Author     : ssr
+/*
+   Styles for printing.
+   Created on : 01.04.2014, 10:13:55
+   Author     : ssr
 */
 @import "settings";
-@import "foundation";
+
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
-body {
-   background-color: #ffffff;
-   background-image: none;
-   font-family: $body-font-family;
+@media print { 
+   body {
+      background-color: #ffffff;
+      background-image: none;
+      font-family: $body-font-family;
+      color:#000;
+      font-size: 11px;
+   }
 }

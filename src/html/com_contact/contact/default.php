@@ -78,7 +78,7 @@ $cparams = JComponentHelper::getParams ('com_media');
 			<?php  echo JHtml::_($this->params->get('presentation_style').'.panel', JText::_('COM_CONTACT_EMAIL_FORM'), 'display-form');  ?>
 		<?php endif; ?>
 		<?php if ($this->params->get('presentation_style')=='plain'):?>
-			<?php  echo '<h3>'. JText::_('COM_CONTACT_EMAIL_FORM').'</h3>';  ?>
+			<?php  echo '<h3 class="hide-for-print">'. JText::_('COM_CONTACT_EMAIL_FORM').'</h3>';  ?>
 		<?php endif; ?>
 		<?php  echo $this->loadTemplate('form');  ?>
 	<?php endif; ?>
