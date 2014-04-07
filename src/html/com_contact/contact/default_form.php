@@ -25,9 +25,9 @@ JHtml::_('behavior.tooltip');
 <?php endif; ?>
 
 <div class="contact-form hide-for-print">
-	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate" data-abide>
+	<form id="contact-form custom" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate" data-abide>
 		<fieldset>
-			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
+			<legend>Formular  <?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
 			<dl>
 				<dt><?php echo $this->form->getLabel('contact_name'); ?></dt>
 				<dd><?php echo $this->form->getInput('contact_name'); ?></dd>
@@ -49,7 +49,7 @@ JHtml::_('behavior.tooltip');
 			                    <?php if ($field->hidden): ?>
 			                         <?php echo $field->input;?>
 			                    <?php else:?>
-			                         <dt>
+			                         <dt> 
 			                            <?php echo $field->label; ?>
 			                            <?php if (!$field->required && $field->type != "Spacer"): ?>
 			                               <span class="optional"><?php echo JText::_('COM_CONTACT_OPTIONAL');?></span>

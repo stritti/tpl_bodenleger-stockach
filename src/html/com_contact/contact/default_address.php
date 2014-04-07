@@ -108,6 +108,5 @@ if (($this->params->get('address_check') > 0) &&
 
       <?php if ($this->params->get('show_email') || $this->params->get('show_telephone') || $this->params->get('show_fax') || $this->params->get('show_mobile') || $this->params->get('show_webpage')) : ?>
       </ul>
-
    <?php endif; ?>
 </div>
