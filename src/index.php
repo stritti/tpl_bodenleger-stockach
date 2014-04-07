@@ -59,7 +59,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
       </nav>
    </div>
 
-   <div id="header" class="row" role="banner">
+   <div id="header" class="row hide-for-small" role="banner">
       <a href="<?php echo $doc->baseurl; ?>">
          <div class="logo">
             <h1 class="logo-name"><?php echo $this->params->get('siteTitle'); ?></h1>
@@ -114,7 +114,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
       </div>
    </div>
    <footer id="footer" class="row">
-      <div id="footer-1" class="large-4 medium-4 columns">
+      <div id="footer-1" class="large-4 medium-4 columns logo">
          <img src="<?php echo $templateUrl; ?>/images/bodenleger-j-schmid-stockach.png" alt="Bodenleger J. & J. Schmid GbR" />
          <jdoc:include type="modules" name="user1" />
       </div>
@@ -134,7 +134,9 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
       </div>
    </footer>
    <div id="copyright" class="row">
+      <div class="large-12 column">
       <jdoc:include type="modules" name="copyright" />
+      </div>
    </div>
 <jdoc:include type="modules" name="debug" />
 <script src="<?php echo $templateUrl; ?>/js/final.js?debug=<?php echo JDEBUG; ?>&c=<?php echo $component; ?>&v=<?php echo $view; ?>" type="text/javascript"></script>

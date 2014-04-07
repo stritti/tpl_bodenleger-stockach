@@ -63,7 +63,7 @@ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 3px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -129,7 +129,7 @@ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
 // $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
+ $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
@@ -162,9 +162,9 @@ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $code-font-weight: bold;
 
 // We use these to style anchors
-// $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-text-decoration: none;
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;

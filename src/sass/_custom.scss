@@ -28,11 +28,12 @@ body {
 }
 
 #header {
-
+      background: rgba(240, 237, 224, .25);
 }
 
 #content {
-   background-color: #f0ede0;
+   background: #f0ede0;
+   background: rgba(240, 237, 224, .9);
 
 
    #left-sidebar {
@@ -43,6 +44,7 @@ body {
    #component {
       padding-top: rem-calc(20);
       padding-bottom: rem-calc(20);
+      background: rgba(240, 237, 224, .95);
    }
 
    #right-sidebar {
@@ -51,7 +53,7 @@ body {
    }
 }
 #bottom {
-   background-color: #f5b371;
+   background-color: $secondary-color;
 
    #bottom-1, #bottom-2, #bottom-3 {
       padding: 50px 0 0 0;
@@ -62,63 +64,85 @@ body {
    }
 }
 #footer {
-   background: #512200;
+   color: $secondary-color;
+   background: $primary-color;
    padding-top: 1em;
    padding-bottom: 1em;
 
-
    h3 {
-      font-size: rem-calc(27);
+      font-size: rem-calc(18);
       font-weight: bold;
       color: #e09040;
    }
    a {
-      color: #f5b371;
+      color: $secondary-color;
+   }
+
+   logo:hover {
+      opacity: 0.8;
+   }
+
+   .menu {
+      list-style: none;
+
+      .active a {
+         color: #eee;
+      }
    }
 }
 #copyright {
-   font-weight: bold;
+   color: $secondary-color;
+   background: $primary-color;
+   margin-bottom: 1.25rem;
+   p {
+      font-size: rem-calc(13);
+      margin-bottom: 0.25rem;
+   }
 }
 
 #image-caption {
-   background-color: #f5b371;
+   background-color: $secondary-color;
    padding: 0.3em;
 }
 
-article p {
-   -webkit-hyphens: auto;
-   -moz-hyphens: auto;
-   -ms-hyphens: auto;
-   hyphens: auto;
+article {
+   p {
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+   }
 }
 
-.readmore a {
-   border-style: solid;
-   border-width: 0px;
-   cursor: pointer;
-   font-weight: normal;
-   line-height: normal;
-   margin: 0 0 1.25rem;
-   position: relative;
-   text-decoration: none;
-   text-align: center;
-   display: inline-block;
-   padding-top: 0.875rem;
-   padding-right: 1.75rem;
-   padding-bottom: 0.9375rem;
-   padding-left: 1.75rem;
-   font-size: 0.8125rem;
-   background-color: #5e2700;
-   border-color: #4b1f00;
-   color: white;
-   -webkit-transition: background-color 300ms ease-out;
-   -moz-transition: background-color 300ms ease-out;
-   transition: background-color 300ms ease-out;
-}
+.readmore {
+   a {
+      border-style: solid;
+      border-width: 0px;
+      cursor: pointer;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0 0 1.25rem;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      padding-top: 0.875rem;
+      padding-right: 1.75rem;
+      padding-bottom: 0.9375rem;
+      padding-left: 1.75rem;
+      font-size: 0.8125rem;
+      background-color: $primary-color;
+      border-color: #4b1f00;
+      color: white;
+      -webkit-transition: background-color 300ms ease-out;
+      -moz-transition: background-color 300ms ease-out;
+      transition: background-color 300ms ease-out;
+   }
 
-.readmore a:hover, .readmore a:focus, .readmore a:hover, .readmore a:focus {
-   background-color: #4b1f00;
-   color: white;
+   a:hover, a:focus, a:hover, a:focus {
+      background-color: #4b1f00;
+      color: white;
+   }
 }
 
 .left img {
@@ -145,11 +169,25 @@ fieldset legend {
    background-color: transparent;
 }
 
-//see https://github.com/zurb/foundation/issues/2625
-.recaptcha_is_showing_audio embed {
-   height: 0;
-   width: 0;
-}
-#recaptcha_area table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-   line-height: normal;
+
+#recaptcha_area {
+
+
+   #recaptcha_table {
+      // width: inherit;
+   }
+   #recaptcha_response_field {
+
+   }
+   //see https://github.com/zurb/foundation/issues/2625
+   table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+      line-height: normal;
+   }
+
+
+
+   .recaptcha_is_showing_audio embed {
+      height: 0;
+      width: 0;
+   }
 }
