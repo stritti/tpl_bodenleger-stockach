@@ -33,47 +33,40 @@ if ($params->get('access-view')) {
    $link->setVar('return', base64_encode($returnURL));
 }
 ?>
-<section class="post row large-12 <?php if ($this->item->state == 0) echo 'unpublished' ?>">
-
-        
-   <?php /** Begin Article Title * */
-    if ($params->get('show_title')) { ?>
-      <?php if ($params->get('show_title')) { ?>
-            <h2 class="header">
-                  <?php if ($params->get('link_titles')) { ?>
-                     <a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); ?>"><?php echo $this->escape($this->item->title); ?></a>
-                  <?php } else { ?>
-                     <?php echo $this->escape($this->item->title); ?>
-                  <?php } ?>
-            </h2>
+<section class="article row column large-12 <?php if ($this->item->state == 0) { echo 'unpublished';} ?>">
+      <?php if ($params->get('show_title')) { /** Begin Article Title */ ?>
+      <h2 class="large-12">
+         <?php if ($params->get('link_titles')) { ?>
+            <a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); ?>"><?php echo $this->escape($this->item->title); ?></a>
+         <?php } else { ?>
+         <?php echo $this->escape($this->item->title); ?>
       <?php } ?>
+      </h2>
    <?php }/** End Article Title * */ ?>
    <?php if (!$params->get('show_intro')) { ?>
       <?php echo $this->item->event->afterDisplayTitle; ?>
    <?php } ?>
-
    <?php echo $this->item->event->beforeDisplayContent; ?>
-        
-   <?php /** Begin intro image * */ 
-   if (isset($images->image_intro) and !empty($images->image_intro)) { ?>
-        <div class="blog-img-wrapper large-12">
-           <a href="<?php echo $link; ?>" >
-               <img src="<?php echo htmlspecialchars($images->image_intro); ?>"
-                    title="<?php echo htmlspecialchars($images->image_intro_caption); ?>"
-                    alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>"
-                    class="blog-item-img"/>
-                    <?php /** Begin caption under image * */
-                    if ($images->image_intro_caption) { ?>
-               <div class="blogcaption small-12 columns"><c1><?php echo htmlspecialchars($images->image_intro_caption); ?></c1></div>
-               <?php } /** End caption under image* */ ?>
-            </a>
-        </div>
-   <?php } else { ?>
-   <div class="large-12 medium-12 small-12">
+
+<?php if (isset($images->image_intro) and ! empty($images->image_intro)) { /** Begin intro image * */ ?>
+   <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
+      <div class="large-6 medium-6 <?php echo $imgfloat; ?>">
+         <a href="<?php echo $link; ?>" >
+            <img src="<?php echo htmlspecialchars($images->image_intro); ?>"
+                 title="<?php echo htmlspecialchars($images->image_intro_caption); ?>"
+                 alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" />
+               <?php if ($images->image_intro_caption) { /** Begin caption under image * */ ?>
+               <div class="image-caption">
+               <?php echo htmlspecialchars($images->image_intro_caption); ?>
+               </div>
+      <?php } /** End caption under image* */ ?>
+         </a>
+      </div>
+      <?php } /** End Intro Image * */ ?>
+   <div class="large-12 medium-12 small-12 end">
       <?php echo $this->item->introtext; ?>
-      <?php
-      /** Begin Read More * */
-      if ($params->get('show_readmore') && $this->item->readmore) {
+      <?php if ($params->get('show_readmore') && $this->item->readmore) { /** Begin Read More * */ ?>
+         <?php
          if ($params->get('access-view')) {
             $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid));
          } else {
@@ -86,8 +79,7 @@ if ($params->get('access-view')) {
             $link->setVar('return', base64_encode($returnURL));
          }
          ?>
-         <p class="readmore">
-            <a href="<?php echo $link; ?>">
+            <a href="<?php echo $link; ?>" class="readmore button tiny radius">
                <?php
                if (!$params->get('access-view')) :
                   echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
@@ -103,9 +95,7 @@ if ($params->get('access-view')) {
                   echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit'));
                endif;
                ?></a>
-         </p>
-      <?php } ?>
-      <?php echo $this->item->event->afterDisplayContent; ?>
+<?php } ?>
+<?php echo $this->item->event->afterDisplayContent; ?>
    </div>
-   <?php } /** End Intro Image * */ ?>
 </section>

@@ -28,12 +28,15 @@ body {
 }
 
 #header {
-      background: rgba(240, 237, 224, .25);
+   background: rgba(240, 237, 224, .25);
+   a {
+      text-decoration: none;
+   }
 }
 
 #content {
    background: #f0ede0;
-   background: rgba(240, 237, 224, .9);
+   background: rgba(240, 237, 224, .88);
 
 
    #left-sidebar {
@@ -52,6 +55,7 @@ body {
       padding-bottom: rem-calc(20);
    }
 }
+
 #bottom {
    background-color: $secondary-color;
 
@@ -63,6 +67,7 @@ body {
       border-left: 1px solid rgba(255, 255, 255, 0.2);
    }
 }
+
 #footer {
    color: $secondary-color;
    background: $primary-color;
@@ -85,11 +90,12 @@ body {
    .menu {
       list-style: none;
 
-      .active a {
+      .current a {
          color: #eee;
       }
    }
 }
+
 #copyright {
    color: $secondary-color;
    background: $primary-color;
@@ -100,94 +106,50 @@ body {
    }
 }
 
-#image-caption {
-   background-color: $secondary-color;
-   padding: 0.3em;
+.image-caption {
+   bottom: 0;
+   background-color: $orbit-caption-bg;
+   color: $orbit-caption-font-color;
+   width: 100%;
+   padding: $orbit-caption-padding;
+   font-size: $orbit-caption-font-size;
 }
 
-article {
+#article {
    p {
       -webkit-hyphens: auto;
       -moz-hyphens: auto;
       -ms-hyphens: auto;
       hyphens: auto;
    }
-}
 
-.readmore {
    a {
-      border-style: solid;
-      border-width: 0px;
-      cursor: pointer;
-      font-weight: normal;
-      line-height: normal;
-      margin: 0 0 1.25rem;
-      position: relative;
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-      padding-top: 0.875rem;
-      padding-right: 1.75rem;
-      padding-bottom: 0.9375rem;
-      padding-left: 1.75rem;
-      font-size: 0.8125rem;
-      background-color: $primary-color;
-      border-color: #4b1f00;
-      color: white;
-      -webkit-transition: background-color 300ms ease-out;
-      -moz-transition: background-color 300ms ease-out;
-      transition: background-color 300ms ease-out;
-   }
-
-   a:hover, a:focus, a:hover, a:focus {
-      background-color: #4b1f00;
-      color: white;
+      text-decoration: underline;
    }
 }
 
-.left img {
-   padding-right: 1em;
+.left {
+   padding-right: $column-gutter/2;
 }
 
-.right img {
-   padding-left: 1em;
+.right {
+   padding-left: $column-gutter/2;
 }
 
+.search {
 
-.search .element-invisible {
-   display: none;
-}
+   .element-invisible {
+      display: none;
+   }
 
-.search  #mod-search-searchword {
-   height: auto;
-   padding-top: .35rem;
-   padding-bottom: .35rem;
-   font-size: 0.75rem;
+  #mod-search-searchword {
+      height: auto;
+      padding-top: .35rem;
+      padding-bottom: .35rem;
+      font-size: 0.75rem;
+   }
 }
 
 fieldset legend {
    background-color: transparent;
-}
-
-
-#recaptcha_area {
-
-
-   #recaptcha_table {
-      // width: inherit;
-   }
-   #recaptcha_response_field {
-
-   }
-   //see https://github.com/zurb/foundation/issues/2625
-   table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-      line-height: normal;
-   }
-
-
-
-   .recaptcha_is_showing_audio embed {
-      height: 0;
-      width: 0;
-   }
 }

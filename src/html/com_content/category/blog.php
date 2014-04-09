@@ -16,7 +16,7 @@ $tpath = '/templates/' . $app->getTemplate();
 <div class="blog<?php echo $this->pageclass_sfx; ?> large-12 column">
 
    <header class="row">
-<?php if ($this->params->get('show_page_heading', 1)) { ?>
+      <?php if ($this->params->get('show_page_heading', 1)) { ?>
          <h1 id="heading" class="large-12"><?php echo $this->escape($this->params->get('page_heading')); ?></h1>
       <?php } ?>
 
