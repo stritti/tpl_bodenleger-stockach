@@ -22,7 +22,10 @@ By @stritti
 }
 #recaptcha_area {
 
-
+   input[type="text"] {
+      display: inline-block;
+      height: auto;
+   }
    #recaptcha_table {
       // width: inherit;
    }
