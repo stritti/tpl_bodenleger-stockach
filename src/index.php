@@ -101,7 +101,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          </div>
       <?php } ?>
    </div>
-
+   <?php if(hasBottomModules()){ ?>
    <div id="bottom" class="row">
       <div id="bottom-1" class="large-4 medium-4 columns">
          <jdoc:include type="modules" name="position-4" />
@@ -113,6 +113,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          <jdoc:include type="modules" name="position-6" />
       </div>
    </div>
+   <?php } ?>
    <footer id="footer" class="row">
       <div id="footer-1" class="large-4 medium-4 columns logo">
          <img src="<?php echo $templateUrl; ?>/images/bodenleger-j-schmid-stockach.png" alt="Bodenleger J. & J. Schmid GbR" />

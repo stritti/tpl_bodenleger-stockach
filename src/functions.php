@@ -156,3 +156,14 @@ function getSlideImages($params) {
 
    return "var bslides = [" . $slideImageArray . "];";
 }
+
+function hasBottomModules() {
+   $retval = false;
+   $doc = JFactory::getDocument();
+   if($doc->countModules('position-4') || $doc->countModules('position-5')  || $doc->countModules('position-6')) {
+      $retval = true;
+   } else {
+      $retval = false;
+   }
+   return $retval;
+}
