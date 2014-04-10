@@ -63,7 +63,7 @@ $scripts = array(
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
     '/js/jquery.sublimeSlideshow.js',
-    '/js/custom.js.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view,
+    '/js/custom.js',
 );
 
 // remove deprecated meta-data (html5)
@@ -144,6 +144,11 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
 
+/**
+ * Load the images for background slide show.
+ * @param type $params
+ * @return String JavaScript
+ */
 function getSlideImages($params) {
    $slideImageArray = "";
 
@@ -157,6 +162,11 @@ function getSlideImages($params) {
    return "var bslides = [" . $slideImageArray . "];";
 }
 
+/**
+ * Check wether there are modules in the bottom area.
+ *
+ * @return boolean true if there are modules in bottom area
+ */
 function hasBottomModules() {
    $retval = false;
    $doc = JFactory::getDocument();

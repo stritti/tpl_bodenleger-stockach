@@ -1,4 +1,3 @@
-<?php
 /*
 Copyright 2014
 An free open source Joomla! Template
@@ -14,22 +13,6 @@ By @stritti
  somewhere else in your site for example in your links section or impressum.
 */
 
-$debug = $_GET['debug'];
-$view = $_GET['v'];
-$component = $_GET['c'];
-
-// initialize ob_gzhandler to send and compress data
-ob_start("ob_gzhandler");
-
-// initialize compress function for whitespace removal
-if ($debug === 0) {
-   ob_start("compress");
-}
-// required header info and character set
-header("Content-type:text/javascript; charset=UTF-8");
-// cache control to process
-header("Cache-Control:must-revalidate");
-?>
 
 /**
  * Shuffle an array.
