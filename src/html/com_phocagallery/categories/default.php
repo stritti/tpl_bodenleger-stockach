@@ -59,5 +59,5 @@ switch($this->tmpl['display_image_categories']) {
 }
 
 echo $this->loadTemplate('pagination');
-echo $this->tmpl['tl'];
+//echo $this->tmpl['tl'];
 echo '</div>';
