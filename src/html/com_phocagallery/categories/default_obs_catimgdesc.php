@@ -26,22 +26,25 @@ defined('_JEXEC') or die('Restricted access');
                <small>(<?php echo $this->categories[$i]->numlinks; ?>)</small>
             <?php } ?>
          </h3>
-         <div class="row column">
+         <div class="column">
             <div class="large-4 medium-4 small-12 column">
                <a href="<?php echo $this->categories[$i]->link; ?>">
                   <?php
                   if (isset($this->categories[$i]->extpic) && $this->categories[$i]->extpic) {
                      $correctImageRes = PhocaGalleryPicasa::correctSizeWithRate($this->categories[$i]->extw, $this->categories[$i]->exth, $this->tmpl['picasa_correct_width'], $this->tmpl['picasa_correct_height']);
-                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%', 'style' => '', 'class' => ''));
+                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%', 'class' => 'th'));
                   } else {
-                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%', 'style' => '', 'class' => ''));
+                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%','class' => 'th'));
                   }
                   ?>
                </a>
             </div>
-            <div class="large-8 medium-8 small-12 column">
+            
+            <div class="large-8 medium-8 small-12 column end">
                <?php if ($this->categories[$i]->description != '') { ?>
                   <?php echo $this->categories[$i]->description; ?>
+               <?php } else {?>
+                  <p>&nbsp;</p>
                <?php } ?>
             </div>
          </div>
