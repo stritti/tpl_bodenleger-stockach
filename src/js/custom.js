@@ -17,6 +17,7 @@ By @stritti
 /**
  * Shuffle an array.
  * see http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+ * @param {Array} array Array to shuffle.
  */
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -42,7 +43,7 @@ $(function() {
    $.sublime_slideshow({
       src: backgroundSlides,
       duration: 12,
-      fade: 4,
+      fade: 2,
       scaling: false,
       rotating: false,
       overlay: false
