@@ -402,3 +402,5 @@ joomla.xml
 /node_modules/
 /bower_components/
 /src/css/app.css
+/src/css/editor.css
+/src/css/pages/com_phocagallery/

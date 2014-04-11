@@ -125,7 +125,7 @@ if (isset($urls) AND ((!empty($urls->urls_position) AND ($urls->urls_position ==
    <?php if (isset($images->image_fulltext) and !empty($images->image_fulltext)) { ?>
       <?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
 
-      <div class="<?php echo htmlspecialchars($imgfloat); ?> large-4 medium-4 small-12 image-fulltext">
+      <div class="<?php echo htmlspecialchars($imgfloat); ?> large-6 medium-6 small-12 image-fulltext">
          <img src="<?php echo htmlspecialchars($images->image_fulltext); ?>"
               title="<?php echo htmlspecialchars($images->image_fulltext_caption); ?>"
               alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>" width="100%"/>

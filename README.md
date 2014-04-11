@@ -4,7 +4,18 @@ tpl_bodenleger-stockach
 Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
 [Bodenleger Stockach](http://www.bodenleger-stockach.de)
 
-Full source at (https://github.com/stritti/tpl_bodenleger-stockach)
+### Features
+ * SEO
+ ** optimized breadcrumbs
+ ** microformats for contacts
+ ** header enhancements (Facebook, Google+ etc.)
+ ** optimized for local SEO
+ * Multidevice
+ ** the layout is completly responsive
+ ** support for smartphones, tablet, desktop
+ ** responsive navigation menu
+ *
+
 
 
 ### License
@@ -19,8 +30,9 @@ The template is free to use under the [MIT license](http://www.opensource.org/li
 
 
 ### Development
-## Requirements
+Full source of template at (https://github.com/stritti/tpl_bodenleger-stockach)
 
+## Requirements
 You'll need to have the following items installed before continuing.
 
   * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
@@ -42,9 +54,13 @@ Then run in same directory following commands:
 npm install && bower install
 npm install -g grunt-cli
 npm install -g bower
+npm install -g livereload2
 npm install grunt-contrib-watch --save-dev
 npm install grunt-contrib-sass --save-dev
 npm install grunt-contrib-compress --save-dev
+npm install grunt-contrib-copy --save-dev
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-clean --save-dev
 ```
 
 While you're working on the project, run:

@@ -63,7 +63,7 @@ $scripts = array(
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
     '/js/jquery.sublimeSlideshow.js',
-    '/js/custom.js.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view,
+    '/js/custom.js',
 );
 
 // remove deprecated meta-data (html5)
@@ -82,7 +82,7 @@ if ($user->guest) {
 
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.min.js']);
-   //unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
+   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/bootstrap.js']);
@@ -127,14 +127,14 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $showLeftSidebar = true;
    $showRightSidebar = false;
 
-   $columnSizeContent = "large-9 medium-8 column end";
-   $columnSizeLeftSideBar = "large-3 medium-4 column hide-on-print";
+   $columnSizeContent = "large-9 medium-9 column end";
+   $columnSizeLeftSideBar = "large-3 medium-3 column hide-on-print";
 } else if ($this->countModules('position-7') && !$this->countModules('position-8')) {
    $showLeftSidebar = false;
    $showRightSidebar = true;
 
-   $columnSizeContent = "large-9 medium-8";
-   $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print end";
+   $columnSizeContent = "large-9 medium-9";
+   $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 } else {
    $showLeftSidebar = true;
    $showRightSidebar = true;
@@ -144,6 +144,11 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
 
+/**
+ * Load the images for background slide show.
+ * @param type $params
+ * @return String JavaScript
+ */
 function getSlideImages($params) {
    $slideImageArray = "";
 
@@ -155,4 +160,20 @@ function getSlideImages($params) {
    }
 
    return "var bslides = [" . $slideImageArray . "];";
+}
+
+/**
+ * Check wether there are modules in the bottom area.
+ *
+ * @return boolean true if there are modules in bottom area
+ */
+function hasBottomModules() {
+   $retval = false;
+   $doc = JFactory::getDocument();
+   if($doc->countModules('position-4') || $doc->countModules('position-5')  || $doc->countModules('position-6')) {
+      $retval = true;
+   } else {
+      $retval = false;
+   }
+   return $retval;
 }

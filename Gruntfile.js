@@ -18,14 +18,14 @@ By @stritti
  * Grunt Module
  */
 module.exports = function(grunt) {
-  /**
-   * Configuration
-   */
-  grunt.initConfig({
-    /**
-     * Get package meta data
-     */
-      pkg: grunt.file.readJSON('package.json'),
+/**
+ * Configuration
+ */
+grunt.initConfig({
+   /**
+    * Get package meta data
+    */
+   pkg: grunt.file.readJSON('package.json'),
    /**
     * Project banner
     */
@@ -40,9 +40,14 @@ module.exports = function(grunt) {
              ' */\n'
    },
 
+   /**
+    *
+    */
    sass: {
       options: {
-        includePaths: ['bower_components/foundation/scss']
+        includePaths: [
+           'bower_components/foundation/scss',
+        ]
       },
       dev: {
         options: {
@@ -50,10 +55,18 @@ module.exports = function(grunt) {
           banner: '<%= tag.banner %>',
           compass: true
         },
-        files: {
+        files: [{
             'src/css/app.css': 'src/sass/app.scss',
-            'src/css/editor.css': 'src/sass/editor.scss',
-        }
+            'src/css/editor.css': 'src/sass/editor.scss'},
+            {
+               expand: true,
+               cwd: "src/sass/pages",
+               src: ["**/*.scss"],
+               dest: "src/css/pages/",
+               ext: ".css"
+            }]
+         
+        
       },
       dist: {
         options: {
@@ -67,48 +80,103 @@ module.exports = function(grunt) {
       }
    },
 
-   watch: {
-      grunt: { 
-         files: ['Gruntfile.js']
+   jshint: {
+      options: {
+        jshintrc: '.jshintrc',
       },
-      sass: {
-        files: ['src/sass/**/*.{scss,sass}'],
-        tasks: ['sass:dev']
-      },
-      livereload: {
-         files: ['src/*.html', 'src/*.php', 'src/js/**/*.{js,json}', 'src/css/*.css','src/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
-         options: {
-            livereload: true
-         }
-      }
+      all: [
+        'src/js/*.js',
+        '!src/js/*.min.js',
+        '!src/js/jquery.*.js'
+      ]
+   },
+   /**
+    *
+    */
+   copy: {
+      deploy: {
+         nonull: true,
+         cwd: 'src/',
+         src: ['**',  '!**/*.scss' ],
+         expand: true,
+         //dest: 'target/files/tpl_bodenleger-stockach/',
+         dest: '../xampp_1_8_1/htdocs/templates/Bodenleger-Stockach/',
+     },
    },
 
-
+   /**
+    *
+    */
    compress: {
      main: {
        options: {
          archive: 'target/<%= pkg.name %>.zip'
        },
        files: [
-         {src: ['target/files/<%= pkg.name %>/**'], dest: '/'} // includes files in path and its subdirs
+         {
+            cwd: 'target/files/<%= pkg.name %>/',
+            src: ['target/files/<%= pkg.name %>/**'],
+            dest: '/'
+         }
        ]
      }
-   }   
+   },
+
+   clean: {
+      deploy: {
+         src: ['target/files/<%= pkg.name %>/']
+      },
+   },
+   /**
+    * 
+    */
+   watch: {
+      grunt: { 
+         files: ['Gruntfile.js']
+      },
+      sass: {
+         files: ['src/sass/**/*.{scss,sass}'],
+         tasks: ['sass:dev']
+      },
+      livereload: {
+         files: [
+            'src/*',
+            'src/css/**/*.css',
+            'src/html/**/*.{html,php}',
+            'src/images/**/*.{png,jpg,jpeg,gif}',
+            'src/js/**/*.{js,json}',
+            'src/language/**/*.ini'
+         ],
+         tasks: [ 'copy:deploy'],
+         options: {
+            //interrupt: true,
+            livereload: true
+         }
+      },
+   }  
 });
 
-grunt.loadNpmTasks('grunt-sass');
-grunt.loadNpmTasks('grunt-contrib-watch');
-grunt.loadNpmTasks('grunt-contrib-compress');
+   grunt.loadNpmTasks('grunt-sass');
+   grunt.loadNpmTasks('grunt-contrib-watch');
+   grunt.loadNpmTasks('grunt-contrib-compress');
+   grunt.loadNpmTasks('grunt-contrib-copy');
+   grunt.loadNpmTasks('grunt-contrib-jshint');
+   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  /**
-   * Build task
-   * Run `grunt build` on the command line
-   * Then compress all JS/CSS files
-   */
-  grunt.registerTask('build', ['sass:dist', 'compress']);
-  /**
-   * Default task
-   * Run `grunt` on the command line
-   */
-  grunt.registerTask('default', ['sass:dev','watch']);
+   /**
+    * Build task
+    * Run `grunt build` on the command line
+    * Then compress all JS/CSS files
+    */
+   grunt.registerTask('build',
+      'Compiles all of the assets and copies the files to the build directory.',
+      ['sass:dist', 'jshint', 'compress']
+   );
+   /**
+    * Default task
+    * Run `grunt` on the command line
+    */
+   grunt.registerTask('default',
+      [ 'sass:dev', 'watch']
+   );
 }

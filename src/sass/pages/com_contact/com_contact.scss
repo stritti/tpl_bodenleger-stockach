@@ -13,16 +13,34 @@ By @stritti
  somewhere else in your site for example in your links section or impressum.
 */
 /* 
-    Created on : 01.04.2014, 10:13:55
+    Created on : 09.04.2014, 14:41:07
     Author     : ssr
 */
-@import "settings";
-@import "foundation";
-// Allows the use of rem-calc() or lower-bound() in your settings
-@import "foundation/functions";
 
-body {
-   background-color: #ffffff;
-   background-image: none;
-   font-family: $body-font-family;
+.vcard {
+   background: #efefef;
+}
+#recaptcha_area {
+
+   input[type="text"] {
+      display: inline-block;
+      height: auto;
+   }
+   #recaptcha_table {
+      // width: inherit;
+   }
+   #recaptcha_response_field {
+
+   }
+   //see https://github.com/zurb/foundation/issues/2625
+   table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+      line-height: normal;
+   }
+
+
+
+   .recaptcha_is_showing_audio embed {
+      height: 0;
+      width: 0;
+   }
 }

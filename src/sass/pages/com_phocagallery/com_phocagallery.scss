@@ -11,18 +11,25 @@ Licensed under the Apache 2.0 license. Please see LICENSE for more information.
     Author     : ssr
 */
 
-@import "settings";
+@import "../../settings";
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
-#phocagallery {
-   .pg-cats-box-float2 {
-      padding: initial;
+.category-box {
+   background: #fff;
+   -webkit-box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
+   box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
+   -webkit-border-radius: $global-radius;
+   border-radius: $global-radius;
+   margin-bottom: 10px;
+   margin-right: 1em;
+}
+.orbit-caption {
+   h4 {
+      color: #dddddd;
    }
-
-   .category {
-      margin: 0;
-      font-size: $h3-font-size;
-      font-weight: bold;
-   }
+}
+#phocagallery-responsive img {
+   max-width: inherit;
+   width: 100%;
 }

@@ -1,8 +1,23 @@
 <?php
+/*
+ * Copyright 2014
+ * An free open source Joomla! Template
+ * http://www.bodenleger-stockach.de
+ * By @stritti
+ *
+ *  Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ *  Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+ *
+ *  Our templates are downloadable for everyone and for free. You are allowed
+ *  to modify this template to suite your needs and as you wish, the only thing not allowed
+ *  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ *  somewhere else in your site for example in your links section or impressum.
+ */
 defined('_JEXEC') or die('Restricted access');
-echo '<div id="phocagallery" class="pg-categories-view'.$this->params->get( 'pageclass_sfx' ).'">';
+
+echo '<div id="phocagallery-responsive" class="categories-view'.$this->params->get( 'pageclass_sfx' ).' row">';
 if ( $this->params->get( 'show_page_heading' ) ) { 
-	echo '<div class="page-header"><h1>'. $this->escape($this->params->get('page_heading')) . '</h1></div>';
+	echo '<h1>'. $this->escape($this->params->get('page_heading')) . '</h1>';
 }
 
 echo '<div id="pg-icons">';
@@ -10,9 +25,8 @@ echo PhocaGalleryRenderFront::renderFeedIcon('categories');
 echo '</div>';
 echo '<div class="ph-cb"></div>';
 
-
 if ($this->tmpl['categories_description'] != '') {
-	echo '<div class="pg-csv-desc" >'.JHTML::_('content.prepare', $this->tmpl['categories_description']).'</div>';
+	echo '<div class="csv-desc row" >'.JHTML::_('content.prepare', $this->tmpl['categories_description']).'</div>';
 }
 
 // Obsolete methods
@@ -45,5 +59,5 @@ switch($this->tmpl['display_image_categories']) {
 }
 
 echo $this->loadTemplate('pagination');
-echo $this->tmpl['tl'];
+//echo $this->tmpl['tl'];
 echo '</div>';
