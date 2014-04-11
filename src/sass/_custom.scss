@@ -36,8 +36,7 @@ body {
 
 #content {
    background: #f0ede0;
-   background: rgba(240, 237, 224, .88);
-
+   background: rgba(240, 237, 224, .80);
 
    #left-sidebar {
       padding-top: rem-calc(20);
@@ -47,7 +46,7 @@ body {
    #component {
       padding-top: rem-calc(20);
       padding-bottom: rem-calc(20);
-      background: rgba(240, 237, 224, .95);
+      background: rgba(240, 237, 224, .90);
    }
 
    #right-sidebar {
@@ -106,6 +105,9 @@ body {
    }
 }
 
+.logo {
+   text-shadow: 1px 1px 3px $secondary-color;
+}
 .image-caption {
    bottom: 0;
    background-color: $orbit-caption-bg;
@@ -142,7 +144,7 @@ body {
       display: none;
    }
 
-  #mod-search-searchword {
+   #mod-search-searchword {
       height: auto;
       padding-top: .35rem;
       padding-bottom: .35rem;
@@ -152,4 +154,34 @@ body {
 
 fieldset legend {
    background-color: transparent;
+}
+
+.image-intro{
+   background-color: #ededed; /* some background color for short images */
+   overflow: hidden;
+
+   /* remove white-space for inline-block elements */
+   letter-spacing: -0.31em; /* webkit */
+   *letter-spacing: normal; /* reset IE < 8 */
+   word-spacing: -0.43em; /* IE < 8 && gecko */
+
+   img{
+      /* removes(sorta) image from the flow */
+      padding-left: 100%;
+      margin: -999em -100%;
+      max-width: none;
+   }
+}
+.image-intro:before, .image-intro img{
+   /* vertically center the image */
+   display: inline-block;
+   vertical-align: middle;
+}
+.image-intro:before {
+   /* pseudo element to vertically align image to */
+   content: "";
+
+   /* Magic Number */
+   /* Set this to your desired height(to width) ratio */
+   padding-top: 75%; /* % of original image width */
 }
