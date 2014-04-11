@@ -50,8 +50,8 @@ if ($params->get('access-view')) {
 
 <?php if (isset($images->image_intro) and ! empty($images->image_intro)) { /** Begin intro image * */ ?>
    <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
-      <div class="large-6 medium-6 <?php echo $imgfloat; ?>">
-         <a href="<?php echo $link; ?>" >
+      <a href="<?php echo $link; ?>" >
+         <div class="image-intro large-6 medium-6 <?php echo $imgfloat; ?>">
             <img src="<?php echo htmlspecialchars($images->image_intro); ?>"
                  title="<?php echo htmlspecialchars($images->image_intro_caption); ?>"
                  alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" />
@@ -60,8 +60,8 @@ if ($params->get('access-view')) {
                <?php echo htmlspecialchars($images->image_intro_caption); ?>
                </div>
       <?php } /** End caption under image* */ ?>
-         </a>
-      </div>
+         </div>
+      </a>
       <?php } /** End Intro Image * */ ?>
    <div class="large-12 medium-12 small-12 end">
       <?php echo $this->item->introtext; ?>
