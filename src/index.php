@@ -21,9 +21,10 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 
 <!--[if IE 9]><html class="lt-ie10" lang="<?php echo $doc->language; ?>"  > <![endif]-->
 <html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
-   <head>
-      <meta charset="utf-8">
-       <?php echo '<script>' . getSlideImages($this->params) . '</script>'; //custom Tag, because addScript has wrong order...?>
+<head>
+   <meta charset="utf-8">
+    <?php echo '<script>' . getSlideImages($this->params) . '</script>'; //custom Tag, because addScript has wrong order...?>
+   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
    <jdoc:include type="head" />
 
    <script type="text/javascript">
@@ -43,15 +44,14 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
 
-   <div class="contain-to-grid hide-for-print">
+   <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
-         <ul class="title-area">
+         <ul class="title-area hide-for-medium hide-for-large">
             <li class="name">
                <h1><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
          </ul>
-
          <section id="navigation" class="top-bar-section">
             <jdoc:include type="modules" name="position-1" />
             <jdoc:include type="modules" name="position-0" />
@@ -63,7 +63,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
       <a href="<?php echo $doc->baseurl; ?>">
          <div class="logo">
             <h1 class="logo-name"><?php echo $this->params->get('siteTitle'); ?></h1>
-            <h2 class="logo-text"><?php echo $this->params->get('siteDescription'); ?></h2>
+            <h3 class="logo-text"><?php echo $this->params->get('siteDescription'); ?></h3>
          </div>
       </a>
    </div>
@@ -73,17 +73,6 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    </div>
    <div id="breadcrumb" class="row">
       <jdoc:include type="modules" name="position-2" />
-   </div>
-   <div id="top" class="row">
-      <div id="top1" class="small-4">
-         <jdoc:include type="modules" name="top1" />
-      </div>
-      <div id="top2" class="small-4">
-         <jdoc:include type="modules" name="top2" />
-      </div>
-      <div id="top3" class="small-4">
-         <jdoc:include type="modules" name="top3" />
-      </div>
    </div>
 
    <div id="content" class="row">
@@ -115,28 +104,35 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    </div>
    <?php } ?>
    <footer id="footer" class="row">
-      <div id="footer-1" class="large-4 medium-4 columns logo">
+      <div id="footer-1" class="large-2 medium-2  small-12 columns">
          <img src="<?php echo $templateUrl; ?>/images/bodenleger-j-schmid-stockach.png" alt="Bodenleger J. & J. Schmid GbR" />
-         <jdoc:include type="modules" name="user1" />
       </div>
-      <div id="footer-2" class="large-4 medium-4 columns">
-         <jdoc:include type="modules" name="user2" style="footer"/>
+      <div id="footer-2" class="large-3 medium-3  small-12 columns">
+         <jdoc:include type="modules" name="position-9" style="footer"/>
       </div>
-      <div id="footer-3" class="large-4 medium-4 columns">
-         <?php if ($this->params->get('facebookFanpage') != "") { ?>
-            <a class="webicon facebook large" href="<?php echo $this->params->get('facebookFanpage'); ?>">Facebook</a>
+      <div id="footer-3" class="large-3 medium-3  small-12 columns">
+         <jdoc:include type="modules" name="position-10" style="footer"/>
+      </div>
+      <div id="footer-4" class="large-3 medium-3  small-12 columns">
+         <jdoc:include type="modules" name="position-11" style="footer"/>
+      </div>
+      <div id="footer-5" class="large-1 medium-1 small-12 end columns">
+         <div class="row">
+         <?php if ($this->params->get('facebookFanpage') != " ") { ?>
+            <a class="webicon facebook" href="<?php echo $this->params->get('facebookFanpage'); ?>">Facebook</a>
          <?php } ?>
-         <?php if ($this->params->get('googlePublisher') != "") { ?>
-            <a class="webicon googleplus large" href="<?php echo $this->params->get('googlePublisher'); ?>">Google+</a>
+         <?php if ($this->params->get('googlePublisher') != " ") { ?>
+            <a class="webicon googleplus" href="<?php echo $this->params->get('googlePublisher'); ?>">Google+</a>
          <?php } ?>
-         <?php if ($this->params->get('twitterAccount') != "") { ?>
-            <a class="webicon twitter large" href="<?php echo $this->params->get('twitterAccount'); ?>">Twitter</a>
+         <?php if ($this->params->get('twitterAccount') != " ") { ?>
+            <a class="webicon twitter" href="<?php echo $this->params->get('twitterAccount'); ?>">Twitter</a>
          <?php } ?>
+         </div> 
       </div>
    </footer>
    <div id="copyright" class="row">
       <div class="large-12 column">
-      <jdoc:include type="modules" name="copyright" />
+         <jdoc:include type="modules" name="copyright" />
       </div>
    </div>
 <jdoc:include type="modules" name="debug" />

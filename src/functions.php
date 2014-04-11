@@ -82,7 +82,7 @@ if ($user->guest) {
 
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.min.js']);
-   //unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
+   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
    unset($head['scripts'][$this->baseurl . '/media/jui/js/bootstrap.js']);
@@ -127,14 +127,14 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $showLeftSidebar = true;
    $showRightSidebar = false;
 
-   $columnSizeContent = "large-9 medium-8 column end";
-   $columnSizeLeftSideBar = "large-3 medium-4 column hide-on-print";
+   $columnSizeContent = "large-9 medium-9 column end";
+   $columnSizeLeftSideBar = "large-3 medium-3 column hide-on-print";
 } else if ($this->countModules('position-7') && !$this->countModules('position-8')) {
    $showLeftSidebar = false;
    $showRightSidebar = true;
 
-   $columnSizeContent = "large-9 medium-8";
-   $columnSizeRightSideBar = "large-3 medium-4 column hide-on-print end";
+   $columnSizeContent = "large-9 medium-9";
+   $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 } else {
    $showLeftSidebar = true;
    $showRightSidebar = true;

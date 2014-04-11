@@ -29,6 +29,7 @@ body {
 
 #header {
    background: rgba(240, 237, 224, .25);
+   text-shadow: 1px 1px 3px $secondary-color;
    a {
       text-decoration: none;
    }
@@ -105,9 +106,6 @@ body {
    }
 }
 
-.logo {
-   text-shadow: 1px 1px 3px $secondary-color;
-}
 .image-caption {
    bottom: 0;
    background-color: $orbit-caption-bg;
@@ -156,7 +154,7 @@ fieldset legend {
    background-color: transparent;
 }
 
-.image-intro{
+.image-intro {
    background-color: #ededed; /* some background color for short images */
    overflow: hidden;
 
