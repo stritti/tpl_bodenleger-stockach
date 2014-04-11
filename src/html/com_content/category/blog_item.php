@@ -51,7 +51,7 @@ if ($params->get('access-view')) {
 <?php if (isset($images->image_intro) and ! empty($images->image_intro)) { /** Begin intro image * */ ?>
    <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
       <a href="<?php echo $link; ?>" >
-         <div class="image-intro large-6 medium-6 <?php echo $imgfloat; ?>">
+         <div class="image-intro2 large-6 medium-6 <?php echo $imgfloat; ?>">
             <img src="<?php echo htmlspecialchars($images->image_intro); ?>"
                  title="<?php echo htmlspecialchars($images->image_intro_caption); ?>"
                  alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" />
