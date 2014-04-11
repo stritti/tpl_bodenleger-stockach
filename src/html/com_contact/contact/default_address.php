@@ -57,7 +57,7 @@ if (($this->params->get('address_check') > 0) &&
       <?php if ($this->contact->email_to && $this->params->get('show_email')) : ?>
          <li>
             <span class="<?php echo $this->params->get('marker_class'); ?>" >
-               <?php echo $this->params->get('marker_email'); ?>
+               <i class="fi-mail"></i> <?php //echo $this->params->get('marker_email'); ?>
             </span>
             <span class="contact-emailto">
                <?php echo $this->contact->email_to; ?>
@@ -68,7 +68,7 @@ if (($this->params->get('address_check') > 0) &&
       <?php if ($this->contact->telephone && $this->params->get('show_telephone')) : ?>
          <li>
             <span class="<?php echo $this->params->get('marker_class'); ?>" >
-               <?php echo $this->params->get('marker_telephone'); ?>
+               <i class="fi-telephone"></i><?php //echo $this->params->get('marker_telephone'); ?>
             </span>
             <span class="tel work">
                <?php echo nl2br($this->contact->telephone); ?>

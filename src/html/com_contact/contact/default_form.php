@@ -27,7 +27,7 @@ JHtml::_('behavior.tooltip');
 <div class="contact-form hide-for-print">
 	<form id="contact-form custom" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate" data-abide>
 		<fieldset>
-			<legend>Formular  <?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
+			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
 			<dl>
 				<dt><?php echo $this->form->getLabel('contact_name'); ?></dt>
 				<dd><?php echo $this->form->getInput('contact_name'); ?></dd>
