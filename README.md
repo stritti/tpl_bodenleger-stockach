@@ -6,15 +6,15 @@ Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
 
 ### Features
  * SEO
- ** optimized breadcrumbs
- ** microformats for contacts
- ** header enhancements (Facebook, Google+ etc.)
- ** optimized for local SEO
+ 	* optimized breadcrumbs
+ 	* microformats for contacts
+ 	* header enhancements (Facebook, Google+ etc.)
+ 	* optimized for local SEO
  * Multidevice
- ** the layout is completly responsive
- ** support for smartphones, tablet, desktop
- ** responsive navigation menu
- *
+ 	* the layout is completly responsive
+ 	* support for smartphones, tablet, desktop
+ 	* responsive navigation menu
+
 
 
 
