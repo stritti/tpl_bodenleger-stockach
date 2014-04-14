@@ -36,8 +36,8 @@ function shuffle(array) {
 
   return array;
 }
-
-backgroundSlides= shuffle(bslides);
+/* global bslides */
+var backgroundSlides= shuffle(bslides);
 
 $(function() {
    $.sublime_slideshow({
