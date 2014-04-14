@@ -12,11 +12,12 @@ By @stritti
  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
  somewhere else in your site for example in your links section or impressum.
 */
-'use strict';
 
 /**
  * Grunt Module
+ *
  */
+/*jshint node:true */
 module.exports = function(grunt) {
 /**
  * Configuration
@@ -37,7 +38,10 @@ grunt.initConfig({
              ' * @author <%= pkg.author %>\n' +
              ' * @version <%= pkg.version %>\n' +
              ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
-             ' */\n'
+             ' */\n',
+     deploy: {
+        dest: 'target/files/<%= pkg.name %>/css/'
+     },
    },
 
    /**
@@ -60,10 +64,10 @@ grunt.initConfig({
             'src/css/editor.css': 'src/sass/editor.scss'},
             {
                expand: true,
-               cwd: "src/sass/pages",
-               src: ["**/*.scss"],
-               dest: "src/css/pages/",
-               ext: ".css"
+               cwd: 'src/sass/pages',
+               src: ['**/*.scss'],
+               dest: 'src/css/pages/',
+               ext: '.css'
             }]
          
         
@@ -102,20 +106,23 @@ grunt.initConfig({
     *
     */
    uglify  : {
-     build : {
-       src     : ['**/*.js', '!*.min.js', '!**/foundation/*', '!**vendor/*'],
-       cwd     : 'target/files/<%= pkg.name %>/js/',
-       dest    : 'src/js/',
-       expand  : true,
-       rename  : function (dest, src) {
-         var folder    = src.substring(0, src.lastIndexOf('/'));
-         var filename  = src.substring(src.lastIndexOf('/'), src.length);
+      options: {
+         // the banner is inserted at the top of the output
+         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      build : {
+         src     : ['**/*.js', '!*.min.js', '!**/foundation/*', '!**vendor/*'],
+         cwd     : 'target/files/<%= pkg.name %>/js/',
+         dest    : 'src/js/',
+         expand  : true,
+         rename  : function (dest, src) {
+            var folder    = src.substring(0, src.lastIndexOf('/'));
+            var filename  = src.substring(src.lastIndexOf('/'), src.length);
+            filename  = filename.substring(0, filename.lastIndexOf('.'));
 
-         filename  = filename.substring(0, filename.lastIndexOf('.'));
-
-         return dest + folder + filename + '.min.js';
-       }
-     }
+            return dest + folder + filename + '.min.js';
+         }
+      }
    },
 
    /**
@@ -125,10 +132,11 @@ grunt.initConfig({
       options: {
         jshintrc: '.jshintrc',
       },
-      all: [
-        'src/js/*.js',
-        '!src/js/*.min.js',
-        '!src/js/jquery.*.js'
+      files: [
+         'Gruntfile.js',
+         'src/js/*.js',
+         '!src/js/*.min.js',
+         '!src/js/jquery.*.js'
       ]
    },
    /**
@@ -237,4 +245,4 @@ grunt.initConfig({
    grunt.registerTask('default',
       [ 'sass:dev', 'watch']
    );
-}
+};
