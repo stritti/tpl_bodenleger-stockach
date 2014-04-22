@@ -4,6 +4,8 @@ $app = JFactory::getApplication();
 // - - - - - - - - - -
 // Images
 // - - - - - - - - - -
+
+$firstImage = NULL; //set first Image below for meta tags;
 ?>
 
 <?php if (!empty($this->items)) { ?>
@@ -43,7 +45,10 @@ $app = JFactory::getApplication();
                ?>
                <?php
                if ($extImage) {
-                   echo JHtml::_('image', $cv->extm, $cv->altvalue, array('class' => 'pg-image'));
+                  echo JHtml::_('image', $cv->extm, $cv->altvalue, array('class' => 'pg-image'));
+                  if($firstImage === NULL) {
+                     $firstImage =  $cv->extm;
+                  }
                } else {
                   if(property_exists($cv, 'oimgalt')) {
                      $alt = $cv->oimgalt;
@@ -51,6 +56,10 @@ $app = JFactory::getApplication();
                      $alt = $cv->altvalue;
                   }
                   echo JHtml::_('image', $cv->link, $alt,  array('class' => 'pg-image'));
+
+                  if($firstImage === NULL) {
+                     $firstImage =  $cv->link;
+                  }
                }
                ?>
 
@@ -78,6 +87,12 @@ $app = JFactory::getApplication();
    </ul>
 
    <?php
+
+   if($firstImage != NULL) {
+      $doc = JFactory::getDocument();
+      $doc->addCustomTag('<meta property="og:image" content="' . $firstImage . '" />');
+      $doc->addCustomTag('<link rel="image_src" href="' . $firstImage . '" />');
+   }
 } else {
    // Will be not displayed
    //echo JText::_('COM_PHOCAGALLERY_THERE_IS_NO_IMAGE');
