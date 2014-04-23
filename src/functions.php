@@ -46,10 +46,6 @@ $customtags = array(
    '<meta property="og:description" content="' . $doc->getDescription() . '" />',
    '<meta property="og:url" content="' . JURI::current() . '" />',
    '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
-    //Facebook Publisher
-   '<meta property="article:publisher" content="'. $this->params->get('facebookFanpage') .'" />',
-   //Google+ Publisher
-   '<link rel="publisher" href="' . $this->params->get('googlePublisher') . '" />',
    // apple touch icons
    '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
@@ -114,6 +110,8 @@ foreach ($customtags as $customtag) {
    $doc->addCustomTag($customtag);
 }
 
+setPublisherTags($doc, $this->params);
+
 if(JDEBUG === 0) {
    //add productive JavaScripts
    foreach ($prodScripts as $script) {
@@ -162,6 +160,16 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
 
+function setPublisherTags($doc, $params) {
+   if($params->get('facebookFanpage') != NULL) {
+       //Facebook Publisher
+      $doc->addCustomTag('<meta property="article:publisher" content="'. $params->get('facebookFanpage') .'" />');
+   }
+   if($params->get('googlePublisher') != NULL) {
+      //Google+ Publisher
+      $doc->addCustomTag('<link rel="publisher" href="' . $params->get('googlePublisher') . '" />');
+   }
+}
 /**
  * Load the images for background slide show.
  * @param type $params
