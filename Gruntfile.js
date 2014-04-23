@@ -171,10 +171,10 @@ grunt.initConfig({
        },
        files: [
          {
+            expand: true,
             cwd: 'target/files/<%= pkg.name %>/',
-            src: ['target/files/<%= pkg.name %>/**'],
-            dest: '/'
-         }
+            src: ['**'], dest: '/'
+          }
        ]
      }
    },
