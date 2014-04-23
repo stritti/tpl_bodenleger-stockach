@@ -1,10 +1,4 @@
 <?php
-/**
- * @package		Joomla.Site
- * @subpackage	Templates.beez5
- * @copyright	Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
- */
 // No direct access
 defined('_JEXEC') or die;
 
@@ -22,12 +16,13 @@ $server = JURI::root();
 $canonical = $this->escape($this->item->readmore_link);
 
 $document->addCustomTag('<link rel="canonical" href="' . $canonical . '"/>');
-$document->addCustomTag('<link rel="image_src" href="' . $server . $images->image_fulltext . '" />');
 $document->addCustomTag('<meta property="og:title" content="' . $this->escape($this->item->title) . '"/>');
 $document->addCustomTag('<meta property="og:type" content="article"/>');
-$document->addCustomTag('<meta property="og:image" content="' . $server . $images->image_fulltext . '" />');
 $document->addCustomTag('<meta property="og:url" content="' . $canonical . '"/>');
-
+if($images->image_fulltext != "") {
+   $document->addCustomTag('<meta property="og:image" content="' . $server . $images->image_fulltext . '" />');
+   $document->addCustomTag('<link rel="image_src" href="' . $server . $images->image_fulltext . '" />');
+}
 $article_details_show = ((intval($this->item->modified) != 0 && $this->params->get('show_modify_date')) || ($this->params->get('show_author') && ($this->article->author != "")) || ($this->params->get('show_create_date')) || ($this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')));
 
  $useDefList = (($params->get('show_author')) or ($params->get('show_category')) or ($params->get('show_parent_category')) or ($params->get('show_create_date')) or ($params->get('show_modify_date')) or ($params->get('show_publish_date')) or ($params->get('show_hits')));

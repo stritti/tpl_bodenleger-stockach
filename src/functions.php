@@ -32,32 +32,39 @@ $component = JRequest::getVar('option');
 $user = JFactory::getUser();
 
 $metatags = array(
-    // force latest IE & chrome frame
-    'x-ua-compatible' => 'IE=edge,chrome=1',
-    // viewport for media queries
-    'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
-    'copyright' => htmlspecialchars($app->getCfg('sitename')),
+   // force latest IE & chrome frame
+   'x-ua-compatible' => 'IE=edge,chrome=1',
+   // viewport for media queries
+   'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+   'copyright' => $app->getCfg('sitename'),
 );
 
 $customtags = array(
-// meta tags
-'<meta property="og:locale" content="' . $doc->language . '" />',
- '<meta property="og:type" content="website" />',
- '<meta property="og:title" content="' . $doc->getTitle() . '" />',
- '<meta property="og:description" content="' . $doc->getDescription() . '" />',
- '<meta property="og:url" content="' . JURI::current() . '" />',
- '<meta property="og:site_name" content="' . $params->get('sitename') . '"/>',
- //Google+ Publisher
-'<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
- // apple touch icons
-'<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
+   // meta tags
+   '<meta property="og:locale" content="' . $doc->language . '" />',
+   '<meta property="og:title" content="' . $doc->getTitle() . '" />',
+   '<meta property="og:description" content="' . $doc->getDescription() . '" />',
+   '<meta property="og:url" content="' . JURI::current() . '" />',
+   '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
+   // apple touch icons
+   '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
+   '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
+   '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
+   '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
 );
 
-// javascripts
-$scripts = array(
+// productive javascripts
+$prodScripts = array(
+    '/js/vendor/modernizr.js',
+    '/js/vendor/jquery.js',
+    '/js/vendor/fastclick.js',
+    '/js/foundation.min.js',
+    '/js/jquery.sublimeSlideshow.min.js',
+    '/js/custom.min.js',
+);
+
+// debugging javascripts
+$debugScripts = array(
     '/js/vendor/modernizr.js',
     '/js/vendor/jquery.js',
     '/js/vendor/fastclick.js',
@@ -103,9 +110,18 @@ foreach ($customtags as $customtag) {
    $doc->addCustomTag($customtag);
 }
 
-//JavaScripts
-foreach ($scripts as $script) {
-   $doc->addScript($templateUrl . $script);
+setPublisherTags($doc, $this->params);
+
+if(JDEBUG === 0) {
+   //add productive JavaScripts
+   foreach ($prodScripts as $script) {
+      $doc->addScript($templateUrl . $script);
+   }
+} else {
+   //add development JavaScripts
+   foreach ($debugScripts as $script) {
+      $doc->addScript($templateUrl . $script);
+   }
 }
 
 //Styles sheets
@@ -144,6 +160,16 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
 
+function setPublisherTags($doc, $params) {
+   if($params->get('facebookFanpage') != NULL) {
+       //Facebook Publisher
+      $doc->addCustomTag('<meta property="article:publisher" content="'. $params->get('facebookFanpage') .'" />');
+   }
+   if($params->get('googlePublisher') != NULL) {
+      //Google+ Publisher
+      $doc->addCustomTag('<link rel="publisher" href="' . $params->get('googlePublisher') . '" />');
+   }
+}
 /**
  * Load the images for background slide show.
  * @param type $params

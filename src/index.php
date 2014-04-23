@@ -23,15 +23,14 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 <html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
    <meta charset="utf-8">
-    <?php echo '<script>' . getSlideImages($this->params) . '</script>'; //custom Tag, because addScript has wrong order...?>
+   <script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
    <jdoc:include type="head" />
-
+<?php if($this->params->get('googleAnalytics') != "") { ?>
    <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-29149707-1']);
+      _gaq.push(['_setAccount', '<?php echo $this->params->get('googleAnalytics'); ?>']);
       _gaq.push(['_trackPageview']);
-
       (function() {
          var ga = document.createElement('script');
          ga.type = 'text/javascript';
@@ -41,9 +40,9 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
          s.parentNode.insertBefore(ga, s);
       })();
    </script>
+<?php } ?>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
-
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
          <ul class="title-area hide-for-medium hide-for-large">

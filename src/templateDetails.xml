@@ -82,6 +82,7 @@
             <field type="text" name="siteTitle" description="Maintitle" label="Main-Titel" default="Bodenleger J. Schmid" size="40"/>
             <field type="text" name="siteDescription" description="Subtitle" label="Subtitle" default="Verlegearbeiten - Schleifarbeiten - Estrichsanierung" size="40"/>
             <field type="text" name="siteCopyright" description="Copyright-Information" label="Copyright" default="Ihre Firma/Seite oder Verein" size="40"/>
+            <field type="text" name="googleAnalytics" description="Google Analytics ID to track website" label="Google Analytics ID" default="UA-29149707-1" size="20"/>
          </fieldset>
          <fieldset name="social" description="Social Links" label="Social Links">
             <field type="text" name="googlePublisher" description="URL of corresponding Google+ Page" label="Google+ Publisher URL" default="https://plus.google.com/+BodenlegerJSchmidStockach" size="40" />
