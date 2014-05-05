@@ -27,11 +27,26 @@ body {
    background-position: top center;
 }
 
+.top-bar {
+   .name h1 a {
+      width: 80%;
+   }
+}
 #header {
    background: rgba(240, 237, 224, .25);
    text-shadow: 1px 1px 3px $secondary-color;
    a {
       text-decoration: none;
+   }
+
+   #logo-name {
+      font-size: $h1-font-size;
+      line-height: $header-line-height;
+   }
+
+   #logo-text {
+      font-size: $h3-font-size;
+      line-height: $header-line-height;
    }
 }
 

@@ -45,11 +45,11 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
-         <ul class="title-area hide-for-medium hide-for-large">
+         <ul class="title-area hide-for-medium-up">
             <li class="name">
                <h1><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></h1>
             </li>
-            <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+            <li class="toggle-topbar menu-icon"><a href="#">Menü</a></li>
          </ul>
          <section id="navigation" class="top-bar-section">
             <jdoc:include type="modules" name="position-1" />
@@ -61,8 +61,8 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    <div id="header" class="row hide-for-small" role="banner">
       <a href="<?php echo $doc->baseurl; ?>">
          <div class="logo">
-            <h1 class="logo-name"><?php echo $this->params->get('siteTitle'); ?></h1>
-            <h3 class="logo-text"><?php echo $this->params->get('siteDescription'); ?></h3>
+            <div id="logo-name"><?php echo $this->params->get('siteTitle'); ?></div>
+            <div id="logo-text"><?php echo $this->params->get('siteDescription'); ?></div>
          </div>
       </a>
    </div>
