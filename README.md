@@ -26,7 +26,8 @@ The template is free to use under the [MIT license](http://www.opensource.org/li
    Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )
  * [jQuery JavaScript Library v2.1.0](http://jquery.com/),
    Released under the MIT license ( http://jquery.org/license)
- * [jQuery Plugin: sublimeSlideshow](http://www.jqueryscript.net/slideshow/Fullscreen-Background-Image-Slideshow-Plugin-with-jQuery.html)
+ * [jQuery Plugin: jQueryFullscreenCycler](https://github.com/nbunney/jQueryFullscreenCycler)
+   Released under GNU GENERAL PUBLIC LICENSE ( https://github.com/nbunney/jQueryFullscreenCycler/blob/master/LICENSE )
 
 
 ### Development
@@ -63,6 +64,8 @@ npm install grunt-contrib-copy --save-dev
 npm install grunt-contrib-jshint --save-dev
 npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-clean --save-dev
+
+bower install zurb/bower-foundation
 ```
 
 While you're working on the project, run:

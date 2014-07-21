@@ -59,7 +59,7 @@ $prodScripts = array(
     '/js/vendor/jquery.js',
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
-    '/js/jquery.sublimeSlideshow.min.js',
+    '/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
 );
 
@@ -69,7 +69,7 @@ $debugScripts = array(
     '/js/vendor/jquery.js',
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
-    '/js/jquery.sublimeSlideshow.js',
+    '/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
 );
 
@@ -177,15 +177,20 @@ function setPublisherTags($doc, $params) {
  */
 function getSlideImages($params) {
    $slideImageArray = "";
+   $maximages = 6;
 
-   for ($index = 1; $index <= 6; $index++) {
+   for ($index = 1; $index <= $maximages; $index++) {
       $filename = $params->get('slide-' . $index);
       //if(file_exists($filename)) {
-      $slideImageArray .= '{url: "' . $filename . '"},';
+      //$slideImageArray .= '{url: "' . $filename . '"},';
+      $slideImageArray .= ' "' . $filename . '"';
+      if($index < $maximages ) {
+         $slideImageArray .= ', ';
+      }
       //}
    }
-
-   return "var bslides = [" . $slideImageArray . "];";
+   return "var bslides = new Array(" . $slideImageArray . ");";
+   //return "var bslides = [" . $slideImageArray . "];";
 }
 
 /**

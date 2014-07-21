@@ -43,6 +43,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 <?php } ?>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
+   <div id="fsCycler"></div>
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
          <ul class="title-area hide-for-medium-up">

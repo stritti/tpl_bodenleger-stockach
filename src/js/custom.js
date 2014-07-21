@@ -36,16 +36,11 @@ function shuffle(array) {
 
   return array;
 }
-/* global bslides */
-var backgroundSlides= shuffle(bslides);
 
 $(function() {
-   $.sublime_slideshow({
-      src: backgroundSlides,
-      duration: 12,
-      fade: 2,
-      scaling: false,
-      rotating: false,
-      overlay: false
+   //init background slider
+   $('#fsCycler').fullscreenSlider({
+      /* global bslides */
+      images: shuffle(bslides)
    });
 });
