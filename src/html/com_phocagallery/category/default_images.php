@@ -88,6 +88,7 @@ $firstImage = NULL; //set first Image below for meta tags;
 
    <?php
 
+   //For Facebook...
    if($firstImage != NULL) {
       $doc = JFactory::getDocument();
       $doc->addCustomTag('<meta property="og:image" content="' . $firstImage . '" />');
@@ -95,5 +96,5 @@ $firstImage = NULL; //set first Image below for meta tags;
    }
 } else {
    // Will be not displayed
-   //echo JText::_('COM_PHOCAGALLERY_THERE_IS_NO_IMAGE');
+   echo JText::_('COM_PHOCAGALLERY_THERE_IS_NO_IMAGE');
 }
