@@ -32,43 +32,41 @@ $component = JRequest::getVar('option');
 $user = JFactory::getUser();
 
 $metatags = array(
-   // force latest IE & chrome frame
-   'x-ua-compatible' => 'IE=edge,chrome=1',
-   // viewport for media queries
-   'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
-   'copyright' => $app->getCfg('sitename'),
+    // force latest IE & chrome frame
+    'x-ua-compatible' => 'IE=edge,chrome=1',
+    // viewport for media queries
+    'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+    'copyright' => $app->getCfg('sitename'),
 );
 
 $customtags = array(
-   // meta tags
-   '<meta property="og:locale" content="' . $doc->language . '" />',
-   '<meta property="og:title" content="' . $doc->getTitle() . '" />',
-   '<meta property="og:description" content="' . $doc->getDescription() . '" />',
-   '<meta property="og:url" content="' . JURI::current() . '" />',
-   '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
-   // apple touch icons
-   '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
-   '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
-   '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
-   '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
+    // meta tags
+    '<meta property="og:locale" content="' . $doc->language . '" />',
+    '<meta property="og:title" content="' . $doc->getTitle() . '" />',
+    '<meta property="og:description" content="' . $doc->getDescription() . '" />',
+    '<meta property="og:url" content="' . JURI::current() . '" />',
+    '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
+    // apple touch icons
+    '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
 );
 
 // productive javascripts
 $prodScripts = array(
-    '/js/vendor/modernizr.js',
-    '/js/vendor/jquery.js',
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
+    '/js/foundation/foundation.tooltip.js',
     '/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
 );
 
 // debugging javascripts
 $debugScripts = array(
-    '/js/vendor/modernizr.js',
-    '/js/vendor/jquery.js',
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
+    '/js/foundation/foundation.tooltip.js',
     '/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
 );
@@ -112,7 +110,7 @@ foreach ($customtags as $customtag) {
 
 setPublisherTags($doc, $this->params);
 
-if(JDEBUG === 0) {
+if (JDEBUG === 0) {
    //add productive JavaScripts
    foreach ($prodScripts as $script) {
       $doc->addScript($templateUrl . $script);
@@ -161,15 +159,16 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
 }
 
 function setPublisherTags($doc, $params) {
-   if($params->get('facebookFanpage') != NULL) {
-       //Facebook Publisher
-      $doc->addCustomTag('<meta property="article:publisher" content="'. $params->get('facebookFanpage') .'" />');
+   if ($params->get('facebookFanpage') != NULL) {
+      //Facebook Publisher
+      $doc->addCustomTag('<meta property="article:publisher" content="' . $params->get('facebookFanpage') . '" />');
    }
-   if($params->get('googlePublisher') != NULL) {
+   if ($params->get('googlePublisher') != NULL) {
       //Google+ Publisher
       $doc->addCustomTag('<link rel="publisher" href="' . $params->get('googlePublisher') . '" />');
    }
 }
+
 /**
  * Load the images for background slide show.
  * @param type $params
@@ -184,7 +183,7 @@ function getSlideImages($params) {
       //if(file_exists($filename)) {
       //$slideImageArray .= '{url: "' . $filename . '"},';
       $slideImageArray .= ' "' . $filename . '"';
-      if($index < $maximages ) {
+      if ($index < $maximages) {
          $slideImageArray .= ', ';
       }
       //}
@@ -201,7 +200,7 @@ function getSlideImages($params) {
 function hasBottomModules() {
    $retval = false;
    $doc = JFactory::getDocument();
-   if($doc->countModules('position-4') || $doc->countModules('position-5')  || $doc->countModules('position-6')) {
+   if ($doc->countModules('position-4') || $doc->countModules('position-5') || $doc->countModules('position-6')) {
       $retval = true;
    } else {
       $retval = false;

@@ -1109,12 +1109,12 @@ $orbit-timer-show-progress-bar: false;
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
 
-// $tooltip-padding: rem-calc(12);
-// $tooltip-bg: #333;
-// $tooltip-font-size: rem-calc(14);
-// $tooltip-font-weight: normal;
-// $tooltip-font-color: #fff;
-// $tooltip-line-height: 1.3;
+$tooltip-padding: rem-calc(12);
+$tooltip-bg: #333;
+$tooltip-font-size: rem-calc(14);
+$tooltip-font-weight: normal;
+$tooltip-font-color: #fff;
+$tooltip-line-height: 1.3;
 // $tooltip-close-font-size: rem-calc(10);
 // $tooltip-close-font-weight: normal;
 // $tooltip-close-font-color: #777;
