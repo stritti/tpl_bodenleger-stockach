@@ -62,16 +62,16 @@ function getAuthor() {
          <h2><?php echo $this->escape($this->item->title); ?></h2>
       <?php } ?>
    </hgroup>
-<?php } // END show_page_heading ?>
-<?php if ($params->get('show_title')) { ?>
-      <h2 class="large-12"><?php echo $this->escape($this->item->title); ?></h2>
-<?php } ?>
-      
-      <?php
-         if (!$params->get('show_intro')) {
-            echo $this->item->event->afterDisplayTitle;
-         }
-      ?>
+<?php
+   // END show_page_heading
+   } else { ?>
+<?php    if ($params->get('show_title')) { ?>
+         <h1 class="large-12"><?php echo $this->escape($this->item->title); ?></h1>
+<?php    }
+}
+?>
+   
+      <?php if (!$params->get('show_intro')) { echo $this->item->event->afterDisplayTitle; }?>
       <?php echo $this->item->event->beforeDisplayContent; ?>
 
       <dl class="large-12">
