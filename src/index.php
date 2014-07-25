@@ -52,10 +52,8 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
          <ul class="title-area hide-for-medium-up">
-            <li class="name">
-               <h1><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#">Menü</a></li>
+            <li class="name"><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menü</span></a></li>
          </ul>
          <section id="navigation" class="top-bar-section">
             <jdoc:include type="modules" name="position-1" />
