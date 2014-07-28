@@ -52,11 +52,6 @@ $cparams = JComponentHelper::getParams ('com_media');
 	<?php if ($this->params->get('presentation_style')=='plain'):?>
 		<?php  echo '<h3>'. JText::_('COM_CONTACT_DETAILS').'</h3>';  ?>
 	<?php endif; ?>
-	<?php if ($this->contact->image && $this->params->get('show_image')) : ?>
-		<div class="contact-image">
-			<?php echo JHtml::_('image', $this->contact->image, JText::_('COM_CONTACT_IMAGE_DETAILS'), array('align' => 'middle')); ?>
-		</div>
-	<?php endif; ?>
 
 	<?php if ($this->contact->con_position && $this->params->get('show_position')) : ?>
 		<p class="contact-position"><?php echo $this->contact->con_position; ?></p>
@@ -69,7 +64,7 @@ $cparams = JComponentHelper::getParams ('com_media');
 			<a href="<?php echo JRoute::_('index.php?option=com_contact&amp;view=contact&amp;id='.$this->contact->id . '&amp;format=vcf'); ?>">
 			<?php echo JText::_('COM_CONTACT_VCARD');?></a>
 	<?php endif; ?>
-	<p></p>
+
 	<?php if ($this->params->get('show_email_form') && ($this->contact->email_to || $this->contact->user_id)) : ?>
 
 		<?php if ($this->params->get('presentation_style')!='plain'):?>
