@@ -15,20 +15,23 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
-echo '<div id="phocagallery-responsive" class="categories-view'.$this->params->get( 'pageclass_sfx' ).' row">';
-if ( $this->params->get( 'show_page_heading' ) ) { 
-	echo '<h1>'. $this->escape($this->params->get('page_heading')) . '</h1>';
-}
+?>
+<div id="phocagallery-responsive" class="categories-view<?php echo $this->params->get( 'pageclass_sfx' ) ?> row">
+<?php if ( $this->params->get( 'show_page_heading' ) ) { ?>
+	<?php echo '<h1>'. $this->escape($this->params->get('page_heading')) . '</h1>';?>
+<?php } ?>
 
-echo '<div id="pg-icons">';
-echo PhocaGalleryRenderFront::renderFeedIcon('categories');
-echo '</div>';
-echo '<div class="ph-cb"></div>';
+<div id="pg-icons">
+<?php echo PhocaGalleryRenderFront::renderFeedIcon('categories');?>
+</div>
 
-if ($this->tmpl['categories_description'] != '') {
-	echo '<div class="csv-desc row" >'.JHTML::_('content.prepare', $this->tmpl['categories_description']).'</div>';
-}
+<?php if ($this->tmpl['categories_description'] != '') {?>
+   <div class="csv-desc row" >
+	<?php echo JHTML::_('content.prepare', $this->tmpl['categories_description']);?>
+   </div>
+<?php } ?>
 
+<?php
 // Obsolete methods
 switch($this->tmpl['display_image_categories']) {
 
