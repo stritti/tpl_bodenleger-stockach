@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 if (($this->params->get('address_check') > 0) &&
         ($this->contact->address || $this->contact->suburb || $this->contact->state || $this->contact->country || $this->contact->postcode)) :
    ?>
-   <div class="vcard">
+   <div class="vcard large-6 medium-9 small-12">
       <?php if ($this->params->get('marker_address') > 0) : ?>
          <span class="<?php echo $this->params->get('marker_class'); ?>" >
             <?php echo $this->params->get('marker_address'); ?>
