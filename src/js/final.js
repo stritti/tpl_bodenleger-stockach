@@ -14,6 +14,10 @@
  */
 $(document).foundation({
    tooltip: {
-      selector: '.hasTooltip',
-   }
+      selector: '.hasTooltip'
+   },
+   topbar: {
+      custom_back_text: true,
+      back_text: 'Zurück'
+    }
 });
