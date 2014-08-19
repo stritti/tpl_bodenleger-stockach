@@ -36,7 +36,7 @@ $metatags = array(
     'x-ua-compatible' => 'IE=edge,chrome=1',
     // viewport for media queries
     'viewport' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
-    'copyright' => htmlspecialchars($app->getCfg('sitename')),
+    'copyright' => $app->getCfg('sitename'),
 );
 
 $customtags = array(
@@ -46,7 +46,7 @@ $customtags = array(
  '<meta property="og:title" content="' . $doc->getTitle() . '" />',
  '<meta property="og:description" content="' . $doc->getDescription() . '" />',
  '<meta property="og:url" content="' . JURI::current() . '" />',
- '<meta property="og:site_name" content="' . $params->get('sitename') . '"/>',
+ '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
  //Google+ Publisher
 '<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
  // apple touch icons
