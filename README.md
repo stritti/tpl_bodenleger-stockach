@@ -6,15 +6,15 @@ Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
 
 ### Features
  * SEO
- ** optimized breadcrumbs
- ** microformats for contacts
- ** header enhancements (Facebook, Google+ etc.)
- ** optimized for local SEO
+ 	* optimized breadcrumbs
+ 	* microformats for contacts
+ 	* header enhancements (Facebook, Google+ etc.)
+ 	* optimized for local SEO
  * Multidevice
- ** the layout is completly responsive
- ** support for smartphones, tablet, desktop
- ** responsive navigation menu
- *
+ 	* the layout is completly responsive
+ 	* support for smartphones, tablet, desktop
+ 	* responsive navigation menu
+
 
 
 
@@ -57,9 +57,11 @@ npm install -g bower
 npm install -g livereload2
 npm install grunt-contrib-watch --save-dev
 npm install grunt-contrib-sass --save-dev
+npm install grunt-contrib-cssmin --save-dev
 npm install grunt-contrib-compress --save-dev
 npm install grunt-contrib-copy --save-dev
 npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-clean --save-dev
 ```
 
