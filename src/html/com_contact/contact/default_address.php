@@ -24,10 +24,10 @@ if (($this->params->get('address_check') > 0) &&
    <?php endif; ?>
    <div class="vcard large-6 medium-9 small-12 ">
       <?php if ($this->contact->image && $this->params->get('show_image')) { ?>
-         <?php echo JHtml::_('image', $this->contact->image, $this->contact->name, array('class' => 'large-4 column th')); ?>
-         <div class="large-8 column">
+         <?php echo JHtml::_('image', $this->contact->image, $this->contact->name, array('class' => 'large-4 medium-4 hide-for-small column th')); ?>
+         <div class="large-8 medium-8 small-12 column">
       <?php } else { ?>
-         <div class="large-12 column">
+         <div class="large-12">
       <?php } ?>
          <ul class="adr">
             <?php if ($this->contact->name && $this->params->get('show_name')) { ?>
@@ -53,8 +53,6 @@ if (($this->params->get('address_check') > 0) &&
          </ul>
        </div>
    <?php endif; ?>
-
-
    <?php if ($this->params->get('show_email') || $this->params->get('show_telephone') || $this->params->get('show_fax') || $this->params->get('show_mobile') || $this->params->get('show_webpage')) : ?>
       <?php echo $this->loadTemplate('communication'); ?>
    <?php endif; ?>
