@@ -27,4 +27,4 @@ before_script:
   - npm install grunt-contrib-clean --save-dev  
   
 script:
- - grunt build
+ - grunt build --verbose
