@@ -101,6 +101,6 @@
    </config>
   
    <updateservers>
-      <server type="extension" priority="2" name="Update-Server">http://stritti.github.io/tpl_bodenleger-stockach/update.xml</server>
+      <server type="extension" priority="1" name="Update-Server">http://stritti.github.io/tpl_bodenleger-stockach/update.xml</server>
    </updateservers>
 </extension>

@@ -40,29 +40,34 @@ $metatags = array(
 );
 
 $customtags = array(
-// meta tags
-'<meta property="og:locale" content="' . $doc->language . '" />',
- '<meta property="og:type" content="website" />',
- '<meta property="og:title" content="' . $doc->getTitle() . '" />',
- '<meta property="og:description" content="' . $doc->getDescription() . '" />',
- '<meta property="og:url" content="' . JURI::current() . '" />',
- '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
- //Google+ Publisher
-'<link rel="publisher" href="' . $params->get('googlePublisher') . '" />',
- // apple touch icons
-'<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
- '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
+    // meta tags
+    '<meta property="og:locale" content="' . $doc->language . '" />',
+    '<meta property="og:title" content="' . $doc->getTitle() . '" />',
+    '<meta property="og:description" content="' . $doc->getDescription() . '" />',
+    '<meta property="og:url" content="' . JURI::current() . '" />',
+    '<meta property="og:site_name" content="' . $app->getCfg('sitename') . '"/>',
+    // apple touch icons
+    '<link rel="apple-touch-icon-precomposed" href="' . $templateUrl . '/images/apple-touch-icon-57x57-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="' . $templateUrl . '/images/apple-touch-icon-72x72-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="' . $templateUrl . '/images/apple-touch-icon-114x114-precomposed.png">',
+    '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="' . $templateUrl . '/images/apple-touch-icon-144x144-precomposed.png">',
 );
 
-// javascripts
-$scripts = array(
-    '/js/vendor/modernizr.js',
-    '/js/vendor/jquery.js',
+// productive javascripts
+$prodScripts = array(
     '/js/vendor/fastclick.js',
     '/js/foundation.min.js',
-    '/js/jquery.sublimeSlideshow.js',
+    '/js/foundation/foundation.tooltip.js',
+    '/js/jquery.fullscreenCycler.min.js',
+    '/js/custom.min.js',
+);
+
+// debugging javascripts
+$debugScripts = array(
+    '/js/vendor/fastclick.js',
+    '/js/foundation.min.js',
+    '/js/foundation/foundation.tooltip.js',
+    '/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
 );
 
@@ -103,9 +108,18 @@ foreach ($customtags as $customtag) {
    $doc->addCustomTag($customtag);
 }
 
-//JavaScripts
-foreach ($scripts as $script) {
-   $doc->addScript($templateUrl . $script);
+setPublisherTags($doc, $this->params);
+
+if (JDEBUG === 0) {
+   //add productive JavaScripts
+   foreach ($prodScripts as $script) {
+      $doc->addScript($templateUrl . $script);
+   }
+} else {
+   //add development JavaScripts
+   foreach ($debugScripts as $script) {
+      $doc->addScript($templateUrl . $script);
+   }
 }
 
 //Styles sheets
@@ -144,6 +158,17 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
    $columnSizeRightSideBar = "large-3 medium-3 column hide-on-print end";
 }
 
+function setPublisherTags($doc, $params) {
+   if ($params->get('facebookFanpage') != NULL) {
+      //Facebook Publisher
+      $doc->addCustomTag('<meta property="article:publisher" content="' . $params->get('facebookFanpage') . '" />');
+   }
+   if ($params->get('googlePublisher') != NULL) {
+      //Google+ Publisher
+      $doc->addCustomTag('<link rel="publisher" href="' . $params->get('googlePublisher') . '" />');
+   }
+}
+
 /**
  * Load the images for background slide show.
  * @param type $params
@@ -151,15 +176,20 @@ if (!$this->countModules('position-8') && !$this->countModules('position-7')) {
  */
 function getSlideImages($params) {
    $slideImageArray = "";
+   $maximages = 6;
 
-   for ($index = 1; $index <= 6; $index++) {
+   for ($index = 1; $index <= $maximages; $index++) {
       $filename = $params->get('slide-' . $index);
       //if(file_exists($filename)) {
-      $slideImageArray .= '{url: "' . $filename . '"},';
+      //$slideImageArray .= '{url: "' . $filename . '"},';
+      $slideImageArray .= ' "' . $filename . '"';
+      if ($index < $maximages) {
+         $slideImageArray .= ', ';
+      }
       //}
    }
-
-   return "var bslides = [" . $slideImageArray . "];";
+   return "var bslides = new Array(" . $slideImageArray . ");";
+   //return "var bslides = [" . $slideImageArray . "];";
 }
 
 /**
@@ -170,7 +200,7 @@ function getSlideImages($params) {
 function hasBottomModules() {
    $retval = false;
    $doc = JFactory::getDocument();
-   if($doc->countModules('position-4') || $doc->countModules('position-5')  || $doc->countModules('position-6')) {
+   if ($doc->countModules('position-4') || $doc->countModules('position-5') || $doc->countModules('position-6')) {
       $retval = true;
    } else {
       $retval = false;

@@ -135,6 +135,7 @@ grunt.initConfig({
       files: [
          'Gruntfile.js',
          'src/js/*.js',
+         '!src/js/foundation.js',
          '!src/js/*.min.js',
          '!src/js/jquery.*.js'
       ]

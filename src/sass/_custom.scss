@@ -28,8 +28,14 @@ body {
 }
 
 .top-bar {
-   .name h1 a {
-      width: 80%;
+   .name {
+      padding-top: 10px;
+      padding-left: $topbar-link-padding;
+      a {
+         color: $topbar-dropdown-link-color;
+         text-decoration: none;
+         font-weight: normal;
+      }
    }
 }
 #header {
@@ -87,7 +93,6 @@ body {
    color: $secondary-color;
    background: $primary-color;
    padding-top: 1em;
-   padding-bottom: 1em;
 
    h3 {
       font-size: rem-calc(18);

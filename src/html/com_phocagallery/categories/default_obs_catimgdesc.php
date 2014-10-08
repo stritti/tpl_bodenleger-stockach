@@ -42,7 +42,7 @@ defined('_JEXEC') or die('Restricted access');
             
             <div class="large-8 medium-8 small-12 column end">
                <?php if ($this->categories[$i]->description != '') { ?>
-                  <?php echo $this->categories[$i]->description; ?>
+                  <?php echo JHTML::_('string.truncate', $this->categories[$i]->description, 250); ?>
                <?php } else {?>
                   <p>&nbsp;</p>
                <?php } ?>

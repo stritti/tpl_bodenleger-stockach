@@ -17,6 +17,9 @@
 defined('_JEXEC') or die;
 
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
+
+$doc = JFactory::getDocument();
+$templateUrl = $doc->baseurl . '/templates/' . $doc->template;
 ?><!DOCTYPE html>
 
 <!--[if IE 9]><html class="lt-ie10" lang="<?php echo $doc->language; ?>"  > <![endif]-->
@@ -25,6 +28,8 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
    <meta charset="utf-8">
    <script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="<?php echo $templateUrl?>/js/vendor/modernizr.js" type="text/javascript"></script>
+  <script src="<?php echo $templateUrl?>/js/vendor/jquery.js" type="text/javascript"></script>
    <jdoc:include type="head" />
 <?php if($this->params->get('googleAnalytics') != "") { ?>
    <script type="text/javascript">
@@ -43,13 +48,12 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'functions.php';
 <?php } ?>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
+   <div id="fsCycler"></div>
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
          <ul class="title-area hide-for-medium-up">
-            <li class="name">
-               <h1><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#">Menü</a></li>
+            <li class="name"><a href="<?php echo $doc->baseurl; ?>"><?php echo $this->params->get('siteTitle'); ?></a></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menü</span></a></li>
          </ul>
          <section id="navigation" class="top-bar-section">
             <jdoc:include type="modules" name="position-1" />

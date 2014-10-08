@@ -4,18 +4,44 @@ An free open source Joomla! Template
 http://www.bodenleger-stockach.de
 By @stritti
 
-Licensed under the Apache 2.0 license. Please see LICENSE for more information.
+ Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
+
+ Our templates are downloadable for everyone and for free. You are allowed
+ to modify this template to suite your needs and as you wish, the only thing not allowed
+ is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ somewhere else in your site for example in your links section or impressum.
 */
 /* 
     Created on : 21.03.2014, 13:39:04
     Author     : ssr
 */
+/*
+Copyright 2014
+An free open source Joomla! Template
+http://www.bodenleger-stockach.de
+By @stritti
 
-#phocagallery .pg-cats-box-float2 {
-   padding: initial;
-}
+ Full source at https://github.com/stritti/tpl_bodenleger-stockach
+ Licensed under the MIT License (MIT) license. Please see LICENSE for more information.
 
-#phocagallery .category {
-   margin: 0;
-   font-weight: bold;
-}
+ Our templates are downloadable for everyone and for free. You are allowed
+ to modify this template to suite your needs and as you wish, the only thing not allowed
+ is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
+ somewhere else in your site for example in your links section or impressum.
+*/
+.category-box {
+  background: white;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
+  box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-right: 1em; }
+
+.orbit-caption h4 {
+  color: #dddddd; }
+
+#phocagallery-responsive img {
+  max-width: inherit;
+  width: 100%; }
