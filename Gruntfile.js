@@ -168,13 +168,16 @@ grunt.initConfig({
    compress: {
      main: {
        options: {
-         archive: 'target/<%= pkg.name %>.zip'
+         archive: 'target/<%= pkg.name %>.zip',
+         mode: 'zip',
        },
        files: [
          {
             expand: true,
+            filter: 'isFile',
             cwd: 'target/files/<%= pkg.name %>/',
-            src: ['**'], dest: '/'
+            src: ['**'], 
+            dest: '/'
           }
        ]
      }
