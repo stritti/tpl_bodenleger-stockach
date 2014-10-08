@@ -1,8 +1,18 @@
 language: node_js
+
 node_js:
   - '0.10'
+  
 before_install:
-  - npm install -g grunt-cli
+  - gem install sass
+  - gem install compass
+
+install: 
+ - npm install
+ 
+before_script: 
+  - 'npm install -g bower grunt-cli karma'
+  - 'bower install'
   - npm install grunt-contrib-watch --save-dev
   - npm install grunt-contrib-sass --save-dev
   - npm install grunt-contrib-cssmin --save-dev
@@ -11,7 +21,6 @@ before_install:
   - npm install grunt-contrib-jshint --save-dev
   - npm install grunt-contrib-uglify --save-dev
   - npm install grunt-contrib-clean --save-dev  
-install: 
- - npm install
-before_script: 
+  
+script:
  - grunt build
