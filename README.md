@@ -1,3 +1,4 @@
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Build Status](https://secure.travis-ci.org/stritti/tpl_bodenleger-stockach.svg?branch=master)](https://travis-ci.org/stritti/tpl_bodenleger-stockach)
 tpl_bodenleger-stockach
 =======================
