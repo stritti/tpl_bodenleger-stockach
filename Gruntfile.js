@@ -167,7 +167,8 @@ grunt.initConfig({
    compress: {
      main: {
        options: {
-         archive: 'target/<%= pkg.name %>.zip'
+         archive: 'target/<%= pkg.name %>.zip',
+         mode: 'zip',
        },
        files: [
          {
