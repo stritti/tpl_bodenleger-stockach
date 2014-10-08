@@ -173,8 +173,10 @@ grunt.initConfig({
        files: [
          {
             expand: true,
+            filter: 'isFile',
             cwd: 'target/files/<%= pkg.name %>/',
-            src: ['**'], dest: '/'
+            src: ['**'], 
+            dest: '/'
           }
        ]
      }
