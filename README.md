@@ -73,3 +73,6 @@ bower install zurb/bower-foundation
 While you're working on the project, run:
 
 `grunt`
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-327996-12/stritti/tpl_bodenleger-stockach)](https://github.com/igrigorik/ga-beacon)
