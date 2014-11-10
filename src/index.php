@@ -28,8 +28,8 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
    <meta charset="utf-8">
    <script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="<?php echo $templateUrl?>/js/vendor/modernizr.js" type="text/javascript"></script>
-  <script src="<?php echo $templateUrl?>/js/vendor/jquery.js" type="text/javascript"></script>
+   <script src="<?php echo $templateUrl?>/js/vendor/modernizr.js" type="text/javascript"></script>
+   <script src="<?php echo $templateUrl?>/js/vendor/jquery.js" type="text/javascript"></script>
    <jdoc:include type="head" />
 <?php if($this->params->get('googleAnalytics') != "") { ?>
    <script type="text/javascript">
@@ -74,7 +74,7 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
    <div id="banner" class="row">
       <jdoc:include type="modules" name="banner" />
    </div>
-   <div id="breadcrumb" class="row">
+   <div id="breadcrumb" class="row hide-for-small">
       <jdoc:include type="modules" name="position-2" />
    </div>
 

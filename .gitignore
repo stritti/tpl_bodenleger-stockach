@@ -408,3 +408,7 @@ joomla.xml
 /src/css/pages/com_contact/
 /src/js/custom.min.js
 /src/js/final.min.js
+/src/js/app.min.js
+/src/js/jquery.fullscreenCycler.min.js
+/src/js/foundation.min.js
+/src/js/jquery.sublimeSlideshow.min.js

@@ -12,7 +12,7 @@ By @stritti
  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
  somewhere else in your site for example in your links section or impressum.
 */
-
+'use strict';
 
 /**
  * Shuffle an array.

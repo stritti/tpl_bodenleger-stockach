@@ -56,8 +56,7 @@ $customtags = array(
 // productive javascripts
 $prodScripts = array(
     '/js/vendor/fastclick.js',
-    '/js/foundation.min.js',
-    '/js/foundation/foundation.tooltip.js',
+    '/js/app.min.js',
     '/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
 );
@@ -65,8 +64,7 @@ $prodScripts = array(
 // debugging javascripts
 $debugScripts = array(
     '/js/vendor/fastclick.js',
-    '/js/foundation.min.js',
-    '/js/foundation/foundation.tooltip.js',
+    '/js/app.js',
     '/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
 );
