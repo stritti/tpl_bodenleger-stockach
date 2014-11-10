@@ -130,7 +130,7 @@ grunt.initConfig({
     */
    jshint: {
       options: {
-        jshintrc: '.jshintrc',
+        jshintrc: '.jshintrc'
       },
       files: [
          'Gruntfile.js',
@@ -149,7 +149,7 @@ grunt.initConfig({
          cwd: 'src/',
          src: ['**',  '!**/*.scss' ],
          expand: true,
-         dest: 'target/files/<%= pkg.name %>/',
+         dest: 'target/files/<%= pkg.name %>/'
      },
 
       deploy: {
@@ -158,8 +158,8 @@ grunt.initConfig({
          src: ['**',  '!**/*.scss', '!sass/**' ],
          expand: true,
          //dest: 'target/files/tpl_bodenleger-stockach/',
-         dest: '../xampp_1_8_1/htdocs/templates/Bodenleger-Stockach/',
-     },
+         dest: '../xampp_1_8_1/htdocs/templates/Bodenleger-Stockach/'
+     }
    },
 
    /**
@@ -169,7 +169,7 @@ grunt.initConfig({
      main: {
        options: {
          archive: 'target/<%= pkg.name %>.zip',
-         mode: 'zip',
+         mode: 'zip'
        },
        files: [
          {
@@ -192,7 +192,7 @@ grunt.initConfig({
       },
       deploy: {
          src: ['../xampp_1_8_1/htdocs/templates/Bodenleger-Stockach/']
-      },
+      }
    },
    /**
     * 
@@ -219,7 +219,7 @@ grunt.initConfig({
             //interrupt: true,
             livereload: true
          }
-      },
+      }
    }  
 });
 
@@ -239,7 +239,7 @@ grunt.initConfig({
     */
    grunt.registerTask('build',
       'Compiles all of the assets and copies the files to the build directory.',
-      ['sass:dist', 'jshint', 'copy:build', 'cssmin', 'uglify', 'compress']
+      ['sass:dist', 'copy:build', 'cssmin', 'uglify', 'compress']
    );
    /**
     * Default task
@@ -247,6 +247,6 @@ grunt.initConfig({
     * This will compile sass-Files on the fly and copy changed files to testing server (deploy).
     */
    grunt.registerTask('default',
-      [ 'sass:dev', 'watch']
+      [ 'sass:dev', 'jshint', 'watch']
    );
 };

@@ -1,6 +1,13 @@
 {
-  "name": "tpl_bodenleger-stockach",
-  "dependencies": {
-    "foundation": "zurb/bower-foundation"
-  }
+   "name": "tpl_bodenleger-stockach",
+   "version": "1.0.1",
+   "main": "target/tpl_bodenleger-stockach.zip",
+   "ignore": [
+      ".jshintrc",
+      "**/*.txt"
+   ],
+   "dependencies": {
+      "foundation": "zurb/bower-foundation"
+   },
+   "devDependencies": {}
 }
