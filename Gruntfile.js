@@ -15,7 +15,7 @@
 
 /**
  * Grunt Module
- *
+ * @param {type} grunt 
  */
 /*jshint node:true */
 module.exports = function (grunt) {
@@ -108,7 +108,7 @@ module.exports = function (grunt) {
             banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
          },
          build: {
-            src: ['**/*.js', '!*.min.js', '!**/foundation/*', '!**vendor/*'],
+            src: ['src/**/*.js', '!**/*.min.js'],
             cwd: 'target/files/<%= pkg.name %>/js/',
             dest: 'src/js/',
             expand: true,
@@ -139,16 +139,25 @@ module.exports = function (grunt) {
        *
        */
       copy: {
+         bower_update: {
+            nonull: true,
+            cwd: 'bower_components',
+            src: ['**/lib/fastclick.js', '**/modernizr/modernizr.js', '**/jquery/dist/jquery.*'],
+            expand: true,
+            flatten: true,
+            filter: 'isFile',
+            dest: 'src/js/'
+         },
          build: {
             nonull: true,
-            cwd: 'src/',
+            cwd: 'src',
             src: ['**', '!**/*.scss'],
             expand: true,
             dest: 'target/files/<%= pkg.name %>/'
          },
          deploy: {
             nonull: true,
-            cwd: 'src/',
+            cwd: '/src',
             src: ['**', '!**/*.scss', '!sass/**'],
             expand: true,
             //dest: 'target/files/tpl_bodenleger-stockach/',
@@ -222,10 +231,7 @@ module.exports = function (grunt) {
                'jquery',
                'fastclick',
                'modernizr'
-            ],
-            bowerOptions: {
-               relative: false
-            }
+            ]
          }
       }
    });
@@ -245,7 +251,7 @@ module.exports = function (grunt) {
     */
    grunt.registerTask('build',
            'Compiles all of the assets and copies the files to the build directory.',
-           ['bower_concat', 'sass:dist', 'copy:build', 'cssmin', 'uglify', 'compress']
+           ['bower_concat', 'copy:bower_update', 'sass:dist', 'copy:build', 'cssmin', 'uglify', 'compress']
            );
    /**
     * Default task
