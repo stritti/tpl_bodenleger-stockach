@@ -15,6 +15,9 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+//TODO: wird nicht raus genommen?
+unset($this->_styleSheets[JURI::root(true).'/media/com_phocagallery/css/main/bootstrap.min.css']);
+
 ?>
 <div id="phocagallery-responsive" class="categories-view<?php echo $this->params->get( 'pageclass_sfx' ) ?> row">
 <?php if ( $this->params->get( 'show_page_heading' ) ) { ?>

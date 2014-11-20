@@ -12,7 +12,7 @@
  is removing the backlink to www.bodenleger-stockach.de - if you like to move it,  place the link
  somewhere else in your site for example in your links section or impressum.
  */
-
+'use strict';
 /**
  * Grunt Module
  * @param {type} grunt 
@@ -129,10 +129,8 @@ module.exports = function (grunt) {
          },
          files: [
             'Gruntfile.js',
-            'src/js/*.js',
-            '!src/js/foundation.js',
-            '!src/js/*.min.js',
-            '!src/js/jquery.*.js'
+            'src/js/custom.js',
+            'src/js/final.js',
          ]
       },
       /**
@@ -150,14 +148,14 @@ module.exports = function (grunt) {
          },
          build: {
             nonull: true,
-            cwd: 'src',
+            cwd: 'src/',
             src: ['**', '!**/*.scss'],
             expand: true,
             dest: 'target/files/<%= pkg.name %>/'
          },
          deploy: {
             nonull: true,
-            cwd: '/src',
+            cwd: 'src/',
             src: ['**', '!**/*.scss', '!sass/**'],
             expand: true,
             //dest: 'target/files/tpl_bodenleger-stockach/',

@@ -16,8 +16,6 @@
  */
 defined('_JEXEC') or die;
 
-jimport('joomla.html.html');
-
 // variables
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
@@ -55,7 +53,8 @@ $customtags = array(
 
 // productive javascripts
 $prodScripts = array(
-    '/js/vendor/fastclick.js',
+    '/js/modernizr.min.js',
+    '/js/jquery.min.js',
     '/js/app.min.js',
     '/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
@@ -63,7 +62,8 @@ $prodScripts = array(
 
 // debugging javascripts
 $debugScripts = array(
-    '/js/vendor/fastclick.js',
+    '/js/modernizr.js',
+    '/js/jquery.js',
     '/js/app.js',
     '/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
@@ -77,19 +77,23 @@ unset($head['metaTags']['standard']['language']);
 
 if ($user->guest) {
 // Mootools remove for unregistered
-   unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-core.js']);
-   unset($head['scripts'][$this->baseurl . '/media/system/js/mootools-more.js']);
-   unset($head['scripts'][$this->baseurl . '/media/system/js/core.js']);
-//unset($head['scripts'][$this->baseurl . '/media/system/js/caption.js']);
-   unset($head['scripts'][$this->baseurl . '/media/system/js/modal.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/system/js/mootools-core.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/system/js/mootools-more.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/system/js/core.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/system/js/modal.js']);
 
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery.min.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-noconflict.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
-   unset($head['scripts'][$this->baseurl . '/media/jui/js/bootstrap.js']);
-   unset($head['scripts'][$this->baseurl . '/media/system/js/tabs-state.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/jquery.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/jquery.min.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/jquery-noconflict.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/jquery-migrate.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/jquery-migrate.min.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/bootstrap.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/jui/js/bootstrap.min.js']);
+   unset($head['scripts'][$doc->baseurl . '/media/system/js/tabs-state.js']);
+} else {
+   //Styles sheets for admin
+   $doc->addStyleSheet($doc->baseurl . '/templates/system/css/system.css');
+   $doc->addStyleSheet($doc->baseurl . '/templates/system/css/general.css');
 }
 $doc->setHeadData($head);
 
@@ -108,7 +112,7 @@ foreach ($customtags as $customtag) {
 
 setPublisherTags($doc, $this->params);
 
-if (JDEBUG === 0) {
+if (JDEBUG == 0) {
    //add productive JavaScripts
    foreach ($prodScripts as $script) {
       $doc->addScript($templateUrl . $script);
@@ -121,8 +125,8 @@ if (JDEBUG === 0) {
 }
 
 //Styles sheets
-$doc->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
-$doc->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
+//$doc->addStyleSheet($this->baseurl . '/templates/system/css/system.css');
+//$doc->addStyleSheet($this->baseurl . '/templates/system/css/general.css');
 //rest of styles are loaded within following css
 $doc->addStyleSheet($templateUrl . '/css/template.css.php?debug=' . JDEBUG . '&c=' . $component . '&v=' . $view);
 

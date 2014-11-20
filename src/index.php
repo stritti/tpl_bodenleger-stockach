@@ -26,24 +26,10 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
 <html class="no-js" lang="<?php echo $doc->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
    <meta charset="utf-8">
-   <script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-   <script src="<?php echo $templateUrl?>/js/modernizr.min.js" type="text/javascript"></script>
-   <script src="<?php echo $templateUrl?>/js/jquery.min.js" type="text/javascript"></script>
    <jdoc:include type="head" />
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
-<?php if($this->params->get('googleAnalytics') != "") { ?>
-   <script type="text/javascript">    
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '<?php echo $this->params->get('googleAnalytics'); ?>', 'auto');
-      ga('send', 'pageview');
-   </script>
-<?php } ?>
    <div id="fsCycler"></div>
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>
@@ -134,7 +120,19 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
          <jdoc:include type="modules" name="copyright" />
       </div>
    </div>
+   
 <jdoc:include type="modules" name="debug" />
+<script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
 <script src="<?php echo $templateUrl; ?>/js/final.js?debug=<?php echo JDEBUG; ?>&c=<?php echo $component; ?>&v=<?php echo $view; ?>" type="text/javascript"></script>
+<?php if($this->params->get('googleAnalytics') != "") { ?>
+<script type="text/javascript">
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   ga('create', '<?php echo $this->params->get('googleAnalytics'); ?>', 'auto');
+   ga('send', 'pageview');
+</script>
+<?php } ?>
 </body>
 </html>
