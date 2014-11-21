@@ -53,8 +53,8 @@ $customtags = array(
 
 // productive javascripts
 $prodScripts = array(
-    '/js/modernizr.min.js',
-    '/js/jquery.min.js',
+    '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js',
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
     '/js/app.min.js',
     //'/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
@@ -62,8 +62,8 @@ $prodScripts = array(
 
 // debugging javascripts
 $debugScripts = array(
-    '/js/modernizr.js',
-    '/js/jquery.js',
+    '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js',
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js',
     '/js/app.js',
     //'/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
@@ -115,12 +115,20 @@ setPublisherTags($doc, $this->params);
 if (JDEBUG == 0) {
    //add productive JavaScripts
    foreach ($prodScripts as $script) {
-      $doc->addScript($templateUrl . $script);
+      if (startsWith($script, '//') || startsWith($script, 'http')) {
+         $doc->addScript($script);
+      } else {
+         $doc->addScript($templateUrl . $script);
+      }
    }
 } else {
    //add development JavaScripts
    foreach ($debugScripts as $script) {
-      $doc->addScript($templateUrl . $script);
+      if (startsWith($script, '//') || startsWith($script, 'http')) {
+         $doc->addScript($script);
+      } else {
+         $doc->addScript($templateUrl . $script);
+      }
    }
 }
 
@@ -208,4 +216,9 @@ function hasBottomModules() {
       $retval = false;
    }
    return $retval;
+}
+
+function startsWith($haystack, $needle) {
+   $length = strlen($needle);
+   return (substr($haystack, 0, $length) === $needle);
 }
