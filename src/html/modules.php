@@ -39,7 +39,7 @@ defined('_JEXEC') or die;
  */
 function modChrome_footer($module, &$params, &$attribs) {
 	if ($module->content) {
-		echo '<div class="footer' . htmlspecialchars($params->get('moduleclass_sfx')) . ' row">';
+		echo '<div class="footer' . htmlspecialchars($params->get('moduleclass_sfx')) . '">';
 		if ($module->showtitle) {
 			echo '<h3>' . $module->title . '</h3>';
 		}
