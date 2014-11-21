@@ -89,16 +89,16 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
    </div>
    <?php } ?>
    <footer id="footer" class="row">
-      <div id="footer-1" class="large-2 medium-2  small-12 column">
+      <div id="footer-1" class="large-2 medium-2 small-12 column">
          <img src="<?php echo $templateUrl; ?>/images/bodenleger-j-schmid-stockach.png" alt="Bodenleger J. & J. Schmid GbR" />
       </div>
-      <div id="footer-2" class="large-3 medium-3  small-12 column">
+      <div id="footer-2" class="large-3 medium-3 small-12 column">
          <jdoc:include type="modules" name="position-9" style="footer"/>
       </div>
-      <div id="footer-3" class="large-3 medium-3  small-12 column">
+      <div id="footer-3" class="large-3 medium-3 small-12 column">
          <jdoc:include type="modules" name="position-10" style="footer"/>
       </div>
-      <div id="footer-4" class="large-3 medium-3  small-12 column">
+      <div id="footer-4" class="large-3 medium-3 small-12 column">
          <jdoc:include type="modules" name="position-11" style="footer"/>
       </div>
       <div id="footer-5" class="large-1 medium-1 small-12 end column">
@@ -119,10 +119,10 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
       <div class="large-12 column">
          <jdoc:include type="modules" name="copyright" />
       </div>
-   </div>
-   
+   </div>  
 <jdoc:include type="modules" name="debug" />
 <script><?php echo getSlideImages($this->params); //custom Tag, because addScript has wrong order...?></script>
+<script src="<?php echo $templateUrl; ?>/js/jquery.fullscreenCycler.min.js"></script>
 <script src="<?php echo $templateUrl; ?>/js/final.js?debug=<?php echo JDEBUG; ?>&c=<?php echo $component; ?>&v=<?php echo $view; ?>" type="text/javascript"></script>
 <?php if($this->params->get('googleAnalytics') != "") { ?>
 <script type="text/javascript">

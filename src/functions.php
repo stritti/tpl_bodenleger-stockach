@@ -56,7 +56,7 @@ $prodScripts = array(
     '/js/modernizr.min.js',
     '/js/jquery.min.js',
     '/js/app.min.js',
-    '/js/jquery.fullscreenCycler.min.js',
+    //'/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
 );
 
@@ -65,7 +65,7 @@ $debugScripts = array(
     '/js/modernizr.js',
     '/js/jquery.js',
     '/js/app.js',
-    '/js/jquery.fullscreenCycler.js',
+    //'/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
 );
 

@@ -105,7 +105,14 @@ module.exports = function (grunt) {
       uglify: {
          options: {
             // the banner is inserted at the top of the output
-            banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+            banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+            sourceMap: true,
+            sourceMapName: function (dest, src) {
+               var folder = src.substring(0, src.lastIndexOf('/'));
+               var filename = src.substring(src.lastIndexOf('/'), src.length);
+               filename = filename.substring(0, filename.lastIndexOf('.'));
+               return dest + folder + filename + '.min.map';
+            }
          },
          build: {
             src: ['src/**/*.js', '!**/*.min.js'],

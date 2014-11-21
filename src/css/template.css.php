@@ -56,14 +56,28 @@ if ($debug == 0) {
          $buffer .= file_get_contents($file);
       }
    }
-
-   // Remove comments
+//see: https://gist.github.com/brentonstrine/5f56a24c7d34bb2d4655
+// Remove comments
    $buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
-   // Remove space after colons
+
+// Remove space after colons
    $buffer = str_replace(': ', ':', $buffer);
 
-   // Remove whitespace
-   $buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+// Remove whitespace
+   $buffer = str_replace(array("\r\n", "\r", "\n", "\t"), '', $buffer);
+
+// Collapse adjacent spaces into a single space
+   $buffer = ereg_replace(" {2,}", ' ', $buffer);
+
+   // Remove spaces that might still be left where we know they aren't needed
+   $buffer = str_replace(array('} '), '}', $buffer);
+   $buffer = str_replace(array('{ '), '{', $buffer);
+   $buffer = str_replace(array('; '), ';', $buffer);
+   $buffer = str_replace(array(', '), ',', $buffer);
+   $buffer = str_replace(array(' }'), '}', $buffer);
+   $buffer = str_replace(array(' {'), '{', $buffer);
+   $buffer = str_replace(array(' ;'), ';', $buffer);
+   $buffer = str_replace(array(' ,'), ',', $buffer);
    // Write everything out
    echo($buffer);
 } else {
