@@ -66,6 +66,7 @@ npm install grunt-contrib-copy --save-dev
 npm install grunt-contrib-jshint --save-dev
 npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-clean --save-dev
+npm install grunt-bower-concat --save-dev
 
 bower install zurb/bower-foundation
 ```
@@ -73,3 +74,6 @@ bower install zurb/bower-foundation
 While you're working on the project, run:
 
 `grunt`
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-327996-12/stritti/tpl_bodenleger-stockach)](https://github.com/igrigorik/ga-beacon)

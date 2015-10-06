@@ -109,6 +109,11 @@ body {
 
    .menu {
       list-style: none;
+      margin-left: 0rem;
+
+      li {
+         margin-bottom: 0.8rem;
+      }
 
       .current a {
          color: #eee;
