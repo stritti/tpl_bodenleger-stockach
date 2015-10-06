@@ -31,7 +31,7 @@ By @stritti
  somewhere else in your site for example in your links section or impressum.
 */
 .category-box {
-  background: white;
+  background: #fff;
   -webkit-box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
   box-shadow: 1px 1px 2px 1px rgba(120, 120, 120, 0.5), inset 0px 0px 7px 7px rgba(240, 240, 240, 0.2);
   -webkit-border-radius: 3px;
