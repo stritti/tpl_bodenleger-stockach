@@ -2,6 +2,8 @@
    "name": "tpl_bodenleger-stockach",
    "version": "1.1.1",
    "main": "target/tpl_bodenleger-stockach.zip",
+   "homepage": "https://github.com/stritti/tpl_bodenleger-stockach",
+   "license": "MIT",   
    "ignore": [
       ".jshintrc",
       "**/*.txt"
@@ -11,5 +13,10 @@
       "slick.js": ">= 1.5.8",
       "normalize.css": ">=3.0.2"
    },
-   "devDependencies": {}
+   "devDependencies": {},
+  "keywords": [
+    "joomla",
+    "template",
+    "foundation"
+  ]
 }
