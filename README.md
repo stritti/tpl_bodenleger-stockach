@@ -25,11 +25,11 @@ The template is free to use under the [MIT license](http://www.opensource.org/li
 
 ### Credits
  * [ZURB Foundation Responsive Library](http://foundation.zurb.com),
-   Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )
- * [jQuery JavaScript Library v2.1.0](http://jquery.com/),
-   Released under the MIT license ( http://jquery.org/license)
+   Free to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php)
+ * [jQuery JavaScript Library](http://jquery.com/),
+   Released under the [MIT license](http://jquery.org/license)
  * [jQuery Plugin: jQueryFullscreenCycler](https://github.com/nbunney/jQueryFullscreenCycler)
-   Released under GNU GENERAL PUBLIC LICENSE ( https://github.com/nbunney/jQueryFullscreenCycler/blob/master/LICENSE )
+   Released under [GNU GENERAL PUBLIC LICENSE](https://github.com/nbunney/jQueryFullscreenCycler/blob/master/LICENSE)
 
 
 ### Development
