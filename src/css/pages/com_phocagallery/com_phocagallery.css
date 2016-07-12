@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Copyright 2014
 An free open source Joomla! Template
@@ -71,7 +72,7 @@ By @stritti
   .slick-list:focus {
     outline: none; }
   .slick-loading .slick-list {
-    background: white url(";f#/ajax-loader.gif") center center no-repeat; }
+    background: #fff url("./ajax-loader.gif") center center no-repeat; }
   .slick-list.dragging {
     cursor: pointer;
     cursor: hand; }
@@ -88,7 +89,8 @@ By @stritti
   left: 0;
   top: 0;
   display: block; }
-  .slick-track:before, .slick-track:after {
+  .slick-track:before,
+  .slick-track:after {
     content: "";
     display: table; }
   .slick-track:after {
@@ -121,13 +123,14 @@ By @stritti
 /* Icons */
 @font-face {
   font-family: "slick";
-  src: font-url("slick.eot");
-  src: font-url("slick.eot?#iefix") format("embedded-opentype"), font-url("slick.woff") format("woff"), font-url("slick.ttf") format("truetype"), font-url("slick.svg#slick") format("svg");
+  src: url("../../fonts/slick.eot");
+  src: url("../../fonts/slick.eot?#iefix") format("embedded-opentype"), url("../../fonts/slick.woff") format("woff"), url("../../fonts/slick.ttf") format("truetype"), url("../../fonts/slick.svg#slick") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 /* Arrows */
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   position: absolute;
   display: block;
   height: 20px;
@@ -142,13 +145,18 @@ By @stritti
   padding: 0;
   border: none;
   outline: none; }
-  .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  .slick-prev:hover,
+  .slick-prev:focus,
+  .slick-next:hover, .slick-next:focus {
     outline: none;
     background: transparent;
     color: transparent; }
-    .slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+    .slick-prev:hover:before,
+    .slick-prev:focus:before,
+    .slick-next:hover:before, .slick-next:focus:before {
       opacity: 1; }
-  .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
     opacity: 0.25; }
 
 .slick-prev:before, .slick-next:before {
@@ -166,9 +174,9 @@ By @stritti
     left: auto;
     right: -25px; }
   .slick-prev:before {
-    content: '\2190'; }
+    content: "←"; }
     [dir="rtl"] .slick-prev:before {
-      content: '\2192'; }
+      content: "→"; }
 
 .slick-next {
   right: -25px; }
@@ -176,9 +184,9 @@ By @stritti
     left: -25px;
     right: auto; }
   .slick-next:before {
-    content: '\2192'; }
+    content: "→"; }
     [dir="rtl"] .slick-next:before {
-      content: '\2190'; }
+      content: "←"; }
 
 /* Dots */
 .slick-slider {
@@ -220,7 +228,7 @@ By @stritti
         position: absolute;
         top: 0;
         left: 0;
-        content: '\2022';
+        content: "•";
         width: 20px;
         height: 20px;
         font-family: "slick";
