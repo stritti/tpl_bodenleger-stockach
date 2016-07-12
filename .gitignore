@@ -421,3 +421,4 @@ joomla.xml
 /src/js/modernizr.js
 /src/js/modernizr.min.js
 src/css/normalize.css
+.idea/
