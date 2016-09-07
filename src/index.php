@@ -131,7 +131,8 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
    ga('create', '<?php echo $this->params->get('googleAnalytics'); ?>', 'auto');
-   ga('send', 'pageview');
+   ga('send', 'pageview');  
+   ga('set', 'anonymizeIp', true); 
 </script>
 <?php } ?>
 </body>
