@@ -15,7 +15,7 @@
  */
 defined('_JEXEC') or die;
 ?>
-<ul class="breadcrumbs<?php echo $moduleclass_sfx; ?>" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<ul class="breadcrumbs<?php echo $moduleclass_sfx; ?>" >
    <?php
    for ($i = 0; $i < $count; $i++) {
       // If not the last item in the breadcrumbs add the separator

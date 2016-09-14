@@ -27,9 +27,10 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
 <head>
    <meta charset="utf-8">
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
    <jdoc:include type="head" />
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" class="antialiased" >
+<body class="antialiased" >
    <div id="fsCycler" class="hide-for-small hide-for-print"></div>
    <div id="nav" class="contain-to-grid hide-for-print">
       <nav class="top-bar" data-topbar>

@@ -54,7 +54,7 @@ $customtags = array(
 // productive javascripts
 $prodScripts = array(
     '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js',
-    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+   // '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
     '/js/app.min.js',
     //'/js/jquery.fullscreenCycler.min.js',
     '/js/custom.min.js',
@@ -63,7 +63,7 @@ $prodScripts = array(
 // debugging javascripts
 $debugScripts = array(
     '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js',
-    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js',
+   // '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js',
     '/js/app.js',
     //'/js/jquery.fullscreenCycler.js',
     '/js/custom.js',
@@ -111,6 +111,8 @@ foreach ($customtags as $customtag) {
 }
 
 setPublisherTags($doc, $this->params);
+
+$doc->addScriptDeclaration(getSocialProfilesJsonScript($app, $doc, $this->params), "application/ld+json");
 
 if (JDEBUG == 0) {
    //add productive JavaScripts
@@ -177,6 +179,32 @@ function setPublisherTags($doc, $params) {
       //Google+ Publisher
       $doc->addCustomTag('<link rel="publisher" href="' . $params->get('googlePublisher') . '" />');
    }
+}
+
+/**
+ * Get the LD JSON of social profiles.
+ * 
+ * @param type $app
+ * @param type $doc
+ * @param type $params
+ * @return type
+ */
+function getSocialProfilesJsonScript($app, $doc, $params) {
+   
+   $script =  '{ "@context" : "http://schema.org", "@type" : "Organization", ';
+   $script .= '"name" : "' . $app->getCfg('sitename') . '", ';
+   $script .= '"url" : "' . $doc->baseurl . '", ';
+   
+   $script .=  '"sameAs" : [';
+   if ($params->get('facebookFanpage') != NULL) {
+      $script .=  '"' . $params->get('facebookFanpage') . '", ';
+   }
+   if ($params->get('googlePublisher') != NULL) {
+      $script .=  '"' . $params->get('googlePublisher') . '" ';
+   }
+   $script .=  ']}';
+   
+   return $script;
 }
 
 /**
