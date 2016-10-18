@@ -421,3 +421,7 @@ joomla.xml
 /src/js/modernizr.js
 /src/js/modernizr.min.js
 src/css/normalize.css
+/src/js/jquery.slim.js
+/src/js/jquery.slim.min.map
+/src/js/jquery.slim.min.js
+.idea/
