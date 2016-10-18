@@ -27,9 +27,10 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
 <head>
    <meta charset="utf-8">
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+   
    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
    
    <jdoc:include type="head" />
 </head>
