@@ -32,7 +32,7 @@ defined('_JEXEC') or die('Restricted access');
                   <?php
                   if (isset($this->categories[$i]->extpic) && $this->categories[$i]->extpic) {
                      $correctImageRes = PhocaGalleryPicasa::correctSizeWithRate($this->categories[$i]->extw, $this->categories[$i]->exth, $this->tmpl['picasa_correct_width'], $this->tmpl['picasa_correct_height']);
-                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%', 'class' => 'th'));
+                     echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), ['width' => '100%', 'class' => 'th']);
                   } else {
                      echo JHtml::_('image', $this->categories[$i]->linkthumbnailpath, str_replace('&raquo;', '-', $this->categories[$i]->title), array('width' => '100%','class' => 'th'));
                   }

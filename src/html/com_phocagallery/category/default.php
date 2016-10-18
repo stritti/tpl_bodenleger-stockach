@@ -82,7 +82,7 @@ if ((int) $this->tagId > 0) {
 
    if ($this->tmpl['displaytabs'] > 0) {
       echo '<div id="phocagallery-pane">';
-      echo JHtml::_('tabs.start', 'config-tabs-com_phocagallery-category', array('useCookie' => 1, 'startOffset' => $this->tmpl['tab']));
+      echo JHtml::_('tabs.start', 'config-tabs-com_phocagallery-category', ['useCookie' => 1, 'startOffset' => $this->tmpl['tab']]);
 
       if ((int) $this->tmpl['display_rating'] == 1) {
          echo JHtml::_('tabs.panel', JHtml::_('image', 'media/com_phocagallery/images/icon-vote.png', '') . '&nbsp;' . JText::_('COM_PHOCAGALLERY_RATING'), 'pgvotes');
