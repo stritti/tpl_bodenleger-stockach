@@ -67,7 +67,7 @@ if ($debug == 0) {
    $buffer = str_replace(array("\r\n", "\r", "\n", "\t"), '', $buffer);
 
 // Collapse adjacent spaces into a single space
-   $buffer = ereg_replace(" {2,}", ' ', $buffer);
+   $buffer = preg_replace('!\s+!', ' ', $buffer);
 
    // Remove spaces that might still be left where we know they aren't needed
    $buffer = str_replace(array('} '), '}', $buffer);
