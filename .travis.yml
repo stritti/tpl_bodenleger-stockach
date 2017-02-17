@@ -10,7 +10,6 @@ before_install:
 - gem install compass
 install:
 - npm install
-before_script:
 - npm install -g bower grunt-cli karma
 - bower install
 - npm install grunt-sass
@@ -32,4 +31,4 @@ deploy:
   file: target/tpl_bodenleger-stockach.zip
   skip_cleanup: true
 on:
-    tags: true  
+  tags: true
