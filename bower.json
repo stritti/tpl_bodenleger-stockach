@@ -1,6 +1,6 @@
 {
   "name": "tpl_bodenleger-stockach",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "target/tpl_bodenleger-stockach.zip",
   "homepage": "https://github.com/stritti/tpl_bodenleger-stockach",
   "license": "MIT",
@@ -9,11 +9,9 @@
     "**/*.txt"
   ],
   "dependencies": {
-      "slick.js": ">= 1.5.8",
-      "normalize.css": ">=3.0.2",
-      "foundation-sites": "5.5.3",
-      "normalize-css": "normalize.css#5.0.0",
-      "slick-carousel": "slick.js#1.6.0"
+    "normalize.css": ">=7.0.0",
+    "foundation-sites": "5.5.3",
+    "slick-carousel": "1.6.0"
   },
   "devDependencies": {},
   "keywords": [

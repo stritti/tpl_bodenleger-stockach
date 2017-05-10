@@ -3,7 +3,7 @@
 tpl_bodenleger-stockach
 =======================
 
-Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
+Responsive Joomla! Template based on ZURB Foundation initially designed for
 [Bodenleger Stockach](http://www.bodenleger-stockach.de)
 
 ### Features
@@ -55,20 +55,6 @@ git clone git@github.com:stritti/tpl_bodenleger-stockach.git
 Then run in same directory following commands:
 ```shell
 npm install && bower install
-npm install -g grunt-cli
-npm install -g bower
-npm install -g livereload2
-npm install grunt-contrib-watch --save-dev
-npm install grunt-contrib-sass --save-dev
-npm install grunt-contrib-cssmin --save-dev
-npm install grunt-contrib-compress --save-dev
-npm install grunt-contrib-copy --save-dev
-npm install grunt-contrib-jshint --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-contrib-clean --save-dev
-npm install grunt-bower-concat --save-dev
-
-bower install zurb/bower-foundation
 ```
 
 While you're working on the project, run:
