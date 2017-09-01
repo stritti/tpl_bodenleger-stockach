@@ -27,7 +27,11 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
 <head>
    <meta charset="utf-8">
    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+   
+   <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+   
    <jdoc:include type="head" />
 </head>
 <body class="antialiased" >
@@ -132,6 +136,8 @@ $templateUrl = $doc->baseurl . '/templates/' . $doc->template;
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
    ga('create', '<?php echo $this->params->get('googleAnalytics'); ?>', 'auto');
+   ga('set', 'anonymizeIp', true);
+   ga('require', 'linkid');
    ga('send', 'pageview');
 </script>
 <?php } ?>

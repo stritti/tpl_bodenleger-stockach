@@ -3,7 +3,7 @@
 tpl_bodenleger-stockach
 =======================
 
-Responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
+Responsive Joomla! Template based on ZURB Foundation initially designed for
 [Bodenleger Stockach](http://www.bodenleger-stockach.de)
 
 ### Features
@@ -25,11 +25,11 @@ The template is free to use under the [MIT license](http://www.opensource.org/li
 
 ### Credits
  * [ZURB Foundation Responsive Library](http://foundation.zurb.com),
-   Free to use under the MIT license ( http://www.opensource.org/licenses/mit-license.php )
- * [jQuery JavaScript Library v2.1.0](http://jquery.com/),
-   Released under the MIT license ( http://jquery.org/license)
+   Free to use under the [MIT license](http://www.opensource.org/licenses/mit-license.php)
+ * [jQuery JavaScript Library](http://jquery.com/),
+   Released under the [MIT license](http://jquery.org/license)
  * [jQuery Plugin: jQueryFullscreenCycler](https://github.com/nbunney/jQueryFullscreenCycler)
-   Released under GNU GENERAL PUBLIC LICENSE ( https://github.com/nbunney/jQueryFullscreenCycler/blob/master/LICENSE )
+   Released under [GNU GENERAL PUBLIC LICENSE](https://github.com/nbunney/jQueryFullscreenCycler/blob/master/LICENSE)
 
 
 ### Development
@@ -55,20 +55,6 @@ git clone git@github.com:stritti/tpl_bodenleger-stockach.git
 Then run in same directory following commands:
 ```shell
 npm install && bower install
-npm install -g grunt-cli
-npm install -g bower
-npm install -g livereload2
-npm install grunt-contrib-watch --save-dev
-npm install grunt-contrib-sass --save-dev
-npm install grunt-contrib-cssmin --save-dev
-npm install grunt-contrib-compress --save-dev
-npm install grunt-contrib-copy --save-dev
-npm install grunt-contrib-jshint --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-contrib-clean --save-dev
-npm install grunt-bower-concat --save-dev
-
-bower install zurb/bower-foundation
 ```
 
 While you're working on the project, run:

@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       sass: {
          options: {
             includePaths: [
-               'bower_components/foundation/scss',
+               'bower_components/foundation-sites/scss',
             ]
          },
          dev: {
@@ -144,7 +144,7 @@ module.exports = function (grunt) {
        *
        */
       copy: {
-         bower_update: {
+         bower_update_js: {
             nonull: true,
             cwd: 'bower_components',
             src: ['**/lib/fastclick.js', '**/modernizr/modernizr.js', '**/jquery/dist/jquery.*'],
@@ -153,6 +153,15 @@ module.exports = function (grunt) {
             filter: 'isFile',
             dest: 'src/js/'
          },
+         bower_update_css: {
+            nonull: true,
+            cwd: 'bower_components',
+            src: [ '**/normalize.css/normalize.css'],
+            expand: true,
+            flatten: true,
+            filter: 'isFile',
+            dest: 'src/css/'
+         },         
          build: {
             nonull: true,
             cwd: 'src/',
@@ -256,7 +265,7 @@ module.exports = function (grunt) {
     */
    grunt.registerTask('build',
            'Compiles all of the assets and copies the files to the build directory.',
-           ['bower_concat', 'copy:bower_update', 'sass:dist', 'copy:build', 'cssmin', 'uglify', 'compress']
+           ['bower_concat', 'copy:bower_update_js', 'copy:bower_update_css', 'sass:dist', 'copy:build', 'cssmin', 'uglify', 'compress']
            );
    /**
     * Default task

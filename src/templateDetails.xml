@@ -21,13 +21,13 @@
 
    <name>Bodenleger-Stockach</name>
    <creationDate>2014-03-13</creationDate>
-   <version>1.0.1</version>
+   <version>2.0.1</version>
    <author>Stephan Strittmatter</author>
    <authorUrl>https://github.com/stritti</authorUrl>
    <license>The MIT License (MIT)</license>
    <description>
       <p>
-         Free responsive Joomla! 3.0 Template based on Foundation 5.0 initially designed for
+         Free responsive Joomla! 3.0 Template based on ZURB Foundation initially designed for
          <a href="http://www.bodenleger-stockach.de">www.bodenleger-stockach.de</a>.
       </p>
       <p>

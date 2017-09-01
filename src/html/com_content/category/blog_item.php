@@ -24,7 +24,7 @@ $app = JFactory::getApplication();
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 $dispatcher = JDispatcher::getInstance();
-$dispatcher->trigger('onContentPrepare', array('com_content.article', &$this->item, &$this->item->params, 0));
+$dispatcher->trigger('onContentPrepare', ['com_content.article', &$this->item, &$this->item->params, 0]);
 
 $article_details_show = ((intval($this->item->modified) != 0 && $params->get('show_modify_date')) ||
         ($params->get('show_author') && ($this->item->author != "")) || ($params->get('show_create_date')) ||

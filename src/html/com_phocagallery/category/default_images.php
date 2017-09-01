@@ -45,7 +45,7 @@ $firstImage = NULL; //set first Image below for meta tags;
                ?>
                <?php
                if ($extImage) {
-                  echo JHtml::_('image', $cv->extm, $cv->altvalue, array('class' => 'pg-image'));
+                  echo JHtml::_('image', $cv->extm, $cv->altvalue, ['class' => 'pg-image']);
                   if($firstImage === NULL) {
                      $firstImage =  $cv->extm;
                   }
