@@ -11,7 +11,7 @@
   "dependencies": {
     "normalize.css": ">=7.0.0",
     "foundation-sites": "5.5.3",
-    "slick-carousel": "1.6.0"
+    "slick-carousel": "1.7.1"
   },
   "devDependencies": {},
   "keywords": [
